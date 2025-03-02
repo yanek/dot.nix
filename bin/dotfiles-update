@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+pushd ~/.dotfiles
+
+echo "Updating flake.lock..."
+nix flake update
+
+echo "Rebuilding..."
+dotfiles-rebuild
+
+popd

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+pushd ~/.dotfiles
+
+doas nix-collect-garbage --delete-old 30d
+
+popd

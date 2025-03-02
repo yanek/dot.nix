@@ -3,6 +3,8 @@
 set -e
 pushd ~/.dotfiles
 
+echo "Staging files..."
+git add .
 git diff --staged
 
 echo "NixOS rebuilding..."
