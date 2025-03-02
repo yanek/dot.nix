@@ -3,7 +3,7 @@
 set -e
 pushd ~/.dotfiles
 
-git diff -U0 *.nix
+git diff --staged
 
 echo "NixOS rebuilding..."
 doas nixos-rebuild switch --flake . &>nixos-switch.log || (
