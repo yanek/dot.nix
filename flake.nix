@@ -6,7 +6,6 @@
         system = "x86_64-linux";
         timezone = "Europe/Paris";
         locale = "en_US.UTF-8";
-        forceStable = false;
         bootMode = "uefi";
         bootMountPath = "/boot";
       };
@@ -35,21 +34,11 @@
         };
       };
 
-      pkgs = (if (systemSettings.forceStable == true) then pkgs-stable else pkgs-unstable);
+      forceStable = builtins.getEnv "FORCE_NIX_STABLE" == "true";
 
-      home-manager = (
-        if (systemSettings.forceStable == true) then
-          inputs.home-manager-stable
-        else
-          inputs.home-manager-unstable
-      );
-
-      nix-lib = (
-        if (systemSettings.forceStable == true) then
-          inputs.nixpkgs-stable.lib
-        else
-          inputs.nixpkgs-unstable.lib
-      );
+      pkgs = (if forceStable then pkgs-stable else pkgs-unstable);
+      home-manager = (if forceStable then inputs.home-manager-stable else inputs.home-manager-unstable);
+      nix-lib = (if forceStable then inputs.nixpkgs-stable.lib else inputs.nixpkgs-unstable.lib);
     in
     {
       nixosConfigurations = {
