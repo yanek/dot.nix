@@ -31,6 +31,10 @@
     };
   };
 
+  programs.zoxide = {
+    enable = true;
+  };
+
   programs.zsh = {
     shellAliases = {
       ls = "eza";
