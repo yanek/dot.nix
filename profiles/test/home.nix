@@ -3,6 +3,7 @@
 {
   imports = [
     ../../user/sh.nix
+    ../../user/nvim/default.nix
     ../../user/git.nix
     ../../user/tmux.nix
     ../../user/tldr.nix

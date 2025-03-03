@@ -61,6 +61,8 @@
     ];
   };
 
+  programs.hyprland.enable = true;
+
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -71,6 +73,7 @@
     fd
     unzip
     nodejs_22
+    kitty
   ];
 
   system.stateVersion = "24.11";

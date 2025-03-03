@@ -5,11 +5,6 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
-  home.packages = [
-    pkgs.python312Packages.pyyaml
-    pkgs.python312Packages.pynvim
-  ];
-
   programs.nixvim = {
     enable = true;
 
@@ -30,7 +25,7 @@
       ./gitsigns.nix
       ./flash.nix
       ./fidget.nix
-      ./coq.nix
+      ./cmp.nix
       ./copilot-chat.nix
     ];
 
