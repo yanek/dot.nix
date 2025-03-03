@@ -5,7 +5,7 @@
     pkgs.bat
   ];
 
-  programs.fish = {
+  programs.zsh = {
     shellAliases = {
       cat = "bat --theme=gruvbox-dark";
     };

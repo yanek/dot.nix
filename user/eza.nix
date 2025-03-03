@@ -13,7 +13,7 @@
     ];
   };
 
-  programs.fish = {
+  programs.zsh = {
     shellAliases = {
       ls = "eza";
     };

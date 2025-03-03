@@ -22,7 +22,7 @@
   ];
 
   environment.sessionVariables = {
-    FORCE_NIX_STABLE = "true";
+    FORCE_NIX_STABLE = "false";
   };
 
   # Bootloader.
@@ -48,11 +48,10 @@
   i18n.defaultLocale = systemSettings.locale;
 
   environment.shells = with pkgs; [
-    bash
-    fish
+    zsh
   ];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
@@ -66,6 +65,7 @@
   environment.systemPackages = with pkgs; [
     wget
     neovim
+    nh
   ];
 
   system.stateVersion = "24.11";

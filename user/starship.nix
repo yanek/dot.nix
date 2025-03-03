@@ -7,7 +7,7 @@
 
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
     settings = pkgs.lib.importTOML ./starship.toml;
   };
 }
