@@ -22,6 +22,6 @@ gen="$(date --rfc-3339 s)\n\n$(nixos-rebuild list-generations | rg current)\n$(h
 git commit -am "$(echo -e $gen)" &>git.log || (
   bat git.log | rg error && false
 )
-git log -n1
+git log -n1 --oneline
 
 popd
