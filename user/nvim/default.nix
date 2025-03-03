@@ -25,7 +25,7 @@
       ./plugins/gitsigns.nix
       ./plugins/flash.nix
       ./plugins/fidget.nix
-      ./plugins/coq.nix
+      ./plugins/cmp.nix
       ./plugins/copilot-chat.nix
     ];
 
