@@ -1,8 +1,13 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+  ];
+
+  home.packages = [
+    pkgs.python312Packages.pyyaml
+    pkgs.python312Packages.pynvim
   ];
 
   programs.nixvim = {
@@ -10,23 +15,23 @@
 
     imports = [
       ./keymaps.nix
-      ./plugins/web-devicons.nix
-      ./plugins/mini.nix
-      ./plugins/lualine.nix
-      ./plugins/bufferline.nix
-      ./plugins/treesitter.nix
-      ./plugins/neo-tree.nix
-      ./plugins/autopairs.nix
-      ./plugins/gitsigns.nix
-      ./plugins/whichkey.nix
-      ./plugins/telescope.nix
-      ./plugins/lsp.nix
-      ./plugins/conform.nix
-      ./plugins/gitsigns.nix
-      ./plugins/flash.nix
-      ./plugins/fidget.nix
-      ./plugins/cmp.nix
-      ./plugins/copilot-chat.nix
+      ./web-devicons.nix
+      ./mini.nix
+      ./lualine.nix
+      ./bufferline.nix
+      ./treesitter.nix
+      ./neo-tree.nix
+      ./autopairs.nix
+      ./gitsigns.nix
+      ./whichkey.nix
+      ./telescope.nix
+      ./lsp.nix
+      ./conform.nix
+      ./gitsigns.nix
+      ./flash.nix
+      ./fidget.nix
+      ./coq.nix
+      ./copilot-chat.nix
     ];
 
     colorschemes.gruvbox.enable = true;

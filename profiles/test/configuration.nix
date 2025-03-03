@@ -2,11 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  pkgs,
-  systemSettings,
-  userSettings,
-  ...
+{ pkgs
+, systemSettings
+, userSettings
+, ...
 }:
 
 {
@@ -66,6 +65,12 @@
     wget
     neovim
     nh
+    cargo
+    gcc
+    zig
+    fd
+    unzip
+    nodejs_22
   ];
 
   system.stateVersion = "24.11";

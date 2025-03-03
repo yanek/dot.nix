@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../../user/nvim/default.nix
     ../../user/sh.nix
     ../../user/git.nix
     ../../user/tmux.nix
