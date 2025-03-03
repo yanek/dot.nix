@@ -2,17 +2,17 @@
 
 {
   imports = [
-    ../../user/sh.nix
-    ../../user/nvim/default.nix
-    ../../user/git.nix
-    ../../user/tmux.nix
-    ../../user/tldr.nix
-    ../../user/ripgrep.nix
-    ../../user/fzf.nix
-    ../../user/zoxide.nix
-    ../../user/starship.nix
-    ../../user/eza.nix
-    ../../user/bat.nix
+    ./modules/sh.nix
+    ./modules/nvim.nix
+    ./modules/git.nix
+    ./modules/tmux.nix
+    ./modules/tldr.nix
+    ./modules/ripgrep.nix
+    ./modules/fzf.nix
+    ./modules/zoxide.nix
+    ./modules/starship.nix
+    ./modules/eza.nix
+    ./modules/bat.nix
   ];
 
   home.username = "${userSettings.username}";

@@ -52,7 +52,7 @@
             inherit inputs;
           };
           modules = [
-            ./profiles/test/configuration.nix
+            ./system/nixos.nix
           ];
         };
       };
@@ -68,7 +68,7 @@
             inherit inputs;
           };
           modules = [
-            ./profiles/test/home.nix
+            ./user/nk.nix
           ];
         };
       };

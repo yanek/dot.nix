@@ -9,24 +9,24 @@
     enable = true;
 
     imports = [
-      ./keymaps.nix
-      ./web-devicons.nix
-      ./mini.nix
-      ./lualine.nix
-      ./bufferline.nix
-      ./treesitter.nix
-      ./neo-tree.nix
-      ./autopairs.nix
-      ./gitsigns.nix
-      ./whichkey.nix
-      ./telescope.nix
-      ./lsp.nix
-      ./conform.nix
-      ./gitsigns.nix
-      ./flash.nix
-      ./fidget.nix
-      ./cmp.nix
-      ./copilot-chat.nix
+      ./nvim/keymaps.nix
+      ./nvim/web-devicons.nix
+      ./nvim/mini.nix
+      ./nvim/lualine.nix
+      ./nvim/bufferline.nix
+      ./nvim/treesitter.nix
+      ./nvim/neo-tree.nix
+      ./nvim/autopairs.nix
+      ./nvim/gitsigns.nix
+      ./nvim/whichkey.nix
+      ./nvim/telescope.nix
+      ./nvim/lsp.nix
+      ./nvim/conform.nix
+      ./nvim/gitsigns.nix
+      ./nvim/flash.nix
+      ./nvim/fidget.nix
+      ./nvim/cmp.nix
+      ./nvim/copilot-chat.nix
     ];
 
     colorschemes.gruvbox.enable = true;
