@@ -5,7 +5,7 @@ pushd ~/.dotfiles
 
 echo "Staging files..."
 git add .
-git diff --staged
+git diff --staged --name-status
 
 echo "NixOS rebuilding..."
 doas nixos-rebuild switch --flake . &>nixos-switch.log || (

@@ -67,7 +67,6 @@
   environment.systemPackages = with pkgs; [
     wget
     neovim
-    nh
     cargo
     gcc
     zig
