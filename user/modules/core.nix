@@ -11,6 +11,7 @@
     ripgrep
     tldr
     zoxide
+    nh
   ];
 
   programs.eza = {
