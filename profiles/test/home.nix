@@ -8,6 +8,11 @@
     ../../user/tmux.nix
     ../../user/tldr.nix
     ../../user/ripgrep.nix
+    ../../user/fzf.nix
+    ../../user/zoxide.nix
+    ../../user/starship.nix
+    ../../user/eza.nix
+    ../../user/bat.nix
   ];
 
   home.username = "${userSettings.username}";
@@ -21,6 +26,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   programs.home-manager.enable = true;
