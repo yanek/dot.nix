@@ -2,17 +2,11 @@
 
 {
   imports = [
-    ./modules/sh.nix
+    ./modules/zsh.nix
+    ./modules/core.nix
     ./modules/nvim.nix
-    ./modules/git.nix
     ./modules/tmux.nix
-    ./modules/tldr.nix
-    ./modules/ripgrep.nix
-    ./modules/fzf.nix
-    ./modules/zoxide.nix
     ./modules/starship.nix
-    ./modules/eza.nix
-    ./modules/bat.nix
   ];
 
   home.username = "${userSettings.username}";
