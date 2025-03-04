@@ -105,6 +105,7 @@
       };
     };
   };
+
   extraPlugins = with pkgs.vimPlugins; [
     ansible-vim
   ];

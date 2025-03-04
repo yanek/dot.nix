@@ -42,6 +42,7 @@
       ls = "eza";
       cat = "bat --theme=gruvbox-dark";
       cd = "z";
+      gs = "git status --short";
     };
   };
 
