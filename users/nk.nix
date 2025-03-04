@@ -1,4 +1,4 @@
-{ userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -8,6 +8,9 @@
     ./modules/tmux.nix
     ./modules/starship.nix
   ];
+
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
   home.username = "${userSettings.username}";
   home.homeDirectory = "/home/${userSettings.username}";

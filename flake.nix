@@ -1,6 +1,6 @@
 {
   outputs =
-    inputs@{ self, ... }:
+    inputs@{ ... }:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -49,7 +49,6 @@
           };
           modules = [
             ./hosts/nixos.nix
-            inputs.stylix.nixosModules.stylix
           ];
         };
       };
@@ -66,6 +65,7 @@
           };
           modules = [
             ./users/nk.nix
+            inputs.stylix.homeManagerModules.stylix
           ];
         };
       };
