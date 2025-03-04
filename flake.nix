@@ -48,7 +48,7 @@
             inherit inputs;
           };
           modules = [
-            ./system/nixos.nix
+            ./hosts/nixos.nix
           ];
         };
       };
@@ -64,7 +64,7 @@
             inherit inputs;
           };
           modules = [
-            ./user/nk.nix
+            ./users/nk.nix
           ];
         };
       };
