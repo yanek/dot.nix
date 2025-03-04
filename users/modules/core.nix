@@ -40,7 +40,7 @@
   programs.zsh = {
     shellAliases = {
       ls = "eza";
-      cat = "bat --theme=gruvbox-dark";
+      cat = "bat";
       cd = "z";
       gs = "git status --short";
     };

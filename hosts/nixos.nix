@@ -21,6 +21,9 @@
     "flakes"
   ];
 
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+
   environment.sessionVariables = {
     FORCE_NIX_STABLE = "false";
   };
@@ -67,10 +70,7 @@
   environment.systemPackages = with pkgs; [
     wget
     neovim
-    cargo
-    gcc
-    zig
-    fd
+    gnumake
     unzip
     nodejs_22
     kitty

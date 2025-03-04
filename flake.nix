@@ -49,6 +49,7 @@
           };
           modules = [
             ./hosts/nixos.nix
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };
@@ -76,6 +77,8 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    stylix.url = "github:danth/stylix";
 
     home-manager-stable.url = "github:nix-community/home-manager/release-24.11";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";

@@ -29,7 +29,7 @@
       ./nvim/copilot-chat.nix
     ];
 
-    colorschemes.gruvbox.enable = true;
+    # colorschemes.gruvbox.enable = true;
 
     extraConfigLuaPre = ''
       vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
