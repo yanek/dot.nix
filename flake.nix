@@ -26,7 +26,7 @@
         };
       };
 
-      pkgs-unstable = import inputs.nixpkgs-unstable {
+      pkgs = import inputs.nixpkgs-unstable {
         system = systemSettings.system;
         config = {
           allowUnfree = true;
@@ -34,16 +34,12 @@
         };
       };
 
-      forceStable = builtins.getEnv "FORCE_NIX_STABLE" == "true";
-
-      pkgs = (if forceStable then pkgs-stable else pkgs-unstable);
-      home-manager = (if forceStable then inputs.home-manager-stable else inputs.home-manager-unstable);
-      nix-lib = (if forceStable then inputs.nixpkgs-stable.lib else inputs.nixpkgs-unstable.lib);
+      home-manager = inputs.home-manager-unstable;
     in
     {
       nixosConfigurations = {
         # nixos == hostname
-        nixos = nix-lib.nixosSystem {
+        nixos = inputs.nixpkgs-unstable.lib.nixosSystem {
           system = systemSettings.system;
           specialArgs = {
             inherit pkgs-stable;
@@ -61,8 +57,8 @@
         nk = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
+            inherit pkgs;
             inherit pkgs-stable;
-            inherit pkgs-unstable;
             inherit systemSettings;
             inherit userSettings;
             inherit inputs;
@@ -75,27 +71,16 @@
     };
 
   inputs = {
-    nixpkgs-stable = {
-      url = "github:nixos/nixpkgs/nixos-24.11";
-    };
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    home-manager-stable.url = "github:nix-community/home-manager/release-24.11";
+    home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
 
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
-    home-manager-unstable = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    home-manager-unstable.url = "github:nix-community/home-manager/master";
+    home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 }
