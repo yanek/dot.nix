@@ -51,6 +51,18 @@
             ./hosts/nixos.nix
           ];
         };
+	nkltop = inputs.nixpkgs-unstable.lib.nixosSystem { 
+		system = systemSettings.system;
+		specialArgs = {
+			inherit pkgs-stable;
+			inherit systemSettings;
+			inherit userSettings;
+			inherit inputs;
+		};
+		modules = [
+			./hosts/nkltop.nix
+		];
+	};
       };
 
       homeConfigurations = {
