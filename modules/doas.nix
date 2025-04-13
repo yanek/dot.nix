@@ -1,9 +1,9 @@
-{ userSettings, pkgs, ... }:
+{ ... }:
 
 {
   security.sudo.enable = false;
 
-  security.doas = { 
+  security.doas = {
     enable = true;
     wheelNeedsPassword = false;
   };

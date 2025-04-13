@@ -3,7 +3,3 @@ os:
 
 home:
 	nh home switch .
-
-commit:
-	dotfiles-commit
-	git push
