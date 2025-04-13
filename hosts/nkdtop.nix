@@ -10,6 +10,7 @@
     ../modules/nvidia.nix
     ../modules/gnome.nix
     ../modules/audio.nix
+    ../modules/multimedia.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -24,12 +25,12 @@
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;
-    edk2-uefi-shell.enable = true;
-    # windows."11-gaming" = {
-    #   title = "Windows 11";
-    #   efiDeviceHandle = "FS1";
-    #   sortKey = "o_windows";
-    # };
+    # edk2-uefi-shell.enable = true;
+    windows."11-gaming" = {
+      title = "Windows 11";
+      efiDeviceHandle = "FS3";
+      sortKey = "o_windows";
+    };
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
@@ -70,18 +71,12 @@
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
+    shell = pkgs.fish;
     description = "${userSettings.fullname}";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
   security.sudo.wheelNeedsPassword = false;
   
-  services.xserver = {
-    enable = true;
-    xkb.layout = "eu";
-  };  
-
-  # Enable CUPS to print documents.
   services.printing.enable = true;
   
   programs.firefox.enable = true;
@@ -103,6 +98,13 @@
     gnumake
     unzip
     wezterm
+  ];
+
+  fonts.packages = with pkgs; [
+    ibm-plex
+    fira-code
+    nerd-fonts.fira-code
+    nerd-fonts.blex-mono
   ];
 
   system.stateVersion = "24.11";
