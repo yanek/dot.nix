@@ -1,5 +1,11 @@
 {
-  outputs = inputs@{ ... }:
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    stylix.url = "github:danth/stylix";
+  };
+  
+  outputs = { nixpkgs, nixpkgs-stable, ... } @ inputs:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -17,52 +23,39 @@
         theme = "nord";
       };
 
-      pkgs-stable = import inputs.nixpkgs-stable {
+      pkgs-stable = import nixpkgs-stable {
         system = systemSettings.system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
+        config = { allowUnfree = true; };
       };
 
-      pkgs = import inputs.nixpkgs-unstable {
+      pkgs = import nixpkgs {
         system = systemSettings.system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
+        config = { allowUnfree = true; };
       };
 
     in {
       nixosConfigurations = {
-        nkdtop = inputs.nixpkgs-unstable.lib.nixosSystem {
+        nkdtop = nixpkgs.lib.nixosSystem {
+          inherit pkgs;
           system = systemSettings.system;
           specialArgs = {
+            inherit inputs;
             inherit pkgs-stable;
             inherit systemSettings;
             inherit userSettings;
-            inherit inputs;
           };
           modules = [ ./hosts/nkdtop.nix ];
         };
-        nkltop = inputs.nixpkgs-unstable.lib.nixosSystem {
+        nkltop = nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
           specialArgs = {
             inherit pkgs-stable;
             inherit systemSettings;
             inherit userSettings;
-            inherit inputs;
           };
           modules = [ ./hosts/nkltop.nix ];
         };
       };
 
     };
-
-  inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    stylix.url = "github:danth/stylix";
-  };
 }

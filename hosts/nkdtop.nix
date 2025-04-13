@@ -2,16 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, systemSettings, userSettings, ... }:
+{ config, pkgs, systemSettings, userSettings, ... }:
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../modules/nvidia.nix
+    ../modules/gnome.nix
+    ../modules/audio.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   environment.sessionVariables = { FORCE_NIX_STABLE = "false"; };
 
   # Bootloader.
@@ -19,7 +21,17 @@
   #boot.loader.grub.device = "/dev/sda";
   #boot.loader.grub.useOSProber = true;
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 5;
+    edk2-uefi-shell.enable = true;
+    # windows."11-gaming" = {
+    #   title = "Windows 11";
+    #   efiDeviceHandle = "FS1";
+    #   sortKey = "o_windows";
+    # };
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nkdtop";
@@ -61,41 +73,33 @@
     description = "${userSettings.fullname}";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  
-  services.xserver.enable = true
-  
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "eu";
+  security.sudo.wheelNeedsPassword = false;
   
+  services.xserver = {
+    enable = true;
+    xkb.layout = "eu";
+  };  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
   
   programs.firefox.enable = true;
-
+   
   environment.systemPackages = with pkgs; [
     wget
-    nerdfonts
+    git
+
+    # misc cli tools
+    zoxide
+    eza
+    bat
+    yazi
+    lazygit
+    starship
+    
     helix
+    discord
     gnumake
     unzip
     wezterm
