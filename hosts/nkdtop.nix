@@ -2,20 +2,33 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, systemSettings, userSettings, ... }:
+{
+  pkgs,
+  systemSettings,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
     ./hardware-configuration.nix
+    ../modules/core.nix
     ../modules/nvidia.nix
     ../modules/gnome.nix
     ../modules/audio.nix
     ../modules/multimedia.nix
+    ../modules/gaming.nix
+    ../modules/3d-printing.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  environment.sessionVariables = { FORCE_NIX_STABLE = "false"; };
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  environment.sessionVariables = {
+    FORCE_NIX_STABLE = "false";
+  };
 
   # Bootloader.
   #boot.loader.grub.enable = true;
@@ -51,7 +64,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale;
-  
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
@@ -63,40 +76,24 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
- 
-  environment.shells = with pkgs; [ zsh fish ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
     shell = pkgs.fish;
     description = "${userSettings.fullname}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
   security.sudo.wheelNeedsPassword = false;
-  
-  services.printing.enable = true;
-  
-  programs.firefox.enable = true;
-   
-  environment.systemPackages = with pkgs; [
-    wget
-    git
 
-    # misc cli tools
-    zoxide
-    eza
-    bat
-    yazi
-    lazygit
-    starship
-    
-    helix
+  services.printing.enable = true;
+
+  programs.firefox.enable = true;
+
+  environment.systemPackages = with pkgs; [
     discord
-    gnumake
-    unzip
     wezterm
   ];
 
