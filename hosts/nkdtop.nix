@@ -14,7 +14,7 @@
     ./hardware-configuration.nix
     ../modules/core.nix
     ../modules/nvidia.nix
-    ../modules/gnome.nix
+    ../modules/bspwm.nix
     ../modules/audio.nix
     ../modules/multimedia.nix
     ../modules/gaming.nix
@@ -62,21 +62,6 @@
 
   time.timeZone = systemSettings.timezone;
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = systemSettings.locale;
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
-  };
-
   users.users.${userSettings.username} = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -92,10 +77,19 @@
 
   programs.firefox.enable = true;
 
+  hardware.keyboard.qmk.enable = true;
+
   environment.systemPackages = with pkgs; [
     discord
     wezterm
+    vial
   ];
+
+  services.udev.packages = [ pkgs.via ];
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "amd";
+  };
 
   fonts.packages = with pkgs; [
     ibm-plex

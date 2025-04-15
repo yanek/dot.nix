@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   services.xserver = {
@@ -11,16 +14,28 @@
     desktopManager.gnome.enable = true;
   };
 
-  environment.gnome.excludePackages = (with pkgs; [
-    epiphany
-    gnome-music
-    gnome-terminal
-    gnome-tour
-    totem
-  ]);
+  environment = {
+    gnome.excludePackages = with pkgs; [
+      epiphany
+      gnome-music
+      gnome-terminal
+      gnome-tour
+      gnome-maps
+      gnome-weather
+      totem
+    ];
 
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.dash-to-dock
-  ];
+    systemPackages = with pkgs; [
+      gnome-tweaks
+
+      nordic # GTK + Qt theme
+      zafiro-icons
+      simp1e-cursors
+
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.sound-output-device-chooser
+      gnomeExtensions.pop-shell
+    ];
+  };
 }
