@@ -13,24 +13,33 @@
     ];
 
     systemPackages = with pkgs; [
-      wget
-      git
-      zoxide
-      eza
       bat
-      yazi
-      lazygit
-      starship
+      bc
+      eza
+      fd
+      fzf
+      git
+      gnumake
       helix
+      htop
+      lazygit
       nil
       nixfmt-rfc-style
-      gnumake
+      ripgrep
+      starship
+      toybox
       unzip
+      yazi
+      zellij
+      zoxide
+
+      fishPlugins.fzf-fish
     ];
   };
 
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
+
   programs.nh = {
     enable = true;
     clean.enable = true;

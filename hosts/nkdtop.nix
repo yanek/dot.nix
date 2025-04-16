@@ -14,11 +14,12 @@
     ./hardware-configuration.nix
     ../modules/core.nix
     ../modules/nvidia.nix
-    ../modules/bspwm.nix
+    ../modules/i3wm.nix
     ../modules/audio.nix
     ../modules/multimedia.nix
     ../modules/gaming.nix
     ../modules/3d-printing.nix
+    ../modules/samba.nix
   ];
 
   nix.settings.experimental-features = [
@@ -82,6 +83,7 @@
   environment.systemPackages = with pkgs; [
     discord
     wezterm
+    ghostty
     vial
   ];
 
@@ -94,6 +96,7 @@
   fonts.packages = with pkgs; [
     ibm-plex
     fira-code
+    open-sans
     nerd-fonts.fira-code
     nerd-fonts.blex-mono
   ];
