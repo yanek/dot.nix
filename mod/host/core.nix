@@ -23,10 +23,8 @@
     ];
 
     systemPackages = with pkgs; [
-      bat
       bc
       fd
-      fzf
       gnumake
       helix
       htop

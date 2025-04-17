@@ -5,8 +5,12 @@
     ../mod/usr/git.nix
     ../mod/usr/multimedia.nix
     ../mod/usr/3d-printing.nix
+    ../mod/usr/fish.nix
     ../mod/usr/starship/starship.nix
     ../mod/usr/eza.nix
+    ../mod/usr/bat.nix
+    ../mod/usr/fzf.nix
+    ../mod/usr/zoxide.nix
   ];
 
   stylix.enable = true;

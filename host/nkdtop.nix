@@ -3,13 +3,14 @@
 {
   imports = [
     ../mod/host/core.nix
-    ../mod/host/gaming.nix
-    ../mod/nvidia.nix
-    ../mod/i3wm.nix
-    ../mod/audio.nix
-    ../mod/samba.nix
     ../mod/host/ssh.nix
+    ../mod/host/nvidia.nix
+    ../mod/host/audio.nix
+    ../mod/host/gaming.nix
+    ../mod/host/nas-client.nix
+    ../mod/i3wm.nix
   ];
+
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;

@@ -8,5 +8,9 @@
     git = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
+    extraOptions = [
+      "--time=style=relative"
+      "--group-directories-first"
+    ];
   };
 }
