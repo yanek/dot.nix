@@ -43,9 +43,7 @@
 
   environment.systemPackages = with pkgs; [
     discord
-    wezterm
     brave
-    ghostty
     vial
     v4l-utils
     cameractrls-gtk4

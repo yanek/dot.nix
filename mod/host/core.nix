@@ -37,7 +37,6 @@
       yazi
       zoxide
 
-      fishPlugins.fzf-fish
     ];
   };
 
