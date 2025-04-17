@@ -24,11 +24,6 @@
     "${userSettings.homeDir}/.local/bin"
   ];
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
-  };
-
   stylix.fonts = {
     serif = {
       package = pkgs.ibm-plex;

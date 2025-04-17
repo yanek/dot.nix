@@ -1,0 +1,8 @@
+[[language]]
+name = "odin"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
+auto-format = true

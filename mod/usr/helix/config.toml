@@ -1,0 +1,47 @@
+theme = "nord"
+
+[editor]
+scroll-lines = 10
+shell = ["fish", "-c"]
+line-number = "relative"
+cursorline = true
+continue-comments = false
+color-modes = true
+auto-format = true
+bufferline = "always"
+default-line-ending = "lf"
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = [ "mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control" ]
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-inlay-hints = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-save]
+focus-lost = true
+after-delay = { enable = true, timeout = 30000 }
+
+[editor.indent-guides]
+render = true
+
+[keys.insert]
+C-s = [":write", "normal_mode"]
+
+[keys.normal]
+";" = "command_mode"
+C-s = ":write"
+C-w = ":buffer-close"
+tab = ":buffer-next"
+C-tab = ":buffer-previous"
+
+[keys.normal.space]
+m = ":toggle-option soft-wrap.enable"
