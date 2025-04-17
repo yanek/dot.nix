@@ -1,8 +1,15 @@
 version: '3'
 
 tasks:
-  rebuild:
+  build:
     cmds:
-      - bash scripts/commit.sh
-      - sudo nixos-rebuild switch --flake . --impure
-      - home-manager switch --flake .
+      - bash build.sh
+
+  update:
+    cmds:
+      - nix flake update
+      - task: build
+
+  clean:
+    cmds:
+      - sudo nix-collect-garbage --delete-older-than 7d
