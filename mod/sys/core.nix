@@ -1,10 +1,13 @@
 { pkgs, systemSettings, ... }:
 
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    warn-dirty = false;
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 
   environment.sessionVariables = {
     FORCE_NIX_STABLE = "false";
