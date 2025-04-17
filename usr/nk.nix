@@ -11,7 +11,7 @@
     ../mod/usr/bat.nix
     ../mod/usr/fzf.nix
     ../mod/usr/zoxide.nix
-    ../mod/usr/wezterm.nix
+    ../mod/usr/wezterm/wezterm.nix
   ];
 
   stylix.enable = true;
