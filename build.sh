@@ -6,6 +6,7 @@ echo "Staging files..."
 git add .
 git diff --staged --name-status
 
+echo "\n"
 echo "NixOS rebuilding..."
 sudo nixos-rebuild switch --flake . --impure | sed -e 's/^/\t/;'
 
