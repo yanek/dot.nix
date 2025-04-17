@@ -1,12 +1,8 @@
 version: '3'
 
-vars:
-  GREETING: Hello, World!
-
 tasks:
   rebuild:
     cmds:
-      - git add .
+      - bash scripts/commit.sh
       - sudo nixos-rebuild switch --flake . --impure
       - home-manager switch --flake .
-      - bash scripts/commit.sh

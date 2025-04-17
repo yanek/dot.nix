@@ -6,6 +6,13 @@
     "flakes"
   ];
 
+  environment.sessionVariables = {
+    FORCE_NIX_STABLE = "false";
+  };
+
+  time.timeZone = systemSettings.timezone;
+  security.sudo.wheelNeedsPassword = false;
+
   environment = {
     shells = with pkgs; [
       bash
@@ -25,7 +32,6 @@
       nil
       nixfmt-rfc-style
       ripgrep
-      starship
       toybox
       unzip
       yazi
@@ -51,5 +57,4 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
-
 }

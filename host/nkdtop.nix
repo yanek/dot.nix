@@ -1,13 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{
-  pkgs,
-  systemSettings,
-  userSettings,
-  ...
-}:
+{ pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -19,16 +10,6 @@
     ../mod/samba.nix
     ../mod/sys/ssh.nix
   ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  environment.sessionVariables = {
-    FORCE_NIX_STABLE = "false";
-  };
-
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;
@@ -46,23 +27,17 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
 
-  time.timeZone = systemSettings.timezone;
-
   users.users.${userSettings.username} = {
     isNormalUser = true;
-    shell = pkgs.fish;
     description = "${userSettings.fullname}";
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
   };
-  security.sudo.wheelNeedsPassword = false;
 
   services.printing.enable = true;
-
   programs.firefox.enable = true;
-
   hardware.keyboard.qmk.enable = true;
 
   environment.systemPackages = with pkgs; [
