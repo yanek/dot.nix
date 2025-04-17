@@ -1,5 +1,3 @@
-theme = "nord"
-
 [editor]
 scroll-lines = 10
 shell = ["fish", "-c"]

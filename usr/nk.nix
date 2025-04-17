@@ -12,6 +12,7 @@
     ../mod/usr/fzf.nix
     ../mod/usr/zoxide.nix
     ../mod/usr/wezterm/wezterm.nix
+    ../mod/usr/helix/helix.nix
   ];
 
   stylix.enable = true;
