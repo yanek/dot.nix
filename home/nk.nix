@@ -5,7 +5,7 @@
     ../mod/usr/git.nix
     ../mod/usr/multimedia.nix
     ../mod/usr/3d-printing.nix
-    ../mod/usr/starship/starship.toml
+    ../mod/usr/starship/starship.nix
   ];
 
   stylix.enable = true;
