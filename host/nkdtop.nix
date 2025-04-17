@@ -17,6 +17,7 @@
     ../mod/i3wm.nix
     ../mod/audio.nix
     ../mod/samba.nix
+    ../mod/sys/ssh.nix
   ];
 
   nix.settings.experimental-features = [
@@ -49,14 +50,6 @@
   networking.hostName = "nkdtop";
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-    };
-  };
 
   time.timeZone = systemSettings.timezone;
 
