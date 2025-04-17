@@ -2,12 +2,19 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+
+    hm.url = "github:nix-community/home-manager/master";
+    hm.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
   };
 
   outputs =
-    { nixpkgs, nixpkgs-stable, ... }@inputs:
+    {
+      nixpkgs,
+      nixpkgs-stable,
+      hm,
+      ...
+    }@inputs:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -21,7 +28,8 @@
         username = "nk";
         fullname = "Noé Ksiazek";
         email = "noe.ksiazek@pm.me";
-        dotfilesDir = "home/${userSettings.username}/.dotfiles";
+        homeDir = "/home/${userSettings.username}";
+        dotfilesDir = "${userSettings.homeDir}/.dotfiles";
         theme = "nord";
       };
 
@@ -51,7 +59,10 @@
             inherit systemSettings;
             inherit userSettings;
           };
-          modules = [ ./hosts/nkdtop.nix ];
+          modules = [
+            /etc/nixos/hardware-configuration.nix
+            ./host/nkdtop.nix
+          ];
         };
         nkltop = nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
@@ -60,7 +71,25 @@
             inherit systemSettings;
             inherit userSettings;
           };
-          modules = [ ./hosts/nkltop.nix ];
+          modules = [
+            /etc/nixos/hardware-configuration.nix
+            ./host/nkltop.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        "nk@nkdtop" = hm.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./home/nk.nix
+            inputs.stylix.homeManagerModules.stylix
+          ];
         };
       };
 

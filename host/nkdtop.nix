@@ -11,15 +11,12 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ../modules/core.nix
-    ../modules/nvidia.nix
-    ../modules/i3wm.nix
-    ../modules/audio.nix
-    ../modules/multimedia.nix
-    ../modules/gaming.nix
-    ../modules/3d-printing.nix
-    ../modules/samba.nix
+    ../mod/sys/core.nix
+    ../mod/sys/gaming.nix
+    ../mod/nvidia.nix
+    ../mod/i3wm.nix
+    ../mod/audio.nix
+    ../mod/samba.nix
   ];
 
   nix.settings.experimental-features = [
@@ -83,10 +80,14 @@
   environment.systemPackages = with pkgs; [
     discord
     wezterm
+    brave
     ghostty
     vial
+    v4l-utils
+    cameractrls-gtk4
   ];
 
+  services.xserver.dpi = 96;
   services.udev.packages = [ pkgs.via ];
   services.hardware.openrgb = {
     enable = true;

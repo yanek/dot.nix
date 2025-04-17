@@ -8,6 +8,7 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   services.displayManager = {
+    ly.enable = true;
     defaultSession = "none+i3";
   };
 
@@ -15,7 +16,6 @@
     enable = true;
     xkb.layout = "eu";
 
-    displayManager.lightdm.enable = true;
     windowManager.i3.enable = true;
 
     desktopManager = {
@@ -37,6 +37,7 @@
     feh
     lxappearance
     maim
+    pango
     pavucontrol
     siji # font required by polybar
     xclip

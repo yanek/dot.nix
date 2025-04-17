@@ -10,4 +10,8 @@
       proton-ge-bin
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    gamemode
+  ];
 }
