@@ -26,17 +26,11 @@
       bc
       fd
       gnumake
-      helix
       htop
       lazygit
-      nil
-      nixfmt-rfc-style
       ripgrep
       toybox
       unzip
-      yazi
-      zoxide
-
     ];
   };
 

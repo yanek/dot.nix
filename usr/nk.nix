@@ -14,6 +14,7 @@
     ../mod/usr/zoxide.nix
     ../mod/usr/wezterm/wezterm.nix
     ../mod/usr/helix/helix.nix
+    ../mod/usr/yazi.nix
   ];
 
   home.username = "${userSettings.username}";
