@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ../mod/sys/core.nix
-    ../mod/sys/gaming.nix
+    ../mod/host/core.nix
+    ../mod/host/gaming.nix
     ../mod/nvidia.nix
     ../mod/i3wm.nix
     ../mod/audio.nix
     ../mod/samba.nix
-    ../mod/sys/ssh.nix
+    ../mod/host/ssh.nix
   ];
   boot.loader.systemd-boot = {
     enable = true;

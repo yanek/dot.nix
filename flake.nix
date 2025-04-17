@@ -87,7 +87,7 @@
             inherit userSettings;
           };
           modules = [
-            ./home/nk.nix
+            ./usr/nk.nix
             inputs.stylix.homeManagerModules.stylix
           ];
         };
