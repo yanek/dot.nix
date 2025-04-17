@@ -95,6 +95,7 @@
 
       devShells.${systemSettings.system}.default = pkgs.mkShell {
         packages = [
+          pkgs.go-task
           pkgs.nil
           pkgs.nixfmt-rfc-style
         ];

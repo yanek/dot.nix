@@ -1,5 +1,11 @@
+all:
+	os
+	home
+
 os:
-	doas nh os switch . -R
+	nixos-rebuild switch --flake . --impure
+	bash scripts/commit.sh
 
 home:
-	nh home switch .
+	home-manager switch --flake .
+	bash scripts/commit.sh
