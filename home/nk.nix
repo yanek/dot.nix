@@ -6,6 +6,7 @@
     ../mod/usr/multimedia.nix
     ../mod/usr/3d-printing.nix
     ../mod/usr/starship/starship.nix
+    ../mod/usr/eza.nix
   ];
 
   stylix.enable = true;

@@ -22,7 +22,6 @@
     systemPackages = with pkgs; [
       bat
       bc
-      eza
       fd
       fzf
       gnumake
@@ -35,7 +34,6 @@
       toybox
       unzip
       yazi
-      zellij
       zoxide
 
       fishPlugins.fzf-fish
