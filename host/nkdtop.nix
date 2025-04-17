@@ -29,11 +29,6 @@
     FORCE_NIX_STABLE = "false";
   };
 
-  # Bootloader.
-  #boot.loader.grub.enable = true;
-  #boot.loader.grub.device = "/dev/sda";
-  #boot.loader.grub.useOSProber = true;
-
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;
