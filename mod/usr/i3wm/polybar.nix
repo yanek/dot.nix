@@ -5,7 +5,9 @@
     enable = true;
     extraConfig = builtins.readFile ./polybar.ini;
     script = ''
-      polybar -rq top
+      for m in $(polybar --list-monitors | cut -d":" -f1); do
+        MONITOR=$m polybar -rq top &
+      done
     '';
   };
 }
