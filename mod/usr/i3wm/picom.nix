@@ -19,7 +19,7 @@
     settings = {
       blur = {
         method = "gaussian";
-        size = 0;
+        size = 4;
         deviation = 5.0;
       };
       blur-background-exclude = [
