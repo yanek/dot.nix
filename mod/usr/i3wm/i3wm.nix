@@ -9,6 +9,8 @@ in
 
     config = {
       modifier = mod;
+      terminal = "wezterm";
+      menu = "rofi";
 
       fonts = {
         names = [ "Fira Code" ];
@@ -25,6 +27,11 @@ in
       floating.border = 1;
       floating.titlebar = false;
       floating.modifier = mod;
+      bars = [ ];
+
+      assigns = {
+        "5" = [ { class = "^discord$"; } ];
+      };
     };
 
     extraConfig = builtins.readFile ./config;
