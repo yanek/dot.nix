@@ -15,6 +15,7 @@
         expansion = "git commit -m \"%\"";
       };
       cat = "bat";
+      qqq = "exit";
     };
   };
 }

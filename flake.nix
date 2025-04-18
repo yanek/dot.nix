@@ -94,11 +94,17 @@
       };
 
       devShells.${systemSettings.system}.default = pkgs.mkShell {
-        packages = [
-          pkgs.go-task
-          pkgs.nil
-          pkgs.nixfmt-rfc-style
+        packages = with pkgs; [
+          go-task
+          nil
+          nixfmt-rfc-style
+          lua-language-server
+          vscode-langservers-extracted
+          yaml-language-server
+          taplo
         ];
+
+        shellHook = "hx .";
       };
 
     };
