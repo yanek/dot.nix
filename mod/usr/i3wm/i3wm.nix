@@ -13,7 +13,6 @@ in
       fonts = {
         names = [ "Fira Code" ];
         style = "Regular";
-        size = 11;
       };
 
       gaps = {
