@@ -9,7 +9,7 @@
     enableFishIntegration = true;
     enableBashIntegration = true;
     extraOptions = [
-      "--time=style=relative"
+      "--time-style=relative"
       "--group-directories-first"
     ];
   };

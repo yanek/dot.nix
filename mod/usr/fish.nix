@@ -14,6 +14,7 @@
         setCursor = "%";
         expansion = "git commit -m \"%\"";
       };
+      cat = "bat";
     };
   };
 }

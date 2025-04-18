@@ -4,7 +4,7 @@
   imports = [
     ../mod/usr/theme/${userSettings.theme}.nix
     ../mod/usr/git.nix
-    ../mod/usr/multimedia.nix
+    ../mod/usr/media.nix
     ../mod/usr/3d-printing.nix
     ../mod/usr/fish.nix
     ../mod/usr/starship/starship.nix

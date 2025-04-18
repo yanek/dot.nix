@@ -23,14 +23,12 @@
     ];
 
     systemPackages = with pkgs; [
-      bc
-      fd
-      gnumake
-      htop
-      lazygit
-      ripgrep
       toybox
       unzip
+      bc
+      fd
+      htop
+      ripgrep
     ];
   };
 
