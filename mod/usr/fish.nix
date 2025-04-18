@@ -16,7 +16,7 @@
       };
       cat = "bat";
       qqq = "exit";
-
+      l = "ls";
     };
 
     functions = {

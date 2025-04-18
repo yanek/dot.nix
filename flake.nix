@@ -6,6 +6,7 @@
     hm.url = "github:nix-community/home-manager/master";
     hm.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
+    betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
   };
 
   outputs =
@@ -13,6 +14,7 @@
       nixpkgs,
       nixpkgs-stable,
       hm,
+      betterfox,
       ...
     }@inputs:
     let
@@ -82,6 +84,7 @@
         "nk@nkdtop" = hm.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
+            inherit inputs;
             inherit pkgs;
             inherit systemSettings;
             inherit userSettings;
