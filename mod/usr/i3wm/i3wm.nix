@@ -50,20 +50,7 @@ in
         "${mod}+Up" = "focus up";
         "${mod}+Right" = "focus right";
 
-        "${mod}+Shift+h" = "move left";
-        "${mod}+Shift+j" = "move down";
-        "${mod}+Shift+k" = "move up";
-        "${mod}+Shift+l" = "move right";
-
-        "${mod}+Shift+Left" = "move left";
-        "${mod}+Shift+Down" = "move down";
-        "${mod}+Shift+Up" = "move up";
-        "${mod}+Shift+Right" = "move right";
-
         "${mod}+f" = "fullscreen toggle";
-        "${mod}+s" = "layout stacking";
-        "${mod}+w" = "layout tabbed";
-        "${mod}+e" = "layout toggle split";
         "${mod}+Shift+space" = "floating toggle";
         "${mod}+space" = "focus mode_toggle";
 
@@ -104,6 +91,22 @@ in
           "Up" = "resize shrink height 10 px or 10 ppt";
           "Right" = "resize grow width 10 px or 10 ppt";
 
+          "Space" = "mode default";
+          "Escape" = "mode default";
+          "Return" = "mode default";
+        };
+        move = {
+          "h" = "move left";
+          "j" = "move down";
+          "k" = "move up";
+          "l" = "move right";
+
+          "Left" = "move left";
+          "Down" = "move down";
+          "Up" = "move up";
+          "Right" = "move right";
+
+          "Space" = "mode default";
           "Escape" = "mode default";
           "Return" = "mode default";
         };
