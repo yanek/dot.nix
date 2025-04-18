@@ -22,6 +22,13 @@ in
         outer = 6;
       };
 
+      keybindings = {
+        "${mod}+h" = "focus left";
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
+      };
+
       window.border = 1;
       window.titlebar = false;
       floating.border = 1;
