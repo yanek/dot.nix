@@ -21,6 +21,9 @@
         method = "gaussian";
         size = 10;
         deviation = 5.0;
+        background-exclude = [
+          "class_g = 'slop'"
+        ];
       };
     };
   };
