@@ -19,12 +19,12 @@
     settings = {
       blur = {
         method = "gaussian";
-        size = 10;
+        size = 0;
         deviation = 5.0;
-        background-exclude = [
-          "class_g = 'slop'"
-        ];
       };
+      blur-background-exclude = [
+        "class_g = 'slop'"
+      ];
     };
   };
 }
