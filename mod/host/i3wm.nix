@@ -1,6 +1,5 @@
 {
   pkgs,
-  userSettings,
   ...
 }:
 
@@ -29,22 +28,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    autotiling
-    rofi
     picom
     polybar
     dunst
     feh
-    lxappearance
-    maim
-    pango
-    pavucontrol
-    siji # font required by polybar
-    xclip
-    xdotool
-    xfce.thunar
-    xorg.xrandr
-    pulsemixer
-    nordic
   ];
 }

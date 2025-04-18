@@ -2,9 +2,12 @@
 
 let
   mod = "Mod4"; # Super
-  smod = "${mod}+Shift";
 in
 {
+  imports = [
+    ./misc.nix
+  ];
+
   xsession.windowManager.i3 = {
     enable = true;
 
