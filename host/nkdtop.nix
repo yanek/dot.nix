@@ -8,7 +8,6 @@
     ../mod/host/audio.nix
     ../mod/host/gaming.nix
     ../mod/host/nas-client.nix
-    ../mod/i3wm.nix
   ];
 
   boot.loader.systemd-boot = {
