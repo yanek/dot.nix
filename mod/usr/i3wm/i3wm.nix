@@ -63,15 +63,6 @@ in
         "${mod}+7" = "workspace number 7";
         "${mod}+8" = "workspace number 8";
 
-        "${mod}+Shift+1" = "move container to workspace number 1";
-        "${mod}+Shift+2" = "move container to workspace number 2";
-        "${mod}+Shift+3" = "move container to workspace number 3";
-        "${mod}+Shift+4" = "move container to workspace number 4";
-        "${mod}+Shift+5" = "move container to workspace number 5";
-        "${mod}+Shift+6" = "move container to workspace number 6";
-        "${mod}+Shift+7" = "move container to workspace number 7";
-        "${mod}+Shift+8" = "move container to workspace number 8";
-
         "${mod}+Shift+c" = "reload";
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+e" = "exec i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'";
@@ -105,6 +96,15 @@ in
           "Down" = "move down";
           "Up" = "move up";
           "Right" = "move right";
+
+          "1" = "move container to workspace number 1";
+          "2" = "move container to workspace number 2";
+          "3" = "move container to workspace number 3";
+          "4" = "move container to workspace number 4";
+          "5" = "move container to workspace number 5";
+          "6" = "move container to workspace number 6";
+          "7" = "move container to workspace number 7";
+          "8" = "move container to workspace number 8";
 
           "Space" = "mode default";
           "Escape" = "mode default";
