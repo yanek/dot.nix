@@ -68,6 +68,7 @@ in
         "${mod}+Shift+e" = "exec i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'";
 
         "${mod}+r" = "mode resize";
+        "${mod}+m" = "mode move";
       };
 
       modes = {
