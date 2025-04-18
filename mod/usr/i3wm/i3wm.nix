@@ -2,6 +2,7 @@
 
 let
   mod = "Mod4"; # Super
+  smod = "${mod}+Shift";
 in
 {
   xsession.windowManager.i3 = {
@@ -19,7 +20,7 @@ in
 
       gaps = {
         inner = 10;
-        outer = 6;
+        outer = 0;
       };
 
       keybindings = {
@@ -27,6 +28,12 @@ in
         "${mod}+j" = "focus down";
         "${mod}+k" = "focus up";
         "${mod}+l" = "focus right";
+
+        "${mod}+Shift+h" = "move left";
+        "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+k" = "move up";
+        "${mod}+Shift+l" = "move right";
+
       };
 
       window.border = 1;
