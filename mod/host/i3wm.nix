@@ -29,7 +29,6 @@
 
   environment.systemPackages = with pkgs; [
     picom
-    polybar
     dunst
     feh
   ];

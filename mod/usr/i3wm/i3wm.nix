@@ -8,6 +8,7 @@ in
 {
   imports = [
     ./misc.nix
+    ./polybar.nix
   ];
 
   xsession.windowManager.i3 = {
