@@ -104,7 +104,7 @@
           taplo
         ];
 
-        shellHook = "hx .";
+        shellHook = "eza -T";
       };
 
     };
