@@ -30,7 +30,7 @@ in
         outer = 0;
       };
 
-      window.border = 1;
+      window.border = 3;
       window.titlebar = false;
       floating.border = 1;
       floating.titlebar = false;
