@@ -26,7 +26,7 @@ workspace 8 output DP-2
 # Autostarted
 exec --no-startup-id xrandr --output DP-4 --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
+#exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.png
 exec_always --no-startup-id dunst --config ~/.config/dunst/dunstrc
 #exec_always --no-startup-id ~/.config/polybar/launch.sh
