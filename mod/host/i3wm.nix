@@ -1,5 +1,6 @@
 {
   pkgs,
+  userSettings,
   ...
 }:
 
@@ -8,6 +9,11 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   services.displayManager = {
+    lightdm.enable = true;
+    lightdm.autologin = {
+      enable = true;
+      user = userSettings.username;
+    };
     defaultSession = "none+i3";
   };
 
