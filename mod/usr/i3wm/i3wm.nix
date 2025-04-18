@@ -10,7 +10,7 @@ in
     config = {
       modifier = mod;
       terminal = "wezterm";
-      menu = "rofi -combi-modi window,drun -show combi";
+      menu = "rofi -show drun";
 
       fonts = {
         names = [ "Fira Code" ];
