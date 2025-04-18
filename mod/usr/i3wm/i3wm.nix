@@ -116,6 +116,7 @@ in
 
       assigns = {
         "5" = [ { class = "^discord$"; } ];
+        "2" = [ { class = "^steam$"; } ];
       };
     };
 
