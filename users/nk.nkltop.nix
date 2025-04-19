@@ -3,7 +3,11 @@
 {
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
-    ../modules/wm/i3/i3wm.nix
+
+    (import ../modules/wm/i3/i3wm.nix ({
+      inherit userSettings;
+      xrandrArgs = null;
+    }))
 
     ../modules/programs/git/git.nix
     ../modules/programs/fish.nix

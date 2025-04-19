@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, xrandrArgs, ... }:
 
 let
   mod = "Mod4"; # Super
@@ -8,12 +8,16 @@ in
 {
   imports = [
     ./misc.nix
-    ./startup.nix
+
+    (import ./startup.nix ({
+      inherit userSettings;
+      inherit xrandrArgs;
+    }))
 
     (import ./keybinds.nix ({
-      mod = mod;
-      term = term;
-      menu = menu;
+      inherit mod;
+      inherit term;
+      inherit menu;
     }))
 
     ../../services/polybar/polybar.nix
@@ -61,7 +65,5 @@ in
         }
       ];
     };
-
-    extraConfig = builtins.readFile ./config;
   };
 }
