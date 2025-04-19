@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../modules/themes/${userSettings.theme}.nix
+    ../modules/themes/${userSettings.theme}/theme.nix
     ../modules/wm/i3/i3wm.nix
 
     ../modules/programs/git/git.nix

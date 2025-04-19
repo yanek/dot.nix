@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
   xsession.windowManager.i3.config.startup = [
@@ -13,6 +13,9 @@
       command = "autotiling";
       always = false;
       notification = false;
+    }
+    {
+      command = "feh --bg-fill ${userSettings.homeDir}/.nixos-config/modules/themes/${userSettings.theme}/wallpaper.png";
     }
     {
       command = "discord";
