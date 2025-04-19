@@ -38,7 +38,6 @@
   };
 
   services.printing.enable = true;
-  programs.firefox.enable = true;
   hardware.keyboard.qmk.enable = true;
 
   environment.systemPackages = with pkgs; [
