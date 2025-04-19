@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
@@ -9,7 +8,7 @@
     fonts = {
       serif = {
         package = pkgs.ibm-plex;
-        name = "IBM Plex Serif";
+        name = "FiraCode Nerd Font Ret";
       };
 
       sansSerif = {
