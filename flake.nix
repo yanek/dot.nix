@@ -69,6 +69,7 @@
         nkltop = nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
           specialArgs = {
+            inherit inputs;
             inherit pkgs-stable;
             inherit systemSettings;
             inherit userSettings;
@@ -91,6 +92,20 @@
           };
           modules = [
             ./users/nk.nix
+            inputs.stylix.homeManagerModules.stylix
+          ];
+        };
+
+        "nk@nkltop" = hm.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit pkgs;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./users/nk.nkltop.nix
             inputs.stylix.homeManagerModules.stylix
           ];
         };
