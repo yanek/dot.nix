@@ -2,7 +2,7 @@
 
 let
   mod = "Mod4"; # Super
-  term = "wezterm";
+  term = "kitty";
   menu = "rofi -show drun";
 in
 {
@@ -26,6 +26,13 @@ in
       modifier = mod;
       terminal = term;
       menu = menu;
+
+      input = {
+        "*" = {
+          xkb_variant = "eu";
+          accel_profile = "flat";
+        };
+      };
 
       fonts = {
         names = [ "Fira Code" ];

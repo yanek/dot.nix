@@ -20,6 +20,7 @@ in
     ../modules/programs/cli/zoxide.nix
     ../modules/programs/cli/yazi.nix
     ../modules/programs/wezterm/wezterm.nix
+    ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
     ../modules/programs/librewolf.nix
     ../modules/programs/prusa-slicer.nix
