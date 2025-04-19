@@ -48,7 +48,6 @@
     cameractrls-gtk4
   ];
 
-  services.xserver.dpi = 96;
   services.udev.packages = [ pkgs.via ];
   services.hardware.openrgb = {
     enable = true;

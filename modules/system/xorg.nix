@@ -14,7 +14,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "eu";
-
+    dpi = 96;
     desktopManager.xterm.enable = false;
     windowManager.i3.enable = true;
   };

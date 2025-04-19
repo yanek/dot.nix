@@ -21,6 +21,11 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
+    xwayland = true;
+
+    swaynag = {
+      enable = true;
+    };
 
     config = {
       modifier = mod;
@@ -49,7 +54,14 @@ in
       floating.border = 1;
       floating.titlebar = false;
       floating.modifier = mod;
-      bars = [ ];
+
+      bars = [
+        {
+          id = "top";
+          position = "top";
+          workspaceButtons = true;
+        }
+      ];
 
       assigns = {
         "5" = [ { class = "^discord$"; } ];

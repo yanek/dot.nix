@@ -7,20 +7,22 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
+  security.pam.loginLimits = [
+    {
+      domain = "@users";
+      item = "rtprio";
+      type = "-";
+      value = 1;
+    }
+  ];
+
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+  '';
+
   # services.displayManager = {
   #   defaultSession = "sway";
   # };
-
-  services.xserver = {
-    enable = true;
-    xkb.layout = "eu";
-  };
-
-  # Disable mouse acceleration
-  services.libinput = {
-    enable = true;
-    mouse.accelProfile = "flat";
-  };
 
   systemd.user.services.kanshi = {
     description = "kanshi daemon";
@@ -32,6 +34,5 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
-    xwayland
   ];
 }

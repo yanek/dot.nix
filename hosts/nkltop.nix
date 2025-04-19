@@ -29,7 +29,6 @@
     ];
   };
 
-  services.xserver.dpi = 96;
   services.udev.packages = [ pkgs.via ];
 
   fonts.packages = with pkgs; [
