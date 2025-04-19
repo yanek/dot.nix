@@ -8,6 +8,8 @@ in
 {
   imports = [
     ./misc.nix
+    ./startup.nix
+
     (import ./keybinds.nix ({
       mod = mod;
       term = term;
