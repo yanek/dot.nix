@@ -17,6 +17,7 @@
     ../modules/programs/helix/helix.nix
     ../modules/programs/librewolf.nix
     ../modules/programs/prusa-slicer.nix
+    ../modules/programs/comms/discord.nix
 
     ../modules/programs/multimedia/spotify.nix
     ../modules/programs/multimedia/vlc.nix
