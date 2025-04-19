@@ -3,8 +3,16 @@
 {
   xsession.windowManager.i3.config.startup = [
     {
-      always = true;
+      # The service usually starts before i3 -- and that's bad
+      # Restarting it at startup works around this issue
       command = "systemctl --user restart polybar";
+      always = true;
+      notification = false;
+    }
+    {
+      command = "discord";
+      always = false;
+      notification = false;
     }
   ];
 }
