@@ -8,7 +8,7 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   services.displayManager = {
-    # defaultSession = "none+i3";
+    defaultSession = "none+i3";
   };
 
   services.xserver = {
@@ -16,7 +16,7 @@
     xkb.layout = "eu";
 
     desktopManager.xterm.enable = false;
-    # windowManager.i3.enable = true;
+    windowManager.i3.enable = true;
   };
 
   # Disable mouse acceleration
