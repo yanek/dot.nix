@@ -8,7 +8,7 @@
     ../modules/system/audio.nix
     ../modules/system/gaming.nix
     ../modules/system/nas-client.nix
-    ../modules/system/xorg.nix
+    ../modules/system/wayland.nix
   ];
 
   boot.loader.systemd-boot = {

@@ -7,9 +7,8 @@ in
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
 
-    (import ../modules/wm/i3/i3wm.nix ({
+    (import ../modules/wm/sway/sway.nix ({
       inherit userSettings;
-      inherit xrandrArgs;
     }))
 
     ../modules/programs/git/git.nix

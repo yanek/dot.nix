@@ -1,0 +1,10 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    rofi-wayland
+    lxappearance
+    pavucontrol
+    xfce.thunar
+  ];
+}
