@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs,... }:
 
 {
   programs.fish = {
@@ -19,7 +19,7 @@
       l = "eza";
       cls = "clear";
     };
-
+    
     functions = {
       # cd into directory on yazi exit
       y = ''
@@ -30,6 +30,18 @@
         end
         rm -f -- "$tmp"
       '';
+      # mkdir + cd into 
+      mkcd = ''
+        mkdir -pv $argv
+        cd $argv
+      '';
     };
+
+    plugins = [
+      {
+        name = "fzf.fish";
+        src = pkgs.fishPlugins.fzf-fish;
+      }  
+    ];
   };
 }
