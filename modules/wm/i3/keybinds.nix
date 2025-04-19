@@ -5,6 +5,9 @@
   ...
 }:
 
+let
+  imgToClipboard = "xclip -selection clipboard -t image/png";
+in
 {
   xsession.windowManager.i3.config = {
     keybindings = {
@@ -34,6 +37,10 @@
       "${mod}+6" = "workspace number 6";
       "${mod}+7" = "workspace number 7";
       "${mod}+8" = "workspace number 8";
+
+      "Print" = "exec maim --format=png --select | ${imgToClipboard}";
+      "${mod}+Print" = "exec maim --format=png --window $(xdotool getactivewindow) | ${imgToClipboard}";
+      "Shift+Print" = "exec maim --format=png | ${imgToClipboard}";
 
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+r" = "restart";

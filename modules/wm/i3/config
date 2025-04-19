@@ -8,11 +8,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
-# take screenshots
-bindsym Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Shift+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
-
 workspace 1 output DP-4
 workspace 2 output DP-4
 workspace 3 output DP-4
@@ -26,10 +21,8 @@ workspace 8 output DP-2
 # Autostarted
 exec --no-startup-id xrandr --output DP-4 --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0
 exec_always --no-startup-id autotiling
-#exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.png
 exec_always --no-startup-id dunst --config ~/.config/dunst/dunstrc
-#exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec --no-startup-id nm-applet
 
 # Force float
