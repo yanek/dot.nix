@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ../modules/host/core.nix
-    ../modules/host/ssh.nix
-    ../modules/host/nvidia.nix
-    ../modules/host/audio.nix
-    ../modules/host/gaming.nix
-    ../modules/host/nas-client.nix
-    ../modules/host/i3wm.nix
+    ../modules/system/core.nix
+    ../modules/system/ssh.nix
+    ../modules/system/nvidia.nix
+    ../modules/system/audio.nix
+    ../modules/system/gaming.nix
+    ../modules/system/nas-client.nix
+    ../modules/system/xorg.nix
   ];
 
   boot.loader.systemd-boot = {

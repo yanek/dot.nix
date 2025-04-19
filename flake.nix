@@ -63,7 +63,7 @@
           };
           modules = [
             /etc/nixos/hardware-configuration.nix
-            ./host/nkdtop.nix
+            ./hosts/nkdtop.nix
           ];
         };
         nkltop = nixpkgs.lib.nixosSystem {
@@ -75,7 +75,7 @@
           };
           modules = [
             /etc/nixos/hardware-configuration.nix
-            ./host/nkltop.nix
+            ./hosts/nkltop.nix
           ];
         };
       };
@@ -90,7 +90,7 @@
             inherit userSettings;
           };
           modules = [
-            ./usr/nk.nix
+            ./users/nk.nix
             inputs.stylix.homeManagerModules.stylix
           ];
         };

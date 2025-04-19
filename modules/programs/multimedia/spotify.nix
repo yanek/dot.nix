@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    spotify
-    vlc
-    gimp
+  home.packages = [
+    pkgs.spotify
   ];
 
   programs.spotify-player.enable = true;
