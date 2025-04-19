@@ -3,7 +3,10 @@ version: '3'
 tasks:
   build:
     cmds:
-      - bash build.sh
+      - git add .
+      - git diff --staged --name-status
+      - sudo nixos-rebuild switch --flake . --impure
+      - bash commit.sh
 
   update:
     cmds:
