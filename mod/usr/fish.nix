@@ -16,7 +16,8 @@
       };
       cat = "bat";
       qqq = "exit";
-      l = "ls";
+      l = "eza";
+      cls = "clear";
     };
 
     functions = {
