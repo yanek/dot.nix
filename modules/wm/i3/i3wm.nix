@@ -49,6 +49,17 @@ in
         "5" = [ { class = "^discord$"; } ];
         "2" = [ { class = "^steam$"; } ];
       };
+
+      window.commands = [
+        {
+          command = "floating enable";
+          criteria.class = "Lxappearance";
+        }
+        {
+          command = "floating enable";
+          criteria.window_role = "pop-up";
+        }
+      ];
     };
 
     extraConfig = builtins.readFile ./config;

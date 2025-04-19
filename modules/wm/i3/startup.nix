@@ -10,6 +10,11 @@
       notification = false;
     }
     {
+      command = "autotiling";
+      always = false;
+      notification = false;
+    }
+    {
       command = "discord";
       always = false;
       notification = false;
