@@ -1,6 +1,10 @@
 { userSettings, ... }:
 
 {
+  imports = [
+    ./delta.nix
+  ];
+
   programs.git = {
     enable = true;
     userName = userSettings.fullname;
@@ -17,10 +21,6 @@
       alias = {
         lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       };
-    };
-
-    delta = {
-      enable = true;
     };
   };
 

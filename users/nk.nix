@@ -5,7 +5,7 @@
     ../modules/themes/${userSettings.theme}.nix
     ../modules/wm/i3/i3wm.nix
 
-    ../modules/programs/git.nix
+    ../modules/programs/git/git.nix
     ../modules/programs/fish.nix
     ../modules/programs/starship/starship.nix
     ../modules/programs/cli/eza.nix
