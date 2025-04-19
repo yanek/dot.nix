@@ -29,6 +29,25 @@ in
       "${mod}+Shift+space" = "floating toggle";
       "${mod}+space" = "focus mode_toggle";
 
+      "${mod}+Shift+h" = "move left";
+      "${mod}+Shift+j" = "move down";
+      "${mod}+Shift+k" = "move up";
+      "${mod}+Shift+l" = "move right";
+
+      "${mod}+Shift+Left" = "move left";
+      "${mod}+Shift+Down" = "move down";
+      "${mod}+Shift+Up" = "move up";
+      "${mod}+Shift+Right" = "move right";
+
+      "${mod}+Shift+1" = "move container to workspace number 1";
+      "${mod}+Shift+2" = "move container to workspace number 2";
+      "${mod}+Shift+3" = "move container to workspace number 3";
+      "${mod}+Shift+4" = "move container to workspace number 4";
+      "${mod}+Shift+5" = "move container to workspace number 5";
+      "${mod}+Shift+6" = "move container to workspace number 6";
+      "${mod}+Shift+7" = "move container to workspace number 7";
+      "${mod}+Shift+8" = "move container to workspace number 8";
+
       "${mod}+1" = "workspace number 1";
       "${mod}+2" = "workspace number 2";
       "${mod}+3" = "workspace number 3";
