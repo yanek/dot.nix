@@ -2,24 +2,24 @@
 
 {
   imports = [
-    ../mod/usr/theme/${userSettings.theme}.nix
-    ../mod/usr/i3wm/i3wm.nix
+    ../modules/usr/theme/${userSettings.theme}.nix
+    ../modules/usr/i3wm/i3wm.nix
 
-    ../mod/usr/git.nix
-    ../mod/usr/fish.nix
-    ../mod/usr/starship/starship.nix
-    ../mod/usr/eza.nix
-    ../mod/usr/bat.nix
-    ../mod/usr/fzf.nix
-    ../mod/usr/zoxide.nix
-    ../mod/usr/yazi.nix
+    ../modules/usr/git.nix
+    ../modules/usr/fish.nix
+    ../modules/usr/starship/starship.nix
+    ../modules/usr/eza.nix
+    ../modules/usr/bat.nix
+    ../modules/usr/fzf.nix
+    ../modules/usr/zoxide.nix
+    ../modules/usr/yazi.nix
 
-    ../mod/usr/wezterm/wezterm.nix
-    ../mod/usr/helix/helix.nix
+    ../modules/usr/wezterm/wezterm.nix
+    ../modules/usr/helix/helix.nix
 
-    ../mod/usr/librewolf.nix
-    ../mod/usr/3d-printing.nix
-    ../mod/usr/media.nix
+    ../modules/usr/librewolf.nix
+    ../modules/usr/3d-printing.nix
+    ../modules/usr/media.nix
   ];
 
   home.username = "${userSettings.username}";
