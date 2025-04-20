@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  home.packages = [
+    pkgs.ibm-plex
+    pkgs.cantarell-fonts
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
+
   stylix.fonts = {
     serif = {
       package = pkgs.ibm-plex;
