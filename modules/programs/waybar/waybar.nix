@@ -8,11 +8,6 @@
     layer = "top";
     position = "top";
 
-    output = [
-      "DP-6"
-      "DP-5"
-    ];
-
     modules-left = [
       "clock"
       "sway/window"

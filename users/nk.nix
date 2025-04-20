@@ -10,6 +10,7 @@ in
     (import ../modules/wm/sway/sway.nix ({
       inherit userSettings;
     }))
+    ../modules/wm/sway/output.nix # manage monitors
 
     ../modules/programs/git/git.nix
     ../modules/programs/fish.nix
