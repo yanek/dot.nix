@@ -19,12 +19,20 @@
     ];
     modules-center = [ "sway/window" ];
     modules-right = [
+      "clock"
+      "memory"
       "cpu"
     ];
 
     "cpu" = {
       interval = 10;
       format = "{}% ";
+      max-length = 10;
+    };
+
+    "memory" = {
+      interval = 30;
+      format = "{}% ";
       max-length = 10;
     };
 
