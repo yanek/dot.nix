@@ -59,11 +59,12 @@ in
       size = 24;
     };
 
-    targets."waybar" = {
-      addCss = false;
-      font = "sansSerif";
-    };
+    # targets."waybar" = {
+    #   addCss = false;
+    #   font = "sansSerif";
+    # };
 
+    targets."waybar".enable = false;
     targets."gtk".enable = false;
     targets."helix".enable = false;
     targets."sway".enable = false;
