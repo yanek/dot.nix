@@ -6,7 +6,7 @@
     ../modules/system/ssh.nix
     ../modules/system/audio.nix
     ../modules/system/nas-client.nix
-    ../modules/system/xorg.nix
+    ../modules/system/wayland.nix
   ];
 
   boot.loader.systemd-boot = {
