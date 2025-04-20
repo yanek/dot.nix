@@ -8,7 +8,7 @@
       notification = false;
     }
     {
-      command = ''swaymsg output "*" bg ${userSettings.homeDir}/.nixos-config/modules/themes/${userSettings.theme}/wallpaper.png fill'';
+      command = ''sleep 5; swaymsg output "*" bg ${userSettings.homeDir}/.nixos-config/modules/themes/${userSettings.theme}/wallpaper.png fill'';
       always = true;
       notification = false;
     }
