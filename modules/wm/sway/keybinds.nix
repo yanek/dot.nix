@@ -7,6 +7,10 @@
 
 let
   imgToClipboard = "xclip -selection clipboard -t image/png";
+  left = "h";
+  down = "j";
+  up = "k";
+  right = "l";
 in
 {
   wayland.windowManager.sway.config = {
@@ -15,10 +19,10 @@ in
       "${mod}+Shift+q" = "kill";
       "${mod}+d" = "exec ${menu}";
 
-      "${mod}+h" = "focus left";
-      "${mod}+j" = "focus down";
-      "${mod}+k" = "focus up";
-      "${mod}+l" = "focus right";
+      "${mod}+${left}" = "focus left";
+      "${mod}+${down}" = "focus down";
+      "${mod}+${up}" = "focus up";
+      "${mod}+${right}" = "focus right";
 
       "${mod}+Left" = "focus left";
       "${mod}+Down" = "focus down";
@@ -30,18 +34,27 @@ in
 
       "${mod}+space" = "move position center";
 
-      "${mod}+Shift+h" = "move left";
-      "${mod}+Shift+j" = "move down";
-      "${mod}+Shift+k" = "move up";
-      "${mod}+Shift+l" = "move right";
+      "${mod}+Shift+${left}" = "move left";
+      "${mod}+Shift+${down}" = "move down";
+      "${mod}+Shift+${up}" = "move up";
+      "${mod}+Shift+${right}" = "move right";
 
       "${mod}+Shift+Left" = "move left";
       "${mod}+Shift+Down" = "move down";
       "${mod}+Shift+Up" = "move up";
       "${mod}+Shift+Right" = "move right";
 
-      "${mod}+w" = "move workspace to output up";
-      "${mod}+Shift+w" = "move workspace to output down";
+      "${mod}+s" = "layout stacking";
+      "${mod}+w" = "layout tabbed";
+      "${mod}+e" = "layout toggle split";
+
+      "${mod}+a" = "focus parent";
+
+      "${mod}+Grave" = "move workspace to output up";
+      "${mod}+Shift+Grave" = "move workspace to output down";
+
+      "${mod}+b" = "splith";
+      "${mod}+v" = "splitv";
 
       "${mod}+Shift+1" = "move container to workspace number 1";
       "${mod}+Shift+2" = "move container to workspace number 2";
@@ -75,10 +88,10 @@ in
 
     modes = {
       resize = {
-        "h" = "resize shrink width 10 px or 10 ppt";
-        "j" = "resize grow height 10 px or 10 ppt";
-        "k" = "resize shrink height 10 px or 10 ppt";
-        "l" = "resize grow width 10 px or 10 ppt";
+        ${left} = "resize shrink width 10 px or 10 ppt";
+        ${down} = "resize grow height 10 px or 10 ppt";
+        ${up} = "resize shrink height 10 px or 10 ppt";
+        ${right} = "resize grow width 10 px or 10 ppt";
 
         "Left" = "resize shrink width 10 px or 10 ppt";
         "Down" = "resize grow height 10 px or 10 ppt";
@@ -90,10 +103,10 @@ in
         "Return" = "mode default";
       };
       move = {
-        "h" = "move left";
-        "j" = "move down";
-        "k" = "move up";
-        "l" = "move right";
+        ${left} = "move left";
+        ${down} = "move down";
+        ${up} = "move up";
+        ${right} = "move right";
 
         "Left" = "move left";
         "Down" = "move down";
