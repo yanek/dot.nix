@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
-    ../modules/wm/sway/sway.nix 
+    ../modules/wm/sway/sway.nix
 
     ../modules/programs/git/git.nix
     ../modules/programs/fish.nix
@@ -13,7 +13,7 @@
     ../modules/programs/cli/fzf.nix
     ../modules/programs/cli/zoxide.nix
     ../modules/programs/cli/yazi.nix
-    ../modules/programs/wezterm/wezterm.nix
+    ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
     ../modules/programs/librewolf.nix
     ../modules/programs/comms/discord.nix

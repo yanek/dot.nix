@@ -58,11 +58,11 @@ in
       floating.modifier = mod;
 
       bars = [
-        {
-          id = "top";
-          position = "top";
-          workspaceButtons = true;
-        }
+        # {
+        #   id = "top";
+        #   position = "top";
+        #   workspaceButtons = true;
+        # }
       ];
 
       assigns = {
