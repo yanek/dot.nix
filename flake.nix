@@ -121,10 +121,6 @@
           yaml-language-server
           taplo
         ];
-
-        shellHook = "eza -T";
       };
-
     };
-
 }
