@@ -11,6 +11,7 @@
     ../modules/system/wayland.nix
   ];
 
+  boot.loader.timeout = 2;
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;
