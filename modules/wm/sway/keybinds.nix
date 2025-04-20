@@ -27,7 +27,8 @@ in
 
       "${mod}+f" = "fullscreen toggle";
       "${mod}+Shift+space" = "floating toggle";
-      "${mod}+space" = "focus mode_toggle";
+
+      "${mod}+space" = "move position center";
 
       "${mod}+Shift+h" = "move left";
       "${mod}+Shift+j" = "move down";
@@ -38,6 +39,9 @@ in
       "${mod}+Shift+Down" = "move down";
       "${mod}+Shift+Up" = "move up";
       "${mod}+Shift+Right" = "move right";
+
+      "${mod}+w" = "move workspace to output up";
+      "${mod}+Shift+w" = "move workspace to output down";
 
       "${mod}+Shift+1" = "move container to workspace number 1";
       "${mod}+Shift+2" = "move container to workspace number 2";

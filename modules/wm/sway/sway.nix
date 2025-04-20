@@ -35,7 +35,7 @@ in
 
       input = {
         "*" = {
-          xkb_variant = "eu";
+          xkb_layout = "eu";
           accel_profile = "flat";
         };
       };
