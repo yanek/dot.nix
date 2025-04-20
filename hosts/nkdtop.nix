@@ -59,7 +59,10 @@
     ibm-plex
     fira-code
     open-sans
+    cantarell-fonts
     nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
     nerd-fonts.blex-mono
   ];
 
