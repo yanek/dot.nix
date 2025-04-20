@@ -32,26 +32,13 @@ let
   ];
 in
 {
+  imports = [
+    ./fonts.nix
+  ];
+
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-
-    fonts = {
-      serif = {
-        package = pkgs.ibm-plex;
-        name = "IBM Plex Serif";
-      };
-
-      sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
-      };
-
-      monospace = {
-        package = pkgs.nerd-fonts.fira-code;
-        name = "FiraCode Nerd Font Ret";
-      };
-    };
 
     cursor = {
       name = "Nordic-cursors";
