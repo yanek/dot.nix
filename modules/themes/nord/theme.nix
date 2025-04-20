@@ -7,8 +7,8 @@
 
     fonts = {
       serif = {
-        package = pkgs.nerd-fonts.fira-code;
-        name = "FiraCode Nerd Font Retina";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Serif";
       };
 
       sansSerif = {
@@ -17,8 +17,8 @@
       };
 
       monospace = {
-        package = pkgs.ibm-plex;
-        name = "IBM Plex Mono";
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font Ret";
       };
     };
 
