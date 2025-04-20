@@ -25,10 +25,9 @@
 
     modules-right = [
       "cpu"
-      "temperature"
       "memory"
       "pulseaudio"
-      # "bluetooth"
+      "bluetooth"
       "network"
       # "tray"
     ];
