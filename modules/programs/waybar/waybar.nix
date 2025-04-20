@@ -29,6 +29,7 @@
       "pulseaudio"
       "bluetooth"
       "network"
+      "battery"
       # "tray"
     ];
 
