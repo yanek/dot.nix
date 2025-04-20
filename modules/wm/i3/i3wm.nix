@@ -32,11 +32,6 @@ in
       terminal = term;
       menu = menu;
 
-      fonts = {
-        names = [ "Fira Code" ];
-        style = "Regular";
-      };
-
       gaps = {
         inner = 10;
         outer = 0;

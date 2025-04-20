@@ -4,7 +4,6 @@ local config = wezterm.config_builder()
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "HorizontalLcd"
 config.font_size = 11
-config.font = wezterm.font {family = "Fira Code", weight = "Medium"}
 config.max_fps = 120
 config.default_cursor_style = "BlinkingBar"
 config.cursor_thickness = 2

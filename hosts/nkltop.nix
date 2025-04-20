@@ -34,13 +34,5 @@
 
   services.udev.packages = [ pkgs.via ];
 
-  fonts.packages = with pkgs; [
-    ibm-plex
-    fira-code
-    open-sans
-    nerd-fonts.fira-code
-    nerd-fonts.blex-mono
-  ];
-
   system.stateVersion = "24.11";
 }

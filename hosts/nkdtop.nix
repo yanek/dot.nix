@@ -55,16 +55,5 @@
     motherboard = "amd";
   };
 
-  fonts.packages = with pkgs; [
-    ibm-plex
-    fira-code
-    open-sans
-    cantarell-fonts
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.blex-mono
-  ];
-
   system.stateVersion = "24.11";
 }
