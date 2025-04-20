@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
   programs.waybar.enable = true;
@@ -6,7 +6,8 @@
   programs.waybar.settings.topBar = {
     layer = "top";
     position = "top";
-    height = 30;
+
+    style = builtins.readFile ../../themes/${userSettings.theme}/waybar.css;
 
     output = [
       "DP-6"
@@ -28,9 +29,9 @@
       "temperature"
       "memory"
       "pulseaudio"
-      "bluetooth"
+      # "bluetooth"
       "network"
-      "tray"
+      # "tray"
     ];
 
     "cpu" = {

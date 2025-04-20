@@ -44,7 +44,6 @@ in
       "${mod}+Shift+Up" = "move up";
       "${mod}+Shift+Right" = "move right";
 
-      "${mod}+s" = "layout stacking";
       "${mod}+w" = "layout tabbed";
       "${mod}+e" = "layout toggle split";
 
