@@ -17,9 +17,9 @@
       name = "Hack Nerd Font";
     };
 
-    sizes.applications = 10;
-    sizes.desktop = 10;
-    sizes.popups = 10;
-    sizes.terminal = 10;
+    sizes.applications = 11;
+    sizes.desktop = 11;
+    sizes.popups = 11;
+    sizes.terminal = 11;
   };
 }
