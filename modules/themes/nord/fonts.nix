@@ -13,8 +13,8 @@
     };
 
     monospace = {
-      package = pkgs.nerd-fonts.hack;
-      name = "Hack Nerd Font";
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetbrainsMono Nerd Font";
     };
 
     sizes.applications = 11;
