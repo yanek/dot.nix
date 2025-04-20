@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     rofi-wayland
     lxappearance
-    wdisplays
+    # wdisplays
     pavucontrol
     xfce.thunar
   ];

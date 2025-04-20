@@ -8,6 +8,7 @@ in
 {
   imports = [
     ./misc.nix
+    ./output.nix
     ./startup.nix
 
     (import ./keybinds.nix ({

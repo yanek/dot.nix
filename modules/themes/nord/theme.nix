@@ -7,8 +7,8 @@
 
     fonts = {
       serif = {
-        package = pkgs.ibm-plex;
-        name = "FiraCode Nerd Font Ret";
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font Retina";
       };
 
       sansSerif = {
