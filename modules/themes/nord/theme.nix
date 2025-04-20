@@ -59,9 +59,15 @@ in
       size = 24;
     };
 
+    targets."waybar" = {
+      addCss = false;
+      font = "sansSerif";
+    };
+
     targets."gtk".enable = false;
     targets."helix".enable = false;
     targets."sway".enable = false;
+
   };
 
   gtk = {
