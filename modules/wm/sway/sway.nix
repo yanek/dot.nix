@@ -1,4 +1,4 @@
-{ userSettings, ... }:
+{ ... }:
 
 let
   mod = "Mod4"; # Super
@@ -41,8 +41,8 @@ in
       };
 
       fonts = {
-        names = [ "Fira Code" ];
-        style = "Regular";
+        names = [ "FiraCode Nerd Font" ];
+        style = "Retina";
       };
 
       gaps = {
