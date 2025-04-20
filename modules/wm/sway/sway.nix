@@ -48,7 +48,7 @@ in
 
       gaps = {
         inner = 16;
-        outer = 8;
+        outer = 0;
       };
 
       window.border = 3;
