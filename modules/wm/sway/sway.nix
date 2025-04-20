@@ -73,6 +73,10 @@ in
           command = "floating enable";
           criteria.window_role = "pop-up";
         }
+        {
+          command = "opacity 0.9";
+          criteria.app_id = "kitty";
+        }
       ];
     };
   };
