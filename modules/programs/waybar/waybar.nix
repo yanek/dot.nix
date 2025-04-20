@@ -2,12 +2,11 @@
 
 {
   programs.waybar.enable = true;
+  programs.waybar.style = builtins.readFile ../../themes/${userSettings.theme}/waybar.css;
 
   programs.waybar.settings.topBar = {
     layer = "top";
     position = "top";
-
-    style = builtins.readFile ../../themes/${userSettings.theme}/waybar.css;
 
     output = [
       "DP-6"
