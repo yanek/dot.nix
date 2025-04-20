@@ -67,7 +67,7 @@
       format-alt = "{ifname}";
       family = "ipv4";
       tooltip-format-wifi = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}";
-      tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}";
+      tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
     };
 
     "sway/workspace" = {
