@@ -16,9 +16,16 @@ in
       inherit term;
       inherit menu;
     }))
+
+    ../../programs/waybar/waybar.nix
   ];
 
   services.gnome-keyring.enable = true;
+
+  programs.waybar.systemd = {
+    enable = true;
+    target = "sway-session.target";
+  };
 
   wayland.windowManager.sway = {
     enable = true;
