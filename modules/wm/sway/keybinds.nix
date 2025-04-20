@@ -9,7 +9,7 @@ let
   imgToClipboard = "xclip -selection clipboard -t image/png";
 in
 {
-  xsession.windowManager.i3.config = {
+  wayland.windowManager.sway.config = {
     keybindings = {
       "${mod}+Return" = "exec ${term}";
       "${mod}+Shift+q" = "kill";

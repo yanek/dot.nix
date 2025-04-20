@@ -1,7 +1,7 @@
 { userSettings, xrandrArgs, ... }:
 
 {
-  xsession.windowManager.i3.config.startup =
+  wayland.windowManager.sway.config.startup =
     [
       {
         # The service usually starts before i3 -- and that's bad

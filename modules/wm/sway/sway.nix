@@ -40,11 +40,6 @@ in
         };
       };
 
-      fonts = {
-        names = [ "FiraCode Nerd Font" ];
-        style = "Retina";
-      };
-
       gaps = {
         inner = 10;
         outer = 0;
