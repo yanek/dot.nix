@@ -21,7 +21,7 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
