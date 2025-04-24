@@ -29,6 +29,8 @@
     "${userSettings.homeDir}/.local/bin"
   ];
 
+  wayland.windowManager.sway.config.gaps.inner = 8;
+
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
 }

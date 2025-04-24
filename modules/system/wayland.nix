@@ -35,6 +35,5 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard
     wlprop
-    libinput
   ];
 }

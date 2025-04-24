@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 let
   mod = "Mod4"; # Super
@@ -42,11 +42,19 @@ in
       input = {
         "*" = {
           xkb_layout = "eu";
+        };
+        "mouse" = {
           accel_profile = "flat";
+        };
+        "touchpad" = {
+          accel_profile = "adaptive";
+          natural_scroll = "enabled";
+          tap = "enabled";
+          tap_button_map = "lrm";
         };
       };
 
-      gaps = {
+      gaps = lib.mkDefault {
         inner = 16;
         outer = 0;
       };
