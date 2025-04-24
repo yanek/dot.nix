@@ -46,6 +46,16 @@
       today-format = "<b>{}</b>";
     };
 
+    "battery" = {
+      interval = 30;
+      format = "{capacity}% bat, {time}";
+    };
+
+    "pulseaudio" = {
+      format = "{volume}% vol, {icon}";
+      on-click = "pavucontrol";
+    };
+
     "network" = {
       # As of today (04/20), family is broken and shows
       # ipv6 even after being set to ipv6.
