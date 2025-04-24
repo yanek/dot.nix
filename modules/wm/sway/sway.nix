@@ -40,13 +40,13 @@ in
       menu = menu;
 
       input = {
-        "*" = {
+        "type:keyboard" = {
           xkb_layout = "eu";
         };
-        "mouse" = {
+        "type:mouse" = {
           accel_profile = "flat";
         };
-        "touchpad" = {
+        "type:touchpad" = {
           accel_profile = "adaptive";
           natural_scroll = "enabled";
           tap = "enabled";
