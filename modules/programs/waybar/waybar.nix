@@ -48,11 +48,18 @@
 
     "battery" = {
       interval = 30;
-      format = "{capacity}% bat, {time}";
+      format = "{capacity}% {icon}";
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
     };
 
     "pulseaudio" = {
-      format = "{volume}% vol, {icon}";
+      format = "{volume}% vol";
       on-click = "pavucontrol";
     };
 
@@ -65,7 +72,7 @@
       # format-wifi = "  {essid}: {ipaddr}/{cidr}";
       # format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
       # format-alt = "{ifname}: {ipaddr}/{cidr}";
-      format-wifi = "{ifname} @ {essid}";
+      format-wifi = "@{essid}";
       format-ethernet = "{ifname}";
       format-linked = "{ifname} (No IP)";
       format-disconnected = "offline";
