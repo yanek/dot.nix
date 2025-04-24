@@ -65,13 +65,7 @@ in
       floating.titlebar = false;
       floating.modifier = mod;
 
-      bars = [
-        # {
-        #   id = "top";
-        #   position = "top";
-        #   workspaceButtons = true;
-        # }
-      ];
+      bars = [ ];
 
       assigns = {
         "5" = [ { class = "^discord$"; } ];
