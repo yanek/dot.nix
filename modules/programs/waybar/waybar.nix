@@ -30,18 +30,18 @@
 
     "cpu" = {
       interval = 10;
-      format = "{}% ";
+      format = "{}% cpu";
       max-length = 10;
     };
 
     "memory" = {
       interval = 30;
-      format = "{}% ";
+      format = "{}% mem";
       max-length = 10;
     };
 
     "clock" = {
-      format = "  {:%H:%M   %e %b}";
+      format = "{:%H:%M, %e %b}";
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       today-format = "<b>{}</b>";
     };
@@ -55,14 +55,14 @@
       # format-wifi = "  {essid}: {ipaddr}/{cidr}";
       # format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
       # format-alt = "{ifname}: {ipaddr}/{cidr}";
-      format-wifi = "  {essid}";
-      format-ethernet = "{ifname} ";
-      format-linked = "{ifname} (No IP) ";
-      format-disconnected = "";
+      format-wifi = "{ifname} @ {essid}";
+      format-ethernet = "{ifname}";
+      format-linked = "{ifname} (No IP)";
+      format-disconnected = "offline";
       format-alt = "{ifname}";
       family = "ipv4";
-      tooltip-format-wifi = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
-      tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
+      tooltip-format-wifi = "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
+      tooltip-format-ethernet = "{ifname}\nIP: {ipaddr}\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
     };
 
     "sway/workspace" = {
