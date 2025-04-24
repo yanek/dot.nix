@@ -48,7 +48,7 @@
 
     "battery" = {
       interval = 30;
-      format = "{capacity}% {icon}";
+      format = "{capacity}% {icon} ";
       format-icons = [
         ""
         ""
