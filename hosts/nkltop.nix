@@ -6,6 +6,7 @@
     ../modules/system/ssh.nix
     ../modules/system/audio.nix
     ../modules/system/nas-client.nix
+    ../modules/system/bluetooth.nix
     ../modules/system/wayland.nix
   ];
 
