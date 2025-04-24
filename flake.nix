@@ -5,8 +5,12 @@
 
     hm.url = "github:nix-community/home-manager/master";
     hm.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
     betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
+    betterfox.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
