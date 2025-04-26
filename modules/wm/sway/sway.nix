@@ -46,6 +46,9 @@ in
         "type:mouse" = {
           accel_profile = "flat";
         };
+        "Logitech_G_Pro" = {
+          accel_profile = "flat";
+        };
         "type:touchpad" = {
           accel_profile = "adaptive";
           natural_scroll = "enabled";
