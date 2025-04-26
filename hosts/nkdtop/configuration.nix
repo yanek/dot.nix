@@ -16,6 +16,7 @@
   boot.loader.timeout = 2;
   boot.loader.systemd-boot = {
     enable = true;
+    consoleMode = "max";
     configurationLimit = 5;
     # edk2-uefi-shell.enable = true;
     windows."11-gaming" = {
@@ -25,6 +26,10 @@
     };
   };
 
+  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.kernelParams = [
+    "nvidia-drm.fbdev=1"
+  ];
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nkdtop";

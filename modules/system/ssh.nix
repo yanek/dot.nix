@@ -1,8 +1,9 @@
-{ userSettings, ... }:
+{ userSettings, pkgs, ... }:
 
 let
-  sshKeys = builtins.fetchurl {
+  sshKeys = pkgs.fetchurl {
     url = "https://github.com/yanek.keys";
+    hash = "sha256-7fqdidKx7QWv6C2Y83k5y8GU8g0NUON1ZYgTe0XSiG0=";
   };
 in
 {

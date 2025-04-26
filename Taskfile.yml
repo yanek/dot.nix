@@ -5,7 +5,7 @@ tasks:
     cmds:
       - git add .
       - git diff --staged --name-status
-      - sudo nixos-rebuild switch --flake . --impure
+      - sudo nixos-rebuild switch --flake .
       - home-manager switch --flake .
       - bash scripts/commit.sh
 
