@@ -2,14 +2,15 @@
 
 {
   imports = [
-    ../modules/system/core.nix
-    ../modules/system/ssh.nix
-    ../modules/system/nvidia.nix
-    ../modules/system/audio.nix
-    ../modules/system/bluetooth.nix
-    ../modules/system/gaming.nix
-    ../modules/system/nas-client.nix
-    ../modules/system/wayland.nix
+    ./hardware-configuration.nix
+    ../../modules/system/core.nix
+    ../../modules/system/ssh.nix
+    ../../modules/system/nvidia.nix
+    ../../modules/system/audio.nix
+    ../../modules/system/bluetooth.nix
+    ../../modules/system/gaming.nix
+    ../../modules/system/nas-client.nix
+    ../../modules/system/wayland.nix
   ];
 
   boot.loader.timeout = 2;

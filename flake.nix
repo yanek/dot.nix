@@ -66,8 +66,7 @@
             inherit userSettings;
           };
           modules = [
-            /etc/nixos/hardware-configuration.nix
-            ./hosts/nkdtop.nix
+            ./hosts/nkdtop/configuration.nix
           ];
         };
         nkltop = nixpkgs.lib.nixosSystem {
@@ -79,8 +78,7 @@
             inherit userSettings;
           };
           modules = [
-            /etc/nixos/hardware-configuration.nix
-            ./hosts/nkltop.nix
+            ./hosts/nkltop/configuration.nix
           ];
         };
       };
