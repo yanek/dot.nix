@@ -44,18 +44,12 @@ in
           xkb_layout = "eu";
           accel_profile = "flat";
         };
-        # "type:mouse" = {
-        #   accel_profile = "flat";
-        # };
-        # "Logitech_G_Pro" = {
-        #   accel_profile = "flat";
-        # };
-        # "type:touchpad" = {
-        #   accel_profile = "adaptive";
-        #   natural_scroll = "enabled";
-        #   tap = "enabled";
-        #   tap_button_map = "lrm";
-        # };
+        "type:touchpad" = {
+          accel_profile = "adaptive";
+          natural_scroll = "enabled";
+          tap = "enabled";
+          tap_button_map = "lrm";
+        };
       };
 
       gaps = lib.mkDefault {
