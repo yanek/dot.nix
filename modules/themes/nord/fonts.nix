@@ -17,9 +17,9 @@
       name = "MapleMono";
     };
 
-    sizes.applications = 12;
+    sizes.applications = 11;
     sizes.desktop = 11;
-    sizes.popups = 12;
-    sizes.terminal = 12;
+    sizes.popups = 11;
+    sizes.terminal = 10;
   };
 }

@@ -62,13 +62,13 @@
   border-radius: 3px;
   min-height: 0;
   margin: 0.2em 0.3em 0.2em 0.3em;
+  font-family: "MapleMono", "Font Awesome 5 Pro";
 }
 
 /* The whole bar */
 #waybar {
   background: @bg;
   color: @light;
-  font-family: "MapleMono", "Font Awesome 5 Pro";
   font-size: 12px;
   font-weight: bold;
 }
@@ -176,7 +176,7 @@
 }
 
 #window {
-  margin-right: 20px;
+  margin-left: 20px;
   opacity: 0.3;
 }
 
