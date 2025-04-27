@@ -49,8 +49,8 @@ in
 
     iconTheme = {
       enable = true;
-      dark = "Nordic-blueish";
-      package = pkgs.nordic;
+      dark = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
 
     targets.gtk = {
