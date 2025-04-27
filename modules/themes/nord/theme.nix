@@ -39,7 +39,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-    polarity = "dark";
+    polarity = "light";
 
     cursor = {
       name = "Nordic-cursors";
