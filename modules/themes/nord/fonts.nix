@@ -14,7 +14,7 @@
 
     monospace = {
       package = pkgs.maple-mono.NF;
-      name = "MapleMono-NF";
+      name = "MapleMono";
     };
 
     sizes.applications = 11;
