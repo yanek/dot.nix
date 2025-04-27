@@ -13,8 +13,8 @@
     };
 
     monospace = {
-      package = pkgs.nerd-fonts.jetbrains-mono;
-      name = "JetbrainsMono Nerd Font";
+      package = pkgs.maple-mono.NF;
+      name = "MapleMono-NF";
     };
 
     sizes.applications = 11;
