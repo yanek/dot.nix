@@ -8,7 +8,7 @@
   programs.librewolf = {
     enable = true;
     betterfox = {
-      enable = false;
+      enable = true;
       settings = {
         enable = true;
         enableAllSections = true;

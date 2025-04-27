@@ -9,8 +9,11 @@
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-    betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
+    betterfox.url = "github:heitoraugustoln/betterfox-nix";
     betterfox.inputs.nixpkgs.follows = "nixpkgs";
+
+    bettercontrol.url = "github:rishabh5321/better-control-flake";
+    bettercontrol.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -18,7 +21,6 @@
       nixpkgs,
       nixpkgs-stable,
       hm,
-      betterfox,
       ...
     }@inputs:
     let

@@ -1,4 +1,4 @@
-{ userSettings, ... }:
+{ pkgs, userSettings, inputs, ... }:
 
 {
   imports = [
@@ -32,6 +32,10 @@
 
   home.sessionPath = [
     "${userSettings.homeDir}/.local/bin"
+  ];
+
+  home.packages = [
+    inputs.bettercontrol.packages.${pkgs.system}.better-control
   ];
 
   programs.home-manager.enable = true;
