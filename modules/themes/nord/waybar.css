@@ -160,7 +160,6 @@
   /*color: #999;*/
   opacity: 0.3;
   background: none;
-  font-size: 1.2em;
 }
 
 #workspaces button.focused {
@@ -177,39 +176,12 @@
 }
 
 #window {
-  margin-right: 40px;
-  margin-left: 40px;
-  font-weight: normal;
+  margin-right: 20px;
+  opacity: 0.3;
 }
 
 #bluetooth {
   background: @nord_bg_blue;
-  padding: 0 0.6em;
-}
-
-#custom-gpu {
-  background: @nord_bg;
-  font-weight: bold;
-  padding: 0 0.6em;
-}
-
-#custom-weather {
-  background: @mode;
-  font-weight: bold;
-  padding: 0 0.6em;
-}
-
-#custom-pacman {
-  background: @nord_light;
-  color: @nord_dark_font;
-  font-weight: bold;
-  padding: 0 0.6em;
-}
-
-#custom-scratchpad-indicator {
-  background: @nord_light;
-  color: @nord_dark_font;
-  font-weight: bold;
   padding: 0 0.6em;
 }
 
