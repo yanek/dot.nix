@@ -66,8 +66,8 @@ in
       bars = [ ];
 
       assigns = {
-        "5" = [ { class = "^discord$"; } ];
         "2" = [ { class = "^steam$"; } ];
+        "5" = [ { class = "^discord$"; } ];
       };
 
       window.commands = [

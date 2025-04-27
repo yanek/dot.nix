@@ -79,7 +79,7 @@ in
 
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+r" = "restart";
-      "${mod}+Shift+e" = "exec i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'";
+      "${mod}+Shift+e" = "exec nagbar -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'";
 
       "${mod}+r" = "mode resize";
       "${mod}+m" = "mode move";
