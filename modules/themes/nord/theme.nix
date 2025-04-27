@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ pkgs, ... }:
 
 let
   nord = [
@@ -47,57 +47,57 @@ in
       size = 24;
     };
 
-    # iconTheme = {
-    #   enable = true;
-    #   dark = "Nordic-blueish";
-    #   package = pkgs.nordic;
-    # };
+    iconTheme = {
+      enable = true;
+      dark = "Nordic-blueish";
+      package = pkgs.nordic;
+    };
 
-    # targets.gtk = {
-    #   enable = true;
-    #   extraCss = ''
-    #     window.background { border-radius: 0; }
-    #   '';
-    # };
+    targets.gtk = {
+      enable = true;
+      extraCss = ''
+        window.background { border-radius: 0; }
+      '';
+    };
 
     targets."waybar".enable = false;
-    targets."gtk".enable = false;
+    # targets."gtk".enable = false;
     targets."helix".enable = false;
     targets."sway".enable = false;
 
   };
 
-  gtk = {
-    enable = true;
+  # gtk = {
+  #   enable = true;
 
-    theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
+  #   theme = {
+  #     name = "Nordic";
+  #     package = pkgs.nordic;
+  #   };
 
-    iconTheme = {
-      name = "Nordic-blueish";
-      package = pkgs.nordic;
-    };
+  #   # iconTheme = {
+  #   #   name = "Nordic-blueish";
+  #   #   package = pkgs.nordic;
+  #   # };
 
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-      gtk-key-theme-name = "Nordic";
-      gtk-icon-theme-name = "Nordic-blueish";
-    };
-  };
+  #   gtk3.extraConfig = {
+  #     gtk-application-prefer-dark-theme = true;
+  #     gtk-key-theme-name = "Nordic";
+  #     gtk-icon-theme-name = "Nordic-blueish";
+  #   };
+  # };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Nordic";
-      color-scheme = "prefer-dark";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     gtk-theme = "Nordic";
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
-  xdg.systemDirs.data = [
-    "${pkgs.gtk3}/share/gsettings-schema/${pkgs.gtk3.name}"
-    "${pkgs.gsettings-desktop-schemas}/share/gsettings-shemas/${pkgs.gsettings-desktop-schemas.name}"
-  ];
+  # xdg.systemDirs.data = [
+  #   "${pkgs.gtk3}/share/gsettings-schema/${pkgs.gtk3.name}"
+  #   "${pkgs.gsettings-desktop-schemas}/share/gsettings-shemas/${pkgs.gsettings-desktop-schemas.name}"
+  # ];
 
   programs.helix = {
     settings = {
