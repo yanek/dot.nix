@@ -13,7 +13,7 @@
     };
 
     monospace = {
-      package = pkgs.maple-mono.truetype;
+      package = pkgs.maple-mono.NF;
       name = "MapleMono";
     };
 
