@@ -39,6 +39,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    polarity = "dark";
 
     cursor = {
       name = "Nordic-cursors";
@@ -46,26 +47,50 @@ in
       size = 24;
     };
 
+    iconTheme = {
+      enable = true;
+      dark = "Nordic-blueish";
+      package = pkgs.nordic;
+    };
+
+    targets.gtk = {
+      enable = true;
+      extraCss = ''
+        window.background { border-radius: 0; }
+      '';
+    };
+
     targets."waybar".enable = false;
-    targets."gtk".enable = false;
+    # targets."gtk".enable = false;
     targets."helix".enable = false;
     targets."sway".enable = false;
 
   };
 
-  gtk = {
-    enable = true;
+  # gtk = {
+  #   enable = true;
 
-    theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
+  #   theme = {
+  #     name = "Nordic";
+  #     package = pkgs.nordic;
+  #   };
 
-    iconTheme = {
-      name = "Nordic-blueish";
-      package = pkgs.nordic;
-    };
-  };
+  #   iconTheme = {
+  #     name = "Nordic-blueish";
+  #     package = pkgs.nordic;
+  #   };
+
+  #   gtk3 = {
+  #     extraConfig.gtk-application-prefer-dark-theme = true;
+  #   };
+  # };
+
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     gtk-theme = "Nordic";
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
   programs.helix = {
     settings = {

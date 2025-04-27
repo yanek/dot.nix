@@ -20,6 +20,8 @@
     [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
   '';
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # services.displayManager = {
   #   defaultSession = "sway";
   # };
