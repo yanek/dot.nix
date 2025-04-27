@@ -40,6 +40,7 @@
     isNormalUser = true;
     description = "${userSettings.fullname}";
     extraGroups = [
+      "video"
       "networkmanager"
       "wheel"
     ];
