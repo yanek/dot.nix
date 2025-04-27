@@ -20,6 +20,6 @@
     sizes.applications = 11;
     sizes.desktop = 11;
     sizes.popups = 11;
-    sizes.terminal = 10;
+    sizes.terminal = 11;
   };
 }
