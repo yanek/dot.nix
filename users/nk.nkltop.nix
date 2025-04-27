@@ -15,7 +15,7 @@
     ../modules/programs/cli/yazi.nix
     ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
-    ../modules/programs/librewolf.nix
+    ../modules/programs/firefox.nix
     ../modules/programs/comms/discord.nix
 
     ../modules/programs/multimedia/spotify.nix

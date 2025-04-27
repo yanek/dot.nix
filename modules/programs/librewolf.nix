@@ -3,7 +3,7 @@
 {
   imports = [ inputs.betterfox.homeManagerModules.betterfox ];
 
-  stylix.targets."librewolf".profileNames = [userSettings.username];
+  stylix.targets."librewolf".profileNames = [ userSettings.username ];
 
   programs.librewolf = {
     enable = true;

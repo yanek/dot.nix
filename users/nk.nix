@@ -1,4 +1,9 @@
-{ pkgs, userSettings, inputs, ... }:
+{
+  pkgs,
+  userSettings,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -18,7 +23,7 @@
     ../modules/programs/wezterm/wezterm.nix
     ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
-    ../modules/programs/librewolf.nix
+    ../modules/programs/firefox.nix
     ../modules/programs/prusa-slicer.nix
     ../modules/programs/comms/discord.nix
 
