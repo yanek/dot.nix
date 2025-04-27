@@ -68,7 +68,7 @@
 #waybar {
   background: @bg;
   color: @light;
-  font-family: "Cantarell", "Font Awesome 5 Pro";
+  font-family: "MapleMono", "Font Awesome 5 Pro";
   font-size: 12px;
   font-weight: bold;
 }
@@ -160,7 +160,7 @@
   /*color: #999;*/
   opacity: 0.3;
   background: none;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 #workspaces button.focused {
@@ -184,8 +184,6 @@
 
 #bluetooth {
   background: @nord_bg_blue;
-  font-size: 1.2em;
-  font-weight: bold;
   padding: 0 0.6em;
 }
 
