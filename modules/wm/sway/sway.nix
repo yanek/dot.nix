@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   mod = "Mod4"; # Super
@@ -28,6 +28,8 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
+    checkConfig = false;
+    package = pkgs.swayfx;
     xwayland = true;
 
     swaynag = {
