@@ -8,6 +8,8 @@ in
     ../../programs/waybar/waybar.nix
   ];
 
+  programs.waybar.systemd.enable = true;
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
@@ -21,11 +23,5 @@ in
       preload = [ wallpaper ];
       wallpaper = [ ",${wallpaper}" ];
     };
-  };
-
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "waybar"
-    ];
   };
 }
