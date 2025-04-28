@@ -64,7 +64,7 @@
     ];
 
     # n -> non-consuming
-    bindn = [
+    bindo = [
       ", $mod, exec, hyprdim"
     ];
 
