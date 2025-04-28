@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  screenshotOutput = "$HOME/pictures/screenshots";
+in
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
@@ -10,6 +13,10 @@
         "$mod_SHIFT, R, exec, hyprctl reload && notify-send -t 3000 'Hyprland reloaded!'"
         "$mod, ESCAPE, exec, hyprlock"
         "$mod, RETURN, exec, kitty"
+
+        ", PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
+        "$mod, PRINT, exec, hyprshot -m active -o ${screenshotOutput}"
+        "$mod_SHIFT, PRINT, hyprshot -m output -o ${screenshotOutput}"
 
         "$mod, D, exec, wofi --show drun"
 

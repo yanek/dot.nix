@@ -60,6 +60,7 @@ in
   home.packages = with pkgs; [
     nemo
     nemo-fileroller
+    pavucontrol
     hyprdim
     hyprshot
   ];
