@@ -65,7 +65,7 @@
 
     # n -> non-consuming
     bindn = [
-      ", $mod, hyprdim"
+      ", $mod, exec, hyprdim"
     ];
 
     input = {
