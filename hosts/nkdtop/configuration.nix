@@ -63,6 +63,17 @@
     motherboard = "amd";
   };
 
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "hyprland";
+        user = "nk";
+      };
+      default_sesstion = initial_session;
+    };
+  };
+
   programs.hyprland.enable = true;
 
   system.stateVersion = "24.11";
