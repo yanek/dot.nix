@@ -43,8 +43,15 @@ in
     };
   };
 
+  services.hyprpolkitagent = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     nemo
     nemo-fileroller
+    hyprdim
+    hyprshot
+    brightnessctl
   ];
 }
