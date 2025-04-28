@@ -47,11 +47,14 @@ in
     enable = true;
   };
 
+  services.mako = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     nemo
     nemo-fileroller
     hyprdim
     hyprshot
-    brightnessctl
   ];
 }
