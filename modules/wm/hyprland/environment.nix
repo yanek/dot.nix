@@ -10,13 +10,25 @@ in
 
   programs.waybar.systemd.enable = true;
 
-  programs.rofi = {
+  programs.wofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
   };
 
   programs.wlogout = {
     enable = true;
+  };
+
+  programs.hyprlock = {
+    enable = true;
+    # settings = {
+    #   background = [
+    #     {
+    #       path = wallpaper;
+    #       blur_passes = 3;
+    #       blur_size = 8;
+    #     }
+    #   ];
+    # };
   };
 
   services.hyprpaper = {

@@ -17,8 +17,7 @@ in
         "$mod, Escape, exec, ${toggle "wlogout"} -p layer-shell"
         "$mod, RETURN, exec, kitty"
 
-        "$mod, D, exec, rofi -show drun"
-        "$mod, W, exec, rofi -show window"
+        "$mod, D, exec, wofi --show drun"
 
         "$mod, SPACE, togglefloating"
         "$mod, F, fullscreen"
