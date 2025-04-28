@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [
-    rofi-wayland
+    wofi
   ];
 
   wayland.windowManager.hyprland.settings = {
