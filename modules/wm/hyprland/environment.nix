@@ -26,7 +26,10 @@ in
         blur_passes = 3;
         blur_size = 4;
       };
-
+      input-field = {
+        size = "200,50";
+        fade_on_empty = false;
+      };
     };
   };
 
