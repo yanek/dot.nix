@@ -13,7 +13,10 @@
 
     input = {
       kb_layout = "eu";
-
+      accel_profile = "flat";
+      sensitivity = 0;
+      repeat_rate = 60;
+      repeat_delay = 500;
     };
   };
 }
