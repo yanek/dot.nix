@@ -63,6 +63,12 @@
       "$mod, mouse:273, resizewindow"
     ];
 
+    # o -> long press
+    # n -> non-consuming
+    bindon = [
+      ", $mod, hyprdim"
+    ];
+
     input = {
       kb_layout = "eu";
       accel_profile = "flat";
