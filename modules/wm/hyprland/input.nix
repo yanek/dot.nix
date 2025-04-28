@@ -1,15 +1,46 @@
 { ... }:
-
+let
+  toggle =
+    program:
+    let
+      prog = builtins.substring 0 14 program;
+    in
+    "pkill ${prog} || uwsm app -- ${program}";
+in
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
     bind =
       [
-        "$mod_SHIFT, Q, killactive"
+        "$mod_SHIFT, E, exec, killall hyprland"
+        "$mod, Escape, exec, ${toggle "wlogout"} -p layer-shell"
         "$mod, RETURN, exec, kitty"
+
         "$mod, D, exec, rofi -show drun"
         "$mod, W, exec, rofi -show window"
+
+        "$mod, SPACE, togglefloating"
+        "$mod, F, fullscreen"
+        "$mod, G, togglegroup"
+
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, d"
+        "$mod, K, movefocus, u"
+        "$mod, L, movefocus, r"
+        "$mod, LEFT, movefocus, l"
+        "$mod, DOWN, movefocus, d"
+        "$mod, UP, movefocus, u"
+        "$mod, RIGHT, movefocus, r"
+
+        "$mod_SHIFT, H, movewindow, l"
+        "$mod_SHIFT, J, movewindow, d"
+        "$mod_SHIFT, K, movewindow, u"
+        "$mod_SHIFT, L, movewindow, r"
+        "$mod_SHIFT, LEFT, movewindow, l"
+        "$mod_SHIFT, DOWN, movewindow, d"
+        "$mod_SHIFT, UP, movewindow, u"
+        "$mod_SHIFT, RIGHT, movewindow, r"
       ]
       ++ (
         # workspaces
