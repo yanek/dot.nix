@@ -7,6 +7,7 @@
     bind =
       [
         "$mod_SHIFT, E, exec, killall hyprland"
+        "$mod_SHIFT, R, exec, hyprctl reload"
         "$mod, ESCAPE, exec, hyprlock"
         "$mod, RETURN, exec, kitty"
 
