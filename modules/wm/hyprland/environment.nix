@@ -33,6 +33,10 @@ in
     };
   };
 
+  programs.swayimg = {
+    enable = true;
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -63,6 +67,5 @@ in
     pavucontrol
     hyprdim
     hyprshot
-    swayimg
   ];
 }
