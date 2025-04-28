@@ -7,7 +7,7 @@
     bind =
       [
         "$mod_SHIFT, E, exec, killall hyprland"
-        "$mod_SHIFT, R, exec, hyprctl reload"
+        "$mod_SHIFT, R, exec, hyprctl reload && notify-send -t 3000 'Hyprland reloaded!'"
         "$mod, ESCAPE, exec, hyprlock"
         "$mod, RETURN, exec, kitty"
 
