@@ -5,7 +5,7 @@ let
     let
       prog = builtins.substring 0 14 program;
     in
-    "pkill ${prog} || uwsm app -- ${program}";
+    "pkill ${prog} || ${program}";
 in
 {
   wayland.windowManager.hyprland.settings = {

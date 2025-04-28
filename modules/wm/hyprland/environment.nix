@@ -15,6 +15,10 @@ in
     package = pkgs.rofi-wayland;
   };
 
+  programs.wlogout = {
+    enable = true;
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -24,4 +28,9 @@ in
       wallpaper = [ ",${wallpaper}" ];
     };
   };
+
+  home.packages = with pkgs; [
+    nemo
+    nemo-fileroller
+  ];
 }
