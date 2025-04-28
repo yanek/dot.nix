@@ -63,5 +63,6 @@ in
     pavucontrol
     hyprdim
     hyprshot
+    swayimg
   ];
 }
