@@ -11,11 +11,13 @@
     modules-left = [
       "clock"
       "sway/window"
+      "hyprland/window"
       "sway/mode"
     ];
 
     modules-center = [
       "sway/workspaces"
+      "hyprland/workspaces"
     ];
 
     modules-right = [
@@ -85,6 +87,14 @@
     "sway/workspace" = {
       disable-scroll = true;
       all-outputs = true;
+    };
+
+    "hyprland/workspace" = {
+      format = "{id}";
+    };
+
+    "hyprland/window" = {
+      format = "-> {title}";
     };
   };
 }

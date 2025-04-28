@@ -162,7 +162,8 @@
   background: none;
 }
 
-#workspaces button.focused {
+#workspaces button.focused,
+#workspaces button.active {
   background: @workspacesfocused;
   color: #D8DEE9;
   opacity: 1;
