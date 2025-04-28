@@ -63,9 +63,8 @@
       "$mod, mouse:273, resizewindow"
     ];
 
-    # o -> long press
     # n -> non-consuming
-    bindon = [
+    bindn = [
       ", $mod, hyprdim"
     ];
 
