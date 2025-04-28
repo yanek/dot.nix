@@ -4,6 +4,7 @@
   imports = [
     ./keybinds.nix
     ./monitors.nix
+    ./environment.nix
   ];
 
   wayland.windowManager.hyprland = {
