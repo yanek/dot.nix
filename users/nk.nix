@@ -9,8 +9,9 @@
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
 
-    ../modules/wm/sway/sway.nix
-    ../modules/wm/sway/output.nix # manage monitors
+    # ../modules/wm/sway/sway.nix
+    # ../modules/wm/sway/output.nix # manage monitors
+    ../modules/wm/hyprland
 
     ../modules/programs/git/git.nix
     ../modules/programs/fish.nix
@@ -42,6 +43,10 @@
   home.packages = [
     inputs.bettercontrol.packages.${pkgs.system}.better-control
   ];
+
+  # environment.loginShellInit = ''
+  #   [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+  # '';
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
