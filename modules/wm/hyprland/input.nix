@@ -15,8 +15,7 @@ in
         "$mod, RETURN, exec, kitty"
 
         ", PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
-        "$mod, PRINT, exec, hyprshot -m active -o ${screenshotOutput}"
-        "$mod_SHIFT, PRINT, hyprshot -m output -o ${screenshotOutput}"
+        "$mod, PRINT, exec, hyprshot -m window -o ${screenshotOutput}"
 
         "$mod, D, exec, wofi --show drun"
 
