@@ -5,9 +5,11 @@
     ../../programs/waybar/waybar.nix
   ];
 
-  home.packages = with pkgs; [
-    wofi
-  ];
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
+
+  };
 
   wayland.windowManager.hyprland.settings = {
     exec-once = [
