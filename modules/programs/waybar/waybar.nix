@@ -94,7 +94,7 @@
     };
 
     "hyprland/window" = {
-      format = "-> {title}";
+      format = "{title}";
     };
   };
 }
