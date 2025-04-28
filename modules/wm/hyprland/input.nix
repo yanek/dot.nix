@@ -9,7 +9,6 @@
         "$mod_SHIFT, E, exec, killall hyprland"
         "$mod, ESCAPE, exec, hyprlock"
         "$mod, RETURN, exec, kitty"
-        "$mod, TAB, exec, hyprdim"
 
         "$mod, D, exec, wofi --show drun"
 

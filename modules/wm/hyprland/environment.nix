@@ -51,6 +51,12 @@ in
     enable = true;
   };
 
+  wayland.windowManager.hyprland.settings = {
+    exec-once = [
+      "hyprdim"
+    ];
+  };
+
   home.packages = with pkgs; [
     nemo
     nemo-fileroller
