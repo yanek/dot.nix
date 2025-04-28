@@ -1,12 +1,5 @@
 { ... }:
-let
-  toggle =
-    program:
-    let
-      prog = builtins.substring 0 14 program;
-    in
-    "pkill ${prog} || ${program}";
-in
+
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
@@ -14,7 +7,7 @@ in
     bind =
       [
         "$mod_SHIFT, E, exec, killall hyprland"
-        "$mod, Escape, exec, ${toggle "wlogout"} -p layer-shell"
+        "$mod, Escape, exec, hyprlock"
         "$mod, RETURN, exec, kitty"
 
         "$mod, D, exec, wofi --show drun"

@@ -20,15 +20,14 @@ in
 
   programs.hyprlock = {
     enable = true;
-    # settings = {
-    #   background = [
-    #     {
-    #       path = wallpaper;
-    #       blur_passes = 3;
-    #       blur_size = 8;
-    #     }
-    #   ];
-    # };
+    settings = {
+      background = {
+        path = "screenshot";
+        blur_passes = 3;
+        blur_size = 8;
+      };
+
+    };
   };
 
   services.hyprpaper = {
