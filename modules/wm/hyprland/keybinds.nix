@@ -10,5 +10,12 @@
       "$mod, D, exec, rofi -show drun"
       "$mod, W, exec, rofi -show window"
     ];
+
+    input = {
+      kb_layout = "eu";
+      accel_profile = "flat";
+      repeat_delay = 0;
+      repeat_rate = 500;
+    };
   };
 }
