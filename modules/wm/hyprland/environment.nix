@@ -56,7 +56,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "hyprlock"
-      "${pkgs.hyprdim}/bin/hyprdim"
+      # "${pkgs.hyprdim}/bin/hyprdim"
     ];
   };
 
