@@ -22,6 +22,11 @@
       lua-language-server = {
         command = "${pkgs.lua-language-server}/bin/lua-language-server";
       };
+
+      # Odin
+      ols = {
+        command = "${pkgs.ols}/bin/ols";
+      };
     };
     language = [
       {
@@ -32,10 +37,13 @@
       }
       {
         name = "odin";
+        auto-format = true;
         indent = {
           tab-width = 4;
           unit = "    ";
         };
+        formatter.command = "${pkgs.ols}/bin/odinfmt";
+        language-servers = ["ols"];
       }
     ];
   };
