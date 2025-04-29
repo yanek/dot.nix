@@ -11,7 +11,6 @@
     margin-right = 14;
 
     modules-left = [
-      "custom/notification"
       "clock"
       "hyprland/window"
     ];
@@ -28,13 +27,6 @@
       "network"
       "battery"
     ];
-
-    "custom/notification" = {
-      tooltip = false;
-      format = "";
-      on-click = "swaync-client -t -sw";
-      escape = true;
-    };
 
     cpu = {
       format = "󰻠";
@@ -84,7 +76,7 @@
     };
 
     pulseaudio = {
-      format = "{volume}% vol";
+      format = "{volume}% ";
       on-click = "pavucontrol";
     };
 
