@@ -20,13 +20,6 @@
   }
 }
 
-
-/* -----------------------------------------------------------------------------
- * Styles
- * -------------------------------------------------------------------------- */
-
-/* COLORS */
-
 /* Nord */
 @define-color bg #2E3440;
 /*@define-color bg #353C4A;*/
@@ -68,9 +61,7 @@ tooltip {
 #waybar {
   /* background: alpha(@nord_bg_blue, 0.5); */
   border-radius: 3px;
-  box-shadow: 0 0 1px rgba(0,0,0,.8);
   background: alpha(@nord_bg_blue, 0.6);
-  border: 1px solid @bg;
   color: @light;
 }
 
