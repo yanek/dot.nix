@@ -12,13 +12,11 @@
 
     modules-left = [
       "clock"
-      "sway/window"
       "hyprland/window"
       "sway/mode"
     ];
 
     modules-center = [
-      "sway/workspaces"
       "hyprland/workspaces"
     ];
 
@@ -29,7 +27,7 @@
       "bluetooth"
       "network"
       "battery"
-      # "tray"
+      "tray"
     ];
 
     "cpu" = {
