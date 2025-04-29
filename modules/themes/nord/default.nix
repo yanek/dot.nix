@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   nord = [
     # nord0-3
     # - Polar Night
@@ -72,5 +76,9 @@ in {
     settings = {
       theme = "nord";
     };
+  };
+
+  programs.tofi.settings = lib.mkForce {
+    prompt-color = builtins.elemAt nord 13;
   };
 }
