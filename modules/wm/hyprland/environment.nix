@@ -23,7 +23,8 @@ in {
     enable = true;
     settings = {
       background = {
-        path = "screenshot";
+        # path = "screenshot";
+        path = "${userSettings.dirs.theme}/wallpaper.png";
         blur_passes = 3;
         blur_size = 4;
       };
