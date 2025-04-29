@@ -23,7 +23,7 @@
     layerrule = [
       "blur, waybar"
       "ignorezero, waybar"
-      "blur, tofi"
+      "blur, class:tofi"
     ];
   };
 }
