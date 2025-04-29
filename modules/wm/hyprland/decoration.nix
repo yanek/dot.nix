@@ -7,11 +7,11 @@
 
     blur = {
       enabled = true;
-      size = 12;
+      size = 8;
       passes = 2;
       new_optimizations = "on";
       ignore_opacity = true;
-      xray = true;
+      xray = false;
     };
 
     shadow = {
