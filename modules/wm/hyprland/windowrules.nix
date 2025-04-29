@@ -7,8 +7,5 @@
     "float, title:^(Picture-in-Picture)$"
     "pin, title:^(Picture-in-Picture)$"
     "move 69.5% 4%, title:^(Picture-in-Picture)$"
-
-    # idleinhibit
-    "windowrule = idleinhibit fullscreen,class:([window])"
   ];
 }
