@@ -79,6 +79,6 @@ in {
   };
 
   programs.tofi.settings = {
-    prompt-color = lib.mkForce (builtins.elemAt nord 13);
+    selection-color = lib.mkForce (builtins.elemAt nord 13);
   };
 }
