@@ -15,10 +15,6 @@ in {
     enable = true;
   };
 
-  programs.wlogout = {
-    enable = true;
-  };
-
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -53,14 +49,15 @@ in {
     enable = true;
   };
 
-  services.mako = {
-    enable = true;
-  };
+  # services.mako = {
+  #   enable = true;
+  # };
 
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "hyprlock"
-      "hyprdim"
+      "${pkgs.hyprdim}/bin/hyprdim"
+      "${pkgs.hyprpanel}/bin/hyprpanel"
     ];
   };
 
@@ -68,7 +65,6 @@ in {
     nemo
     nemo-fileroller
     pavucontrol
-    hyprdim
     hyprshot
   ];
 }
