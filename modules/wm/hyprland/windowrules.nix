@@ -1,6 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland.settings.windowrule = [
-    "float, title:^(pavucontrol)$"
-    "float, title:^(Bluetooth Devices)$"
+    "float, title:^(Volume Control)$" # pavucontrol
+    "float, title:^(Bluetooth Devices)$" # blueman
   ];
 }
