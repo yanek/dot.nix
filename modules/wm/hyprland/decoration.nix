@@ -19,11 +19,11 @@
       range = 10;
       render_power = 3;
     };
-  };
 
-  wayland.windowManager.hyprland.settings.layerrule = [
-    "blur, waybar"
-    "ignorezero, waybar"
-    "ignorealpha 0.5, waybar"
-  ];
+    layerrule = [
+      "blur, waybar"
+      "ignorezero, waybar"
+      "ignorealpha 0.5, waybar"
+    ];
+  };
 }
