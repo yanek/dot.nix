@@ -46,7 +46,7 @@
       format = "{:%H:%M:%S}";
       interval = 1;
       tooltip-format = "<tt>{calendar}</tt>";
-      today-format = "<b>{}</b>";
+      calendar.format.today = "<b>{}</b>";
     };
 
     "battery" = {
