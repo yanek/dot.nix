@@ -1,6 +1,8 @@
-{ pkgs, userSettings, ... }:
-
 {
+  pkgs,
+  userSettings,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/core.nix
@@ -11,6 +13,7 @@
     ../../modules/system/gaming.nix
     ../../modules/system/nas-client.nix
     ../../modules/system/wayland.nix
+    ../../modules/system/greetd.nix
   ];
 
   boot.loader.timeout = 2;
@@ -26,7 +29,7 @@
     };
   };
 
-  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.initrd.kernelModules = ["nvidia"];
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
   ];
@@ -57,7 +60,7 @@
     cameractrls-gtk4
   ];
 
-  services.udev.packages = [ pkgs.via ];
+  services.udev.packages = [pkgs.via];
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
