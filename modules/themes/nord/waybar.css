@@ -70,8 +70,6 @@ tooltip {
 #waybar {
   background: alpha(@bg, 0.8);
   color: @light;
-  border-radius: 10px;
-  font-weight: bold;
 }
 
 /* Each module */
