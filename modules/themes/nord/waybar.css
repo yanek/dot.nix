@@ -143,8 +143,7 @@ tooltip {
 
 #workspaces button.focused,
 #workspaces button.active {
-  background: @workspacesfocused;
-  color: #D8DEE9;
+  color: @workspacefocused;
   opacity: 1;
   padding: 0 0.4em;
 }
