@@ -46,7 +46,7 @@ in {
 
     iconTheme = {
       enable = true;
-      dark = "frostblue1";
+      dark = "Papirus";
       package = pkgs.papirus-nord;
     };
 
