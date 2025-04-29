@@ -3,7 +3,8 @@
     ./input.nix
     ./monitors.nix
     ./environment.nix
-    ./decorations.nix
+    ./decoration.nix
+    ./windowrules.nix
   ];
 
   wayland.windowManager.hyprland = {
