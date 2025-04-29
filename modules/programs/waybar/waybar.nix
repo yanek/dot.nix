@@ -43,7 +43,8 @@
     };
 
     "clock" = {
-      format = "{:%H:%M:%S %p}";
+      format = "{:%H:%M:%S}";
+      interval = 1;
       tooltip-format = "<tt>{calendar}</tt>";
       today-format = "<b>{}</b>";
     };
