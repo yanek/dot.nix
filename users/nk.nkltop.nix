@@ -1,6 +1,6 @@
 {userSettings, ...}: {
   imports = [
-    ../modules/themes/${userSettings.theme}/theme.nix
+    ../modules/themes/${userSettings.theme}
     ../modules/wm/sway/sway.nix
 
     ../modules/programs/git/git.nix

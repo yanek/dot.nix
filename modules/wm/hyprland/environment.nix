@@ -96,6 +96,7 @@ in {
     exec-once = [
       "hyprlock"
       # "${pkgs.hyprdim}/bin/hyprdim"
+      "discord"
     ];
   };
 

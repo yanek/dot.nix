@@ -67,10 +67,6 @@ in {
       "$mod, mouse:273, resizewindow"
     ];
 
-    # n -> non-consuming
-    bindo = [
-    ];
-
     input = {
       kb_layout = "eu";
       accel_profile = "flat";
