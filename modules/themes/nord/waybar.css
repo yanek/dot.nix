@@ -69,7 +69,7 @@
 #waybar {
   background: @bg;
   color: @light;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -178,18 +178,11 @@
 
 #window {
   margin-left: 20px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 #bluetooth {
   background: @nord_bg_blue;
-  padding: 0 0.6em;
-}
-
-#idle_inhibitor {
-  background: @mode;
-  /*font-size: 1.6em;*/
-  font-weight: bold;
   padding: 0 0.6em;
 }
 
@@ -212,12 +205,6 @@
 
 #cpu.critical {
   color: @nord_dark_font;
-}
-
-#language {
-  background: @nord_bg_blue;
-  color: #D8DEE9;
-  padding: 0 0.4em;
 }
 
 #custom-cpugovernor {
