@@ -58,10 +58,7 @@
 
 /* Reset all styles */
 * {
-  border: none;
-  border-radius: 3px;
-  min-height: 20px;
-  margin: 1px 3px;
+  font-size: 13px;
   font-family: "JetbrainsMono Nerd Font Propo";
 }
 
@@ -71,9 +68,8 @@ tooltip {
 
 /* The whole bar */
 #waybar {
-  background: @bg;
+  background: alpha(@bg, 0.6);
   color: @light;
-  font-size: 13px;
   font-weight: bold;
 }
 
