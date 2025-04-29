@@ -29,7 +29,6 @@
       unzip
       bc
       fd
-      btop
       ripgrep
     ];
   };
