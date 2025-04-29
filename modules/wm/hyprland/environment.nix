@@ -16,7 +16,6 @@ in {
     style = ''
       window {
         opacity: 0.8;
-        border: 1px solid rgba(0,0,0,0.2);
       }
     '';
   };
