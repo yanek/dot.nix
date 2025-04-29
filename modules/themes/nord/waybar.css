@@ -65,6 +65,10 @@
   font-family: "JetbrainsMono Nerd Font Propo";
 }
 
+tooltip {
+  background: @bg;
+}
+
 /* The whole bar */
 #waybar {
   background: @bg;
