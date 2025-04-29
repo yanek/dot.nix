@@ -145,9 +145,6 @@ tooltip {
 
 #workspaces button {
   font-weight: bold;
-  /* Somewhy the bar-wide setting is ignored*/
-  padding: 0;
-  /*color: #999;*/
   opacity: 0.3;
   background: none;
 }
@@ -158,12 +155,6 @@ tooltip {
   color: #D8DEE9;
   opacity: 1;
   padding: 0 0.4em;
-}
-
-#workspaces button.urgent {
-  border-color: #c9545d;
-  color: #c9545d;
-  opacity: 1;
 }
 
 #window {
