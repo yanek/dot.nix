@@ -31,15 +31,12 @@
     ];
 
     "cpu" = {
-      interval = 10;
-      format = "{}% cpu";
-      max-length = 10;
+      format = "󰻠";
+      tootltip = true;
     };
 
     "memory" = {
-      interval = 30;
-      format = "{}% mem";
-      max-length = 10;
+      format = "";
     };
 
     "clock" = {
@@ -49,15 +46,23 @@
       calendar.format.today = "<b>{}</b>";
     };
 
-    "battery" = {
+    battery = {
       interval = 30;
-      format = "{capacity}% {icon} ";
+      format = "{capacity}% {icon}";
+      format-charging = "{capacity}% 󰂄";
+      format-plugged = "{capacity}% 󰂄 ";
+      states = {
+        good = 95;
+        warning = 30;
+        critical = 15;
+      };
       format-icons = [
-        ""
-        ""
-        ""
-        ""
-        ""
+        "󰁻"
+        "󰁼"
+        "󰁾"
+        "󰂀"
+        "󰂂"
+        "󰁹"
       ];
     };
 
@@ -72,7 +77,7 @@
       on-click = "blueman-manager";
     };
 
-    "pulseaudio" = {
+    pulseaudio = {
       format = "{volume}% vol";
       on-click = "pavucontrol";
     };
