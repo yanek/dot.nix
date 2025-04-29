@@ -49,7 +49,7 @@ in {
     enable = true;
   };
 
-  services.mako = {
+  services.swaync = {
     enable = true;
   };
 

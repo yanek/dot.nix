@@ -13,7 +13,6 @@
     modules-left = [
       "custom/notification"
       "clock"
-      "tray"
       "hyprland/window"
     ];
 
@@ -97,11 +96,6 @@
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
       tooltip-format-ethernet = "{ifname} 🖧 ";
       on-click = "kitty nmtui";
-    };
-
-    tray = {
-      icon-size = 14;
-      spacing = 10;
     };
 
     "hyprland/workspace" = {
