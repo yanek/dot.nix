@@ -29,7 +29,7 @@
     ];
 
     cpu = {
-      format = "󰻠";
+      format = "";
       tootltip = true;
     };
 
