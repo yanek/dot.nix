@@ -1,6 +1,8 @@
-{ pkgs, systemSettings, ... }:
-
 {
+  pkgs,
+  systemSettings,
+  ...
+}: {
   nix.settings = {
     warn-dirty = false;
     experimental-features = [
@@ -27,7 +29,7 @@
       unzip
       bc
       fd
-      htop
+      btop
       ripgrep
     ];
   };
