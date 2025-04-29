@@ -6,8 +6,8 @@
     layer = "top";
     position = "top";
     margin-top = 10;
-    margin-left = 20;
-    margin-right = 20;
+    margin-left = 14;
+    margin-right = 14;
 
     modules-left = [
       "clock"
