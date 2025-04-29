@@ -75,14 +75,13 @@
       # format-wifi = "  {essid}: {ipaddr}/{cidr}";
       # format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
       # format-alt = "{ifname}: {ipaddr}/{cidr}";
-      format-wifi = "@{essid}";
-      format-ethernet = "{ifname}";
-      format-linked = "{ifname} (No IP)";
-      format-disconnected = "offline";
-      format-alt = "{ifname}";
-      family = "ipv4";
-      tooltip-format-wifi = "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
-      tooltip-format-ethernet = "{ifname}\nIP: {ipaddr}\nup: {bandwidthUpBits} dn: {bandwidthDownBits}";
+      format-wifi = "";
+      format-ethernet = "";
+      format-disconnected = "";
+      tooltip-format-disconnected = "Error";
+      tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+      tooltip-format-ethernet = "{ifname} 🖧 ";
+      on-click = "kitty nmtui";
     };
 
     "sway/workspace" = {
