@@ -11,9 +11,10 @@
     margin-right = 14;
 
     modules-left = [
+      "custom/notification"
       "clock"
+      "tray"
       "hyprland/window"
-      "sway/mode"
     ];
 
     modules-center = [
@@ -27,19 +28,25 @@
       "bluetooth"
       "network"
       "battery"
-      "tray"
     ];
 
-    "cpu" = {
+    "custom/notification" = {
+      tooltip = false;
+      format = "";
+      on-click = "swaync-client -t -sw";
+      escape = true;
+    };
+
+    cpu = {
       format = "󰻠";
       tootltip = true;
     };
 
-    "memory" = {
+    memory = {
       format = "";
     };
 
-    "clock" = {
+    clock = {
       format = "{:%H:%M:%S}";
       interval = 1;
       tooltip-format = "<tt>{calendar}</tt>";
@@ -82,7 +89,7 @@
       on-click = "pavucontrol";
     };
 
-    "network" = {
+    network = {
       format-wifi = "";
       format-ethernet = "";
       format-disconnected = "";
@@ -90,6 +97,11 @@
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
       tooltip-format-ethernet = "{ifname} 🖧 ";
       on-click = "kitty nmtui";
+    };
+
+    tray = {
+      icon-size = 14;
+      spacing = 10;
     };
 
     "hyprland/workspace" = {
