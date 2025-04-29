@@ -13,13 +13,13 @@
     monospace = {
       # package = pkgs.maple-mono.NF;
       # name = "MapleMono";
-      package = pkgs.nerd-fonts.code-new-roman;
-      name = "CodeNewRoman Nerd Font";
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetbrainsMono Nerd Font";
     };
 
     sizes.applications = 11;
     sizes.desktop = 11;
     sizes.popups = 11;
-    sizes.terminal = 12;
+    sizes.terminal = 11;
   };
 }
