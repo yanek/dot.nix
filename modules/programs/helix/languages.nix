@@ -6,7 +6,7 @@
       {
         name = "nix";
         auto-format = true;
-        formatter.command = "${pkgs.alejandra}/bin/alejandra}";
+        formatter.command = "${pkgs.alejandra}/bin/alejandra";
       }
       {
         name = "odin";
