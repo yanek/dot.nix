@@ -11,9 +11,6 @@
 
     betterfox.url = "github:heitoraugustoln/betterfox-nix";
     betterfox.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprpanel.url = "github:jas-singhfsu/hyprpanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -54,9 +51,6 @@
       config = {
         allowUnfree = true;
       };
-      overlays = [
-        inputs.hyprpanel.overlay
-      ];
     };
   in {
     nixosConfigurations = {

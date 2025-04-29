@@ -57,7 +57,6 @@ in {
     exec-once = [
       "hyprlock"
       "${pkgs.hyprdim}/bin/hyprdim"
-      "${pkgs.hyprpanel}/bin/hyprpanel"
     ];
   };
 
