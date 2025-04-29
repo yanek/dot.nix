@@ -1,10 +1,9 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./input.nix
     ./monitors.nix
     ./environment.nix
+    ./decorations.nix
   ];
 
   wayland.windowManager.hyprland = {
