@@ -117,11 +117,7 @@
     devShells.${systemSettings.system}.default = pkgs.mkShell {
       packages = with pkgs; [
         go-task
-        nil
-        lua-language-server
         vscode-langservers-extracted
-        yaml-language-server
-        taplo
       ];
     };
   };
