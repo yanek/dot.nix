@@ -5,6 +5,7 @@
   programs.waybar.settings.topBar = {
     layer = "top";
     position = "top";
+    height = 24;
     margin-top = 10;
     margin-left = 14;
     margin-right = 14;
