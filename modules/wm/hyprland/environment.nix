@@ -167,6 +167,11 @@ in {
         };
       };
     };
+    style = ''
+      * {
+        font-family = "JetbrainsMono Nerd Font Propo";
+      }
+    '';
   };
 
   wayland.windowManager.hyprland.settings = {
