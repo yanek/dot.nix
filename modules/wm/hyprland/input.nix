@@ -1,9 +1,6 @@
-{ ... }:
-
-let
+{...}: let
   screenshotOutput = "$HOME/pictures/screenshots";
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
@@ -18,7 +15,7 @@ in
         ", PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
         "$mod, PRINT, exec, hyprshot -m window -o ${screenshotOutput}"
 
-        "$mod, D, exec, wofi --show drun"
+        "$mod, D, exec, tofi-drun --drun-launch=true"
 
         "$mod, SPACE, togglefloating"
         "$mod, F, fullscreen"
@@ -46,15 +43,14 @@ in
         # workspaces
         builtins.concatLists (
           builtins.genList (
-            i:
-            let
+            i: let
               ws = i + 1;
-            in
-            [
+            in [
               "$mod, code:1${toString i}, workspace, ${toString ws}"
               "$mod_SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
             ]
-          ) 9
+          )
+          9
         )
       );
 
