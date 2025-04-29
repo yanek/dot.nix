@@ -76,6 +76,7 @@ tooltip {
 
 .modules-left, .modules-right, .module-center {
   padding: 7px;
+  border-radius: 3px;
   background: alpha(@nord_bg_blue, 0.8);
 }
 
