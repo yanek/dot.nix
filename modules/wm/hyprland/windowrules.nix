@@ -7,7 +7,7 @@
       "workspace[2], class:discord"
       "workspace[3], class:steam"
 
-      "noitialfocus, class:discord"
+      "noinitialfocus, class:discord"
 
       # Browser Picture in Picture
       "float, title:^(Picture-in-Picture)$"
