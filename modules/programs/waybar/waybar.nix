@@ -5,7 +5,9 @@
   programs.waybar.settings.topBar = {
     layer = "top";
     position = "top";
-    margin = "10";
+    margin-top = 10;
+    margin-left = 20;
+    margin-right = 20;
 
     modules-left = [
       "clock"
