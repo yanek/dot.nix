@@ -69,10 +69,11 @@ tooltip {
 /* The whole bar */
 #waybar {
   background: alpha(@bg, 0.6);
+  box-shadow:: 0 0 2px rgba(0,0,0,.6);
   color: @light;
 }
 
-.modules-left {
+.modules-left, .modules-right, .module-center {
   padding: 7px;
   background: @nord_bg_blue;
 }
