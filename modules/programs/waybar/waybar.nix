@@ -76,7 +76,9 @@
     };
 
     pulseaudio = {
-      format = "{volume}% ";
+      format = "{volume}% 󰕾";
+      format-muted = "󰝟";
+
       on-click = "pavucontrol";
     };
 
