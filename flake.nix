@@ -119,7 +119,6 @@
         packages = with pkgs; [
           go-task
           nil
-          nixfmt-rfc-style
           lua-language-server
           vscode-langservers-extracted
           yaml-language-server
