@@ -92,7 +92,15 @@
     };
 
     "hyprland/workspace" = {
-      format = "{id}";
+      format = "{icon}";
+      format-icons = {
+        active = "";
+        default = "";
+        empty = "";
+      };
+      persistent-workspaces = {
+        "*" = [1 2 3 4 5];
+      };
     };
 
     "hyprland/window" = {
