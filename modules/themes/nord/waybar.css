@@ -68,8 +68,9 @@ tooltip {
 
 /* The whole bar */
 #waybar {
-  background: alpha(@bg, 0.6);
+  background: alpha(@bg, 0.8);
   color: @light;
+  border-radius: 3px;
   font-weight: bold;
 }
 
