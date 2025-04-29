@@ -13,6 +13,11 @@ in {
 
   programs.wofi = {
     enable = true;
+    style = ''
+      window {
+        opacity: 0.8;
+      }
+    '';
   };
 
   programs.hyprlock = {
