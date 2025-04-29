@@ -61,7 +61,7 @@
   border: none;
   border-radius: 3px;
   min-height: 0;
-  margin: 3px;
+  /* margin: 3px; */
   font-family: "MapleMono", "Font Awesome 5 Pro";
 }
 
