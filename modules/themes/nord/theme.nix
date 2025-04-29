@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   nord = [
     # nord0-3
     # - Polar Night
@@ -30,8 +28,7 @@ let
     "#a3be8c" # 14 - green
     "#b48ead" # 15 - purple
   ];
-in
-{
+in {
   imports = [
     ./fonts.nix
   ];
@@ -49,8 +46,8 @@ in
 
     iconTheme = {
       enable = true;
-      dark = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      dark = "Papirus-Nord";
+      package = pkgs.papirus-nord;
     };
 
     targets.gtk = {
@@ -71,7 +68,6 @@ in
     # targets."gtk".enable = false;
     targets."helix".enable = false;
     targets."sway".enable = false;
-
   };
 
   # gtk = {
@@ -155,5 +151,4 @@ in
       childBorder = builtins.elemAt nord 4;
     };
   };
-
 }
