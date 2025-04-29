@@ -68,7 +68,7 @@ tooltip {
 
 /* The whole bar */
 #waybar {
-  background: alpha(@nord_bg_blue, 0.7);
+  background: alpha(@nord_bg_blue, 0.5);
   border-radius: 3px;
   box-shadow: 0 0 1px rgba(0,0,0,.8);
   color: @light;
@@ -76,6 +76,7 @@ tooltip {
 
 .modules-left, .modules-right, .module-center {
   padding: 7px;
+  background: alpha(@nord_bg_blue, 0.8);
 }
 
 /* Each module */
