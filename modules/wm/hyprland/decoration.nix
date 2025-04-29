@@ -23,7 +23,6 @@
     layerrule = [
       "blur, waybar"
       "ignorezero, waybar"
-      "ignorealpha 0.5, waybar"
     ];
   };
 }
