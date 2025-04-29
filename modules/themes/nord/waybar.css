@@ -71,6 +71,8 @@
   color: @light;
   font-size: 12px;
   font-weight: bold;
+  height: 24px;
+  margin: 10px;
 }
 
 /* Each module */
