@@ -67,16 +67,8 @@
     };
 
     "network" = {
-      # As of today (04/20), family is broken and shows
-      # ipv6 even after being set to ipv6.
-      # Some settings are tweak waiting for a fix.
-      # https://github.com/Alexays/Waybar/issues/3956
-
-      # format-wifi = "  {essid}: {ipaddr}/{cidr}";
-      # format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
-      # format-alt = "{ifname}: {ipaddr}/{cidr}";
       format-wifi = "";
-      format-ethernet = "";
+      format-ethernet = "eth";
       format-disconnected = "";
       tooltip-format-disconnected = "Error";
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
