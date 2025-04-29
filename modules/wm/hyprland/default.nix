@@ -4,6 +4,7 @@
     ./monitors.nix
     ./environment.nix
     ./decoration.nix
+    ./window.nix
     ./windowrules.nix
   ];
 
