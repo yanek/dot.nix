@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   stylix.fonts = {
     serif = {
       package = pkgs.ibm-plex;
@@ -13,8 +11,10 @@
     };
 
     monospace = {
-      package = pkgs.maple-mono.NF;
-      name = "MapleMono";
+      # package = pkgs.maple-mono.NF;
+      # name = "MapleMono";
+      package = pkgs.nerd-fonts.code-new-roman;
+      name = "CodeNewRoman Nerd Font";
     };
 
     sizes.applications = 11;

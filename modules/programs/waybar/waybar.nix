@@ -68,7 +68,7 @@
 
     "network" = {
       format-wifi = "";
-      format-ethernet = "eth";
+      format-ethernet = "";
       format-disconnected = "";
       tooltip-format-disconnected = "Error";
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
