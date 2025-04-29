@@ -1,16 +1,7 @@
-{
-  pkgs,
-  userSettings,
-  inputs,
-  ...
-}:
-
-{
+{userSettings, ...}: {
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
 
-    # ../modules/wm/sway/sway.nix
-    # ../modules/wm/sway/output.nix # manage monitors
     ../modules/wm/hyprland
 
     ../modules/programs/git/git.nix
@@ -34,14 +25,10 @@
   ];
 
   home.username = "${userSettings.username}";
-  home.homeDirectory = "${userSettings.homeDir}";
+  home.homeDirectory = "${userSettings.dirs.home}";
 
   home.sessionPath = [
-    "${userSettings.homeDir}/.local/bin"
-  ];
-
-  home.packages = [
-    inputs.bettercontrol.packages.${pkgs.system}.better-control
+    "${userSettings.dirs.home}/.local/bin"
   ];
 
   # environment.loginShellInit = ''

@@ -1,6 +1,8 @@
-{ userSettings, xrandrArgs, ... }:
-
 {
+  userSettings,
+  xrandrArgs,
+  ...
+}: {
   xserver.windowManager.i3.config.startup =
     [
       {
@@ -16,7 +18,7 @@
         notification = false;
       }
       {
-        command = "feh --bg-fill ${userSettings.homeDir}/.nixos-config/modules/themes/${userSettings.theme}/wallpaper.png";
+        command = "feh --bg-fill ${userSettings.dirs.theme}/wallpaper.png";
         always = true;
         notification = false;
       }
@@ -27,15 +29,14 @@
       }
     ]
     ++ (
-      if xrandrArgs != null then
-        [
-          {
-            command = "xrandr ${xrandrArgs}";
-            always = false;
-            notification = false;
-          }
-        ]
-      else
-        [ ]
+      if xrandrArgs != null
+      then [
+        {
+          command = "xrandr ${xrandrArgs}";
+          always = false;
+          notification = false;
+        }
+      ]
+      else []
     );
 }

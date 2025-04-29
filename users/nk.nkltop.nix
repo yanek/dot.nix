@@ -1,6 +1,4 @@
-{ userSettings, ... }:
-
-{
+{userSettings, ...}: {
   imports = [
     ../modules/themes/${userSettings.theme}/theme.nix
     ../modules/wm/sway/sway.nix
@@ -23,10 +21,10 @@
   ];
 
   home.username = "${userSettings.username}";
-  home.homeDirectory = "${userSettings.homeDir}";
+  home.homeDirectory = "${userSettings.dirs.home}";
 
   home.sessionPath = [
-    "${userSettings.homeDir}/.local/bin"
+    "${userSettings.dirs.home}/.local/bin"
   ];
 
   wayland.windowManager.sway.config.gaps.inner = 8;

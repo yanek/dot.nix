@@ -1,9 +1,10 @@
-{ pkgs, userSettings, ... }:
-
-let
-  wallpaper = "${userSettings.homeDir}/.nixos-config/modules/themes/${userSettings.theme}/wallpaper.png";
-in
 {
+  pkgs,
+  userSettings,
+  ...
+}: let
+  wallpaper = "${userSettings.dirs.theme}/wallpaper.png";
+in {
   imports = [
     ../../programs/waybar/waybar.nix
   ];
@@ -42,8 +43,8 @@ in
     settings = {
       ipc = "on";
       splash = true;
-      preload = [ wallpaper ];
-      wallpaper = [ ",${wallpaper}" ];
+      preload = [wallpaper];
+      wallpaper = [",${wallpaper}"];
     };
   };
 
