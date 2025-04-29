@@ -92,7 +92,7 @@
       on-click = "kitty nmtui";
     };
 
-    "hyprland/workspace" = {
+    "hyprland/workspaces" = {
       format = "{icon}";
       format-icons = {
         active = "";

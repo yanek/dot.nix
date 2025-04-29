@@ -137,7 +137,7 @@ tooltip {
 
 #workspaces button {
   font-weight: bold;
-  opacity: 0.3;
+  opacity: 0.6;
   background: none;
 }
 
@@ -145,7 +145,6 @@ tooltip {
 #workspaces button.active {
   color: @workspacefocused;
   opacity: 1;
-  padding: 0 0.4em;
 }
 
 #window {
