@@ -7,11 +7,7 @@
     ../modules/programs/git/git.nix
     ../modules/programs/fish.nix
     ../modules/programs/starship/starship.nix
-    ../modules/programs/cli/eza.nix
-    ../modules/programs/cli/bat.nix
-    ../modules/programs/cli/fzf.nix
-    ../modules/programs/cli/zoxide.nix
-    ../modules/programs/cli/yazi.nix
+    ../modules/programs/cli
     ../modules/programs/wezterm/wezterm.nix
     ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
