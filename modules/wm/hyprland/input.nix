@@ -37,6 +37,8 @@ in {
         "$mod_SHIFT, DOWN, movewindow, d"
         "$mod_SHIFT, UP, movewindow, u"
         "$mod_SHIFT, RIGHT, movewindow, r"
+
+        "$mod, GRAVE, swapactiveworkspaces"
       ]
       ++ (
         # workspaces
