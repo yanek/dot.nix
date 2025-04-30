@@ -138,6 +138,8 @@ tooltip {
 #workspaces button {
   all:unset;
   padding: 0 5px;
+  background: @nord_bg_blue;
+  border-radius: 100%;
   color: @nord_dark_font;
 }
 
