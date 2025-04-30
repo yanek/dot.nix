@@ -5,6 +5,7 @@
     ../modules/wm/hyprland
 
     ../modules/programs/git/git.nix
+    ../modules/programs/obsidian.nix
     ../modules/programs/fish.nix
     ../modules/programs/starship/starship.nix
     ../modules/programs/cli
