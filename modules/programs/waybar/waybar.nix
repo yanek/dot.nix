@@ -93,7 +93,7 @@
     };
 
     "hyprland/workspaces" = {
-      format = "{icon}";
+      format = "{id}";
       all-outputs = false;
       format-icons = {
         active = "";
