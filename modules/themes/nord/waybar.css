@@ -138,7 +138,7 @@ tooltip {
 #workspaces button {
   all:unset;
   padding: 0 10px;
-  color: @nord_dark_font;
+  color: alpha(@workspacefocused, 0.5);
 }
 
 #workspaces button.focused,
