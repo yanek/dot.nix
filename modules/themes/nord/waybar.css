@@ -138,6 +138,7 @@ tooltip {
 #workspaces button {
   all:unset;
   min-height: 18px;
+  padding: 5px 0;
   min-width: 18px;
   color: @nord_dark_font;
 }
