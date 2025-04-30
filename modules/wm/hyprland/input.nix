@@ -38,7 +38,7 @@ in {
         "$mod_SHIFT, UP, movewindow, u"
         "$mod_SHIFT, RIGHT, movewindow, r"
 
-        "$mod, w, swapactiveworkspaces"
+        "$mod, w, swapactiveworkspaces, DP-4 DP-5"
       ]
       ++ (
         # workspaces
