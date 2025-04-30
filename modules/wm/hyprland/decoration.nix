@@ -9,6 +9,7 @@
       enabled = true;
       size = 8;
       passes = 2;
+      noise = 0.2;
       new_optimizations = "on";
       ignore_opacity = true;
       xray = false;
