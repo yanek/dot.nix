@@ -4,7 +4,7 @@
       "float, title:^(Volume Control)$" # pavucontrol
       "float, title:^(Bluetooth Devices)$" # blueman
 
-      "workspace 2, class:^(discord)$"
+      "workspace 4, class:^(discord)$"
       "workspace 3, class:^(steam)$"
 
       "noinitialfocus, class:discord"
