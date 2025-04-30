@@ -39,7 +39,7 @@ in {
 
   stylix = {
     enable = true;
-    base16Scheme = ./nord.yaml;
+    base16Scheme = ./nordisk.yaml;
     polarity = "light";
 
     cursor = {
