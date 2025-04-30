@@ -19,7 +19,6 @@ in {
 
         "$mod, SPACE, togglefloating"
         "$mod, F, fullscreen"
-        "$mod, G, togglegroup"
 
         "$mod, H, movefocus, l"
         "$mod, J, movefocus, d"
