@@ -95,12 +95,12 @@
     "hyprland/workspaces" = {
       format = "{icon}";
       format-icons = {
-        active = "";
-        default = "";
-        empty = "";
+        active = "";
+        default = "";
+        empty = "";
       };
       persistent-workspaces = {
-        "*" = [1 2 3 4 5];
+        "*" = [1 2 3 4 5 6 7 8];
       };
     };
 
