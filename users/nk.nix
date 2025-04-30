@@ -4,6 +4,7 @@
 
     ../modules/wm/hyprland
 
+    ../modules/programs/ags
     ../modules/programs/git/git.nix
     ../modules/programs/obsidian.nix
     ../modules/programs/fish.nix

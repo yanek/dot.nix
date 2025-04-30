@@ -7,8 +7,9 @@
   programs.ags = {
     enable = true;
     configDir = ./config;
-    extraPackages = with pkgs; [
-      input.ags.packages.${pkgs.system}.battery
+
+    extraPackages = [
+      inputs.ags.packages.${pkgs.system}.battery
     ];
   };
 }
