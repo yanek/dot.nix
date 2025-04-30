@@ -74,6 +74,6 @@ in {
 
   programs.tofi.settings = {
     # selection-color = lib.mkForce (builtins.elemAt nord 14);
-    selection-color = lib.mkForce (config.lib.stylix.colors.base08);
+    selection-color = lib.mkForce (config.lib.stylix.colors.base0B);
   };
 }
