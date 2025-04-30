@@ -4,8 +4,8 @@
       "float, title:^(Volume Control)$" # pavucontrol
       "float, title:^(Bluetooth Devices)$" # blueman
 
-      "workspace 4, class:^(discord)$"
-      "workspace 3, class:^(steam)$"
+      "workspace name:comms, class:^(discord)$"
+      "workspace name:game, class:^(steam)$"
 
       "noinitialfocus, class:discord"
 
@@ -15,8 +15,10 @@
       "move 69.5% 4%, title:^(Picture-in-Picture)$"
     ];
     workspace = [
-      "r[1-3], monitor:DP-6"
-      "r[4-6], monitor:DP-5"
+      "1, monitor:DP-6, defaultName:main"
+      "2, monitor:DP-6, defaultName:alt"
+      "3, monitor:DP-6, defaultName:game"
+      "4, monitor:DP-5, defaultName:comms"
     ];
   };
 }
