@@ -1,6 +1,8 @@
-{ pkgs, userSettings, ... }:
-
 {
+  pkgs,
+  userSettings,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/core.nix
@@ -9,6 +11,7 @@
     ../../modules/system/nas-client.nix
     ../../modules/system/bluetooth.nix
     ../../modules/system/wayland.nix
+    ../../modules/system/xorg.nix
   ];
 
   boot.loader.timeout = 2;
@@ -57,7 +60,7 @@
     };
   };
 
-  services.udev.packages = [ pkgs.via ];
+  services.udev.packages = [pkgs.via];
 
   system.stateVersion = "24.11";
 }

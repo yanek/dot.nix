@@ -12,6 +12,7 @@
     ../../modules/system/bluetooth.nix
     ../../modules/system/gaming.nix
     ../../modules/system/nas-client.nix
+    ../../modules/system/xorg.nix
     ../../modules/system/wayland.nix
     ../../modules/system/greetd.nix
   ];
@@ -19,7 +20,7 @@
   boot.loader.timeout = 2;
   boot.loader.systemd-boot = {
     enable = true;
-    consoleMode = "max";
+    # consoleMode = "max";
     configurationLimit = 5;
     # edk2-uefi-shell.enable = true;
     windows."11-gaming" = {

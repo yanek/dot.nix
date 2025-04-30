@@ -3,7 +3,7 @@
   xrandrArgs,
   ...
 }: {
-  xserver.windowManager.i3.config.startup =
+  xsession.windowManager.i3.config.startup =
     [
       {
         # The service usually starts before i3 -- and that's bad

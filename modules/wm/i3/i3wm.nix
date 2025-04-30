@@ -1,24 +1,25 @@
-{ userSettings, xrandrArgs, ... }:
-
-let
+{
+  userSettings,
+  xrandrArgs,
+  ...
+}: let
   mod = "Mod4"; # Super
   term = "wezterm";
   menu = "rofi -show drun";
-in
-{
+in {
   imports = [
     ./misc.nix
 
-    (import ./startup.nix ({
+    (import ./startup.nix {
       inherit userSettings;
       inherit xrandrArgs;
-    }))
+    })
 
-    (import ./keybinds.nix ({
+    (import ./keybinds.nix {
       inherit mod;
       inherit term;
       inherit menu;
-    }))
+    })
 
     ../../services/polybar/polybar.nix
     ../../services/picom/picom.nix
@@ -42,11 +43,11 @@ in
       floating.border = 1;
       floating.titlebar = false;
       floating.modifier = mod;
-      bars = [ ];
+      bars = [];
 
       assigns = {
-        "5" = [ { class = "^discord$"; } ];
-        "2" = [ { class = "^steam$"; } ];
+        "5" = [{class = "^discord$";}];
+        "2" = [{class = "^steam$";}];
       };
 
       window.commands = [
