@@ -69,14 +69,13 @@ in {
     };
 
     targets."waybar".enable = false;
-    targets."helix".enable = false;
   };
 
-  programs.helix = {
-    settings = {
-      theme = "nord";
-    };
-  };
+  # programs.helix = {
+  #   settings = {
+  #     theme = "nord";
+  #   };
+  # };
 
   programs.tofi.settings = {
     selection-color = lib.mkForce (builtins.elemAt nord 14);
