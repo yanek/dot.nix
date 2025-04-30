@@ -11,6 +11,9 @@
 
     betterfox.url = "github:heitoraugustoln/betterfox-nix";
     betterfox.inputs.nixpkgs.follows = "nixpkgs";
+
+    ags.url = "github:aylur/ags";
+    ags.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

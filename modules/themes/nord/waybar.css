@@ -167,11 +167,9 @@ tooltip {
   color: @nord_dark_font;
 }
 
-
 #clock {
   color: #D8DEE9;
 }
-
 
 #pulseaudio.muted {
   background: #BF616A;
