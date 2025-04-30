@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: let
   nord = [
@@ -71,13 +72,8 @@ in {
     targets."waybar".enable = false;
   };
 
-  # programs.helix = {
-  #   settings = {
-  #     theme = "nord";
-  #   };
-  # };
-
   programs.tofi.settings = {
-    selection-color = lib.mkForce (builtins.elemAt nord 14);
+    # selection-color = lib.mkForce (builtins.elemAt nord 14);
+    selection-color = lib.mkForce (config.lib.stylix.colors.base08);
   };
 }
