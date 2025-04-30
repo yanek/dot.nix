@@ -15,8 +15,8 @@
       "move 69.5% 4%, title:^(Picture-in-Picture)$"
     ];
     workspace = [
-      "w[1-3], monitor:DP-6"
-      "w[4-6], monitor:DP-5"
+      "r[1-3], monitor:DP-6"
+      "r[4-6], monitor:DP-5"
     ];
   };
 }
