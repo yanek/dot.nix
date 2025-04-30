@@ -11,7 +11,6 @@
   stylix = {
     enable = true;
     base16Scheme = ./scheme.yaml;
-    polarity = "light";
 
     cursor = {
       name = "Nordic-cursors";
