@@ -10,6 +10,8 @@
       "noinitialfocus, class:discord"
       "noinitialfocus, class:steam"
 
+      "immediate, class:^(.*)$"
+
       # Browser Picture in Picture
       "float, title:^(Picture-in-Picture)$"
       "monitor DP-6, title:^(Picture-in-Picture)$"
