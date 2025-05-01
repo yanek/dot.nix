@@ -9,13 +9,13 @@ in {
         "$mod_SHIFT, E, exec, killall hyprland"
         "$mod_SHIFT, R, exec, hyprctl reload && notify-send -t 3000 'Hyprland reloaded!'"
         "$mod, Q, killactive"
-        "$mod, ESCAPE, exec, hyprlock"
-        "$mod, RETURN, exec, kitty"
+        "$mod, ESCAPE, exec, uwsm app -- hyprlock"
+        "$mod, RETURN, exec, uwsm app -- kitty"
 
         ", PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
         "$mod, PRINT, exec, hyprshot -m window -o ${screenshotOutput}"
 
-        "$mod, D, exec, tofi-drun --drun-launch=true"
+        "$mod, D, exec, uwsm app -- $(tofi-drun)"
 
         "$mod, SPACE, togglefloating"
         "$mod, F, fullscreen"

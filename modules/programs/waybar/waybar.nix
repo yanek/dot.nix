@@ -72,14 +72,14 @@
       tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
       tooltip-format-enumerate-connected = "{device_alias}\n{device_address}";
       tooltip-format-enumerate-connected-battery = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-      on-click = "blueman-manager";
+      on-click = "uwsm app -- blueman-manager";
     };
 
     pulseaudio = {
       format = "{volume}% ";
       format-muted = "";
 
-      on-click = "pavucontrol";
+      on-click = "uwsm app -- pavucontrol";
     };
 
     network = {
@@ -89,7 +89,7 @@
       tooltip-format-disconnected = "Error";
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
       tooltip-format-ethernet = "{ifname}";
-      on-click = "kitty nmtui";
+      on-click = "uwsm app -- kitty nmtui";
     };
 
     "hyprland/workspaces" = {

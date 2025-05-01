@@ -9,7 +9,7 @@ in {
     ../../programs/waybar/waybar.nix
   ];
 
-  programs.waybar.systemd.enable = true;
+  programs.waybar.systemd.enable = false;
 
   programs.wofi = {
     enable = true;
@@ -75,13 +75,13 @@ in {
       general = {
         after_sleep_cmd = "hyprctl dispatch dpms on";
         ignore_dbus_inhibit = false;
-        lock_cmd = "hyprlock";
+        lock_cmd = "uwsm app -- hyprlock";
       };
 
       listener = [
         {
           timeout = 900;
-          on-timeout = "hyprlock";
+          on-timeout = "uwsm app -- hyprlock";
         }
         {
           timeout = 1200;
@@ -90,14 +90,6 @@ in {
         }
       ];
     };
-  };
-
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "hyprlock"
-      # "${pkgs.hyprdim}/bin/hyprdim"
-      "discord"
-    ];
   };
 
   home.packages = with pkgs; [

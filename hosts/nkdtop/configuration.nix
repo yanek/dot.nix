@@ -67,7 +67,10 @@
     motherboard = "amd";
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   system.stateVersion = "24.11";
 }

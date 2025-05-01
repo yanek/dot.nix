@@ -6,13 +6,14 @@
     ./decoration.nix
     ./window.nix
     ./windowrules.nix
+    ./startup.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
   };
 
   home.sessionVariables = {
