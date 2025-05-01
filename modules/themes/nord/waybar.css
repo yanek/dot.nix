@@ -51,7 +51,7 @@
 
 * {
   font-size: 13px;
-  font-family: "JetbrainsMono Nerd Font Propo";
+  font-weight: 600;
 }
 
 tooltip {
@@ -65,7 +65,9 @@ tooltip {
   color: @light;
 }
 
-.modules-left, .modules-right, .module-center {
+.modules-left,
+.modules-right,
+.module-center {
   padding: 7px;
   border-radius: 3px;
 }
@@ -136,7 +138,7 @@ tooltip {
 }
 
 #workspaces button {
-  all:unset;
+  all: unset;
   padding: 0 10px;
   color: alpha(@workspacefocused, 0.5);
 }
@@ -150,7 +152,7 @@ tooltip {
 }
 
 #workspaces button.empty {
-  color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0);
   text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 
