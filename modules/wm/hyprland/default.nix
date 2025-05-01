@@ -14,6 +14,7 @@
     package = pkgs.hyprland;
     xwayland.enable = true;
     systemd.enable = false;
+    settings.ecosystem.no_donation_nag = true;
   };
 
   home.sessionVariables = {

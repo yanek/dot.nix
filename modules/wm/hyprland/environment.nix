@@ -53,7 +53,7 @@ in {
     enable = true;
     settings = {
       ipc = "on";
-      splash = true;
+      splash = false;
       preload = [wallpaper];
       wallpaper = [",${wallpaper}"];
     };
