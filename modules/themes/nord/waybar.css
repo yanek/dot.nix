@@ -90,8 +90,8 @@ tooltip {
 #backlight,
 #language,
 #custom-cpugovernor {
-  padding-left: 0.6em;
-  padding-right: 0.6em;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Each module that should blink */
