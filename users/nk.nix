@@ -1,15 +1,15 @@
 {userSettings, ...}: let
-  xrandrArgs = "--output DP-4 --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0";
+  # xrandrArgs = "--output DP-4 --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0";
 in {
   imports = [
     ../modules/themes/${userSettings.theme}
 
     ../modules/wm/hyprland
 
-    (import ../modules/wm/i3/i3wm.nix {
-      inherit xrandrArgs;
-      inherit userSettings;
-    })
+    # (import ../modules/wm/i3/i3wm.nix {
+    #   inherit xrandrArgs;
+    #   inherit userSettings;
+    # })
 
     ../modules/programs/ags
     ../modules/programs/git/git.nix

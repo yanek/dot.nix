@@ -12,7 +12,7 @@
     ../../modules/system/bluetooth.nix
     ../../modules/system/gaming.nix
     ../../modules/system/nas-client.nix
-    ../../modules/system/xorg.nix
+    # ../../modules/system/xorg.nix
     ../../modules/system/wayland.nix
     ../../modules/system/greetd.nix
   ];
