@@ -49,6 +49,10 @@ in {
     enable = true;
   };
 
+  programs.cava = {
+    enable = true;
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
