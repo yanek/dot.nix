@@ -14,7 +14,7 @@
     ../../modules/system/nas-client.nix
     # ../../modules/system/xorg.nix
     ../../modules/system/wayland.nix
-    ../../modules/system/greetd.nix
+    ../../modules/system/sddm.nix
   ];
 
   boot.loader.timeout = 2;
