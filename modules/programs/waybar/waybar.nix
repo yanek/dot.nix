@@ -100,6 +100,10 @@
         default = "";
         empty = "";
       };
+      persistent-workspaces = {
+        "DP-6" = [1 2 3];
+        "DP-4" = [4 5 6];
+      };
     };
 
     "hyprland/window" = {
