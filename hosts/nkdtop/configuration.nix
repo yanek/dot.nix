@@ -59,7 +59,6 @@
   hardware.keyboard.qmk.enable = true;
 
   environment.systemPackages = with pkgs; [
-    discord
     brave
     vial
     v4l-utils
