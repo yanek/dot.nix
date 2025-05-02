@@ -20,6 +20,8 @@
     xwayland.enable = true;
     systemd.enable = false;
     settings.ecosystem.no_donation_nag = true;
+    settings.misc.disable_hyprland_logo = true;
+    settings.misc.disable_splash_rendering = true;
   };
 
   home.sessionVariables = {
