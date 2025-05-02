@@ -2,64 +2,63 @@
   screenshotOutput = "$HOME/pictures/screenshots";
 in {
   wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-
     bind = [
-      "$mod_SHIFT, E, exec, loginctl terminate-user ''"
-      "$mod_SHIFT, R, exec, hyprctl reload && notify-send -t 3000 'Hyprland reloaded!'"
-      "$mod, Q, killactive"
-      "$mod, ESCAPE, exec, uwsm app -- hyprlock"
-      "$mod, RETURN, exec, uwsm app -- kitty"
+      "SUPER SHIFT, E, exec, loginctl terminate-user ''"
+      "SUPER SHIFT, R, exec, hyprctl reload && notify-send -t 3000 'Hyprland reloaded!'"
 
-      ", PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
-      "$mod, PRINT, exec, hyprshot -m window -o ${screenshotOutput}"
+      "SUPER, ESCAPE, exec, uwsm app -- hyprlock"
+      "SUPER, RETURN, exec, uwsm app -- kitty"
 
-      "$mod, D, exec, uwsm app -- $(tofi-drun)"
+      ",      PRINT, exec, hyprshot -m region -o ${screenshotOutput}"
+      "SUPER, PRINT, exec, hyprshot -m window -o ${screenshotOutput}"
 
-      "$mod, SPACE, togglefloating"
-      "$mod, F, fullscreen"
+      "SUPER, D, exec, uwsm app -- $(tofi-drun)"
+      "SUPER, Q, killactive"
 
-      "$mod, H,     movefocus, l"
-      "$mod, J,     movefocus, d"
-      "$mod, K,     movefocus, u"
-      "$mod, L,     movefocus, r"
-      "$mod, LEFT,  movefocus, l"
-      "$mod, DOWN,  movefocus, d"
-      "$mod, UP,    movefocus, u"
-      "$mod, RIGHT, movefocus, r"
+      "SUPER, SPACE, togglefloating"
+      "SUPER, F,     fullscreen"
 
-      "$mod_SHIFT, H,     movewindow, l"
-      "$mod_SHIFT, J,     movewindow, d"
-      "$mod_SHIFT, K,     movewindow, u"
-      "$mod_SHIFT, L,     movewindow, r"
-      "$mod_SHIFT, LEFT,  movewindow, l"
-      "$mod_SHIFT, DOWN,  movewindow, d"
-      "$mod_SHIFT, UP,    movewindow, u"
-      "$mod_SHIFT, RIGHT, movewindow, r"
+      "SUPER, H,     movefocus, l"
+      "SUPER, J,     movefocus, d"
+      "SUPER, K,     movefocus, u"
+      "SUPER, L,     movefocus, r"
+      "SUPER, LEFT,  movefocus, l"
+      "SUPER, DOWN,  movefocus, d"
+      "SUPER, UP,    movefocus, u"
+      "SUPER, RIGHT, movefocus, r"
 
-      "$mod, w, swapactiveworkspaces, current +1"
+      "SUPER SHIFT, H,     movewindow, l"
+      "SUPER SHIFT, J,     movewindow, d"
+      "SUPER SHIFT, K,     movewindow, u"
+      "SUPER SHIFT, L,     movewindow, r"
+      "SUPER SHIFT, LEFT,  movewindow, l"
+      "SUPER SHIFT, DOWN,  movewindow, d"
+      "SUPER SHIFT, UP,    movewindow, u"
+      "SUPER SHIFT, RIGHT, movewindow, r"
 
-      "$mod, 1, workspace, 1"
-      "$mod, 2, workspace, 2"
-      "$mod, 3, workspace, 3"
-      "$mod, 4, workspace, 4"
-      "$mod, 5, workspace, 5"
-      "$mod, 6, workspace, 6"
-      "$mod, 7, workspace, 7"
-      "$mod, 8, workspace, 8"
+      "SUPER, w, swapactiveworkspaces, current +1"
 
-      "$mod, tab, workspace, m+1"
-      "$mod, n, workspace, emptym"
+      "SUPER, 1, workspace, 1"
+      "SUPER, 2, workspace, 2"
+      "SUPER, 3, workspace, 3"
+      "SUPER, 4, workspace, 4"
+      "SUPER, 5, workspace, 5"
+      "SUPER, 6, workspace, 6"
+      "SUPER, 7, workspace, 7"
+      "SUPER, 8, workspace, 8"
 
-      "$mod SHIFT, n, movetoworkspacesilent, emptym"
-      "$mod SHIFT, 1, movetoworkspacesilent, 1"
-      "$mod SHIFT, 2, movetoworkspacesilent, 2"
-      "$mod SHIFT, 3, movetoworkspacesilent, 3"
-      "$mod SHIFT, 4, movetoworkspacesilent, 4"
-      "$mod SHIFT, 5, movetoworkspacesilent, 5"
-      "$mod SHIFT, 6, movetoworkspacesilent, 6"
-      "$mod SHIFT, 7, movetoworkspacesilent, 7"
-      "$mod SHIFT, 8, movetoworkspacesilent, 8"
+      "SUPER, TAB, workspace, m+1"
+      "SUPER, N, workspace, emptym"
+
+      "SUPER SHIFT, N, movetoworkspacesilent, emptym"
+      "SUPER SHIFT, 1, movetoworkspacesilent, 1"
+      "SUPER SHIFT, 2, movetoworkspacesilent, 2"
+      "SUPER SHIFT, 3, movetoworkspacesilent, 3"
+      "SUPER SHIFT, 4, movetoworkspacesilent, 4"
+      "SUPER SHIFT, 5, movetoworkspacesilent, 5"
+      "SUPER SHIFT, 6, movetoworkspacesilent, 6"
+      "SUPER SHIFT, 7, movetoworkspacesilent, 7"
+      "SUPER SHIFT, 8, movetoworkspacesilent, 8"
     ];
 
     # e -> repeat
@@ -71,8 +70,8 @@ in {
 
     # m -> mouse
     bindm = [
-      "$mod, mouse:272, movewindow"
-      "$mod, mouse:273, resizewindow"
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
     ];
 
     input = {
