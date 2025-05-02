@@ -22,6 +22,7 @@ in {
     ../modules/programs/firefox.nix
     ../modules/programs/prusa-slicer.nix
     ../modules/programs/comms/discord.nix
+    ../modules/programs/zathura.nix
 
     ../modules/programs/multimedia/spotify.nix
     ../modules/programs/multimedia/vlc.nix
