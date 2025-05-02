@@ -93,16 +93,17 @@
     };
 
     "hyprland/workspaces" = {
-      format = "{name}";
+      format = "{icon}";
       all-outputs = false;
       format-icons = {
+        urgent = "";
         active = "";
-        default = "";
-        empty = "";
+        default = "";
+        empty = "";
       };
       persistent-workspaces = {
-        "DP-6" = [1 2 3];
-        "DP-4" = [4 5 6];
+        "DP-6" = [1 2 3 4];
+        "DP-5" = [5 6 7 8];
       };
     };
 
