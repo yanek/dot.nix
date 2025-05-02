@@ -1,6 +1,4 @@
-{ pkgs,... }:
-
-{
+{pkgs, ...}: {
   programs.fish = {
     enable = true;
     preferAbbrs = true;
@@ -18,8 +16,9 @@
       qqq = "exit";
       l = "eza";
       cls = "clear";
+      lg = "lazygit -sm half";
     };
-    
+
     functions = {
       # cd into directory on yazi exit
       y = ''
@@ -30,7 +29,7 @@
         end
         rm -f -- "$tmp"
       '';
-      # mkdir + cd into 
+      # mkdir + cd into
       mkcd = ''
         mkdir -pv $argv
         cd $argv
@@ -41,7 +40,7 @@
       {
         name = "fzf.fish";
         src = pkgs.fishPlugins.fzf-fish;
-      }  
+      }
     ];
   };
 }
