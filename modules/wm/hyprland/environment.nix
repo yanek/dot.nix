@@ -63,7 +63,11 @@ in {
     };
   };
 
-  services.hyprpolkitagent = {
+  # services.hyprpolkitagent = {
+  #   enable = true;
+  # };
+
+  services.gnome-keyring = {
     enable = true;
   };
 
@@ -101,5 +105,6 @@ in {
     nemo-fileroller
     pavucontrol
     hyprshot
+    gcr # Provides org.gnome.keyring.SystemPrompter
   ];
 }

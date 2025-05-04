@@ -1,22 +1,21 @@
-{
-  mod,
-  term,
-  menu,
-  ...
-}:
-
-let
-  imgToClipboard = "xclip -selection clipboard -t image/png";
+{...}: let
   left = "h";
   down = "j";
   up = "k";
   right = "l";
-in
-{
+  mod = "Mod4"; # Super
+  term = "kitty";
+  menu = "tofi-drun --drun-launch=true";
+in {
   wayland.windowManager.sway.config = {
+    modifier = mod;
+    floating.modifier = mod;
+    terminal = term;
+    menu = menu;
+
     keybindings = {
       "${mod}+Return" = "exec ${term}";
-      "${mod}+Shift+q" = "kill";
+      "${mod}+q" = "kill";
       "${mod}+d" = "exec ${menu}";
 
       "${mod}+${left}" = "focus left";
@@ -30,15 +29,12 @@ in
       "${mod}+Right" = "focus right";
 
       "${mod}+f" = "fullscreen toggle";
-      "${mod}+Shift+space" = "floating toggle";
-
-      "${mod}+space" = "move position center";
+      "${mod}+space" = "floating toggle";
 
       "${mod}+Shift+${left}" = "move left";
       "${mod}+Shift+${down}" = "move down";
       "${mod}+Shift+${up}" = "move up";
       "${mod}+Shift+${right}" = "move right";
-
       "${mod}+Shift+Left" = "move left";
       "${mod}+Shift+Down" = "move down";
       "${mod}+Shift+Up" = "move up";
@@ -64,6 +60,8 @@ in
       "${mod}+Shift+7" = "move container to workspace number 7";
       "${mod}+Shift+8" = "move container to workspace number 8";
 
+      "${mod}+Tab" = "workspace next";
+
       "${mod}+1" = "workspace number 1";
       "${mod}+2" = "workspace number 2";
       "${mod}+3" = "workspace number 3";
@@ -78,11 +76,9 @@ in
       # "Shift+Print" = "exec maim --format=png | ${imgToClipboard}";
 
       "${mod}+Shift+c" = "reload";
-      "${mod}+Shift+r" = "restart";
       "${mod}+Shift+e" = "exec nagbar -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'";
 
       "${mod}+r" = "mode resize";
-      "${mod}+m" = "mode move";
     };
 
     modes = {
@@ -96,30 +92,6 @@ in
         "Down" = "resize grow height 10 px or 10 ppt";
         "Up" = "resize shrink height 10 px or 10 ppt";
         "Right" = "resize grow width 10 px or 10 ppt";
-
-        "Space" = "mode default";
-        "Escape" = "mode default";
-        "Return" = "mode default";
-      };
-      move = {
-        ${left} = "move left";
-        ${down} = "move down";
-        ${up} = "move up";
-        ${right} = "move right";
-
-        "Left" = "move left";
-        "Down" = "move down";
-        "Up" = "move up";
-        "Right" = "move right";
-
-        "1" = "move container to workspace number 1";
-        "2" = "move container to workspace number 2";
-        "3" = "move container to workspace number 3";
-        "4" = "move container to workspace number 4";
-        "5" = "move container to workspace number 5";
-        "6" = "move container to workspace number 6";
-        "7" = "move container to workspace number 7";
-        "8" = "move container to workspace number 8";
 
         "Space" = "mode default";
         "Escape" = "mode default";

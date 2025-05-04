@@ -13,10 +13,13 @@
     modules-left = [
       "clock"
       "hyprland/window"
+      "sway/window"
+      "sway/mode"
     ];
 
     modules-center = [
       "hyprland/workspaces"
+      "sway/workspaces"
     ];
 
     modules-right = [
@@ -110,6 +113,37 @@
     "hyprland/window" = {
       format = "{title}";
       separate-outputs = true;
+    };
+
+    "sway/workspaces" = {
+      format = "{icon}";
+      all-outputs = false;
+      format-icons = {
+        "1" = "";
+        urgent = "";
+        active = "";
+        default = "";
+        empty = "";
+      };
+      persistent-workspaces = {
+        "1" = ["DP-6"];
+        "2" = ["DP-6"];
+        "3" = ["DP-6"];
+        "4" = ["DP-6"];
+        "5" = ["DP-5"];
+        "6" = ["DP-5"];
+        "7" = ["DP-5"];
+        "8" = ["DP-5"];
+      };
+    };
+
+    "sway/window" = {
+      format = "{title}";
+      all-outputs = false;
+    };
+
+    "sway/mode" = {
+      format = "{}";
     };
   };
 }

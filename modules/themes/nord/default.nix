@@ -1,11 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./fonts.nix
+    ./overrides.nix
   ];
 
   stylix = {
@@ -31,17 +27,6 @@
       '';
     };
 
-    opacity = {
-      terminal = 0.9;
-      desktop = 0.9;
-      applications = 0.9;
-      popups = 0.9;
-    };
-
     targets."waybar".enable = false;
-  };
-
-  programs.tofi.settings = {
-    selection-color = lib.mkForce (config.lib.stylix.colors.base0B);
   };
 }

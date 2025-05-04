@@ -4,7 +4,7 @@
       "uwsm app -- hyprlock"
       "openrgb -m static -c cd3c0a"
       "[workspace 5 silent] sleep 10 && uwsm app -- kitty cava"
-      "[workspace 5 silent] sleep 10 && uwsm app -- kitty nix shell nixpkgs#tty-clock -c tty-clock"
+      "[workspace 5 silent] sleep 10 && uwsm app -- kitty 'nix shell nixpkgs#tty-clock -c tty-clock'"
       "[workspace 5 silent] sleep 8 && uwsm app -- kitty btop"
       "[workspace 5 silent] uwsm app -- webcord"
       "[workspace 6 silent] uwsm app -- spotify"

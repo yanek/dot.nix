@@ -1,8 +1,8 @@
 {...}: {
   wayland.windowManager.hyprland.settings.decoration = {
-    rounding = 3;
+    rounding = 6;
     active_opacity = 1.0;
-    inactive_opacity = 0.8;
+    inactive_opacity = 0.9;
     fullscreen_opacity = 1.0;
 
     blur = {
@@ -26,5 +26,9 @@
       "ignorezero, waybar"
       # "blur, tofi" does not work?
     ];
+  };
+
+  wayland.windowManager.hyprland.settings.animations = {
+    enabled = false;
   };
 }

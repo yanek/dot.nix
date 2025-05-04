@@ -17,9 +17,8 @@
     ../../modules/system/bluetooth.nix
     ../../modules/system/gaming.nix
     ../../modules/system/nas-client.nix
-    # ../../modules/system/xorg.nix
     ../../modules/system/wayland.nix
-    ../../modules/system/sddm.nix
+    # ../../modules/system/sddm.nix
   ];
 
   boot.loader.timeout = 2;
@@ -58,23 +57,26 @@
   services.printing.enable = true;
   hardware.keyboard.qmk.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    brave
-    vial
-    v4l-utils
-    cameractrls-gtk4
-  ];
-
   services.udev.packages = [pkgs.via];
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
   };
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = true;
+  # };
+
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+  '';
+
+  environment.systemPackages = with pkgs; [
+    vial
+    v4l-utils
+    cameractrls-gtk4
+  ];
 
   system.stateVersion = "24.11";
 }

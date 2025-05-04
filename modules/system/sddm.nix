@@ -6,7 +6,8 @@
     settings = {
       Autologin = {
         User = userSettings.username;
-        Session = "hyprland-uwsm";
+        # Session = "hyprland-uwsm";
+        Session = "sway";
       };
     };
   };

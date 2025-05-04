@@ -4,12 +4,8 @@ in {
   imports = [
     ../modules/themes/${userSettings.theme}
 
-    ../modules/wm/hyprland
-
-    # (import ../modules/wm/i3/i3wm.nix {
-    #   inherit xrandrArgs;
-    #   inherit userSettings;
-    # })
+    ../modules/wm/sway
+    ../modules/wm/sway/output.nix
 
     ../modules/programs/ags
     ../modules/programs/git/git.nix
@@ -23,6 +19,7 @@ in {
     ../modules/programs/prusa-slicer.nix
     ../modules/programs/comms/discord.nix
     ../modules/programs/zathura.nix
+    ../modules/programs/mail.nix
 
     ../modules/programs/multimedia/spotify.nix
     ../modules/programs/multimedia/vlc.nix
@@ -35,10 +32,6 @@ in {
   home.sessionPath = [
     "${userSettings.dirs.home}/.local/bin"
   ];
-
-  # environment.loginShellInit = ''
-  #   [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
-  # '';
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
