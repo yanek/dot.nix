@@ -16,7 +16,7 @@
       qqq = "exit";
       l = "eza";
       cls = "clear";
-      lg = "lazygit -sm half";
+      lg = "lazygit";
     };
 
     functions = {
