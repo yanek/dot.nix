@@ -6,9 +6,6 @@
     layer = "top";
     position = "top";
     height = 24;
-    margin-top = 10;
-    margin-left = 14;
-    margin-right = 14;
 
     modules-left = [
       "clock"
@@ -32,12 +29,12 @@
     ];
 
     cpu = {
-      format = "";
+      format = "cpu";
       tootltip = true;
     };
 
     memory = {
-      format = "";
+      format = "mem";
     };
 
     clock = {
@@ -68,42 +65,42 @@
     };
 
     bluetooth = {
-      format-on = "󰂯";
-      format-off = "BT-off";
-      format-disabled = "󰂲";
+      format-on = "bt";
+      format-off = "bt-off";
+      format-disabled = "bt-off";
       tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
       tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
       tooltip-format-enumerate-connected = "{device_alias}\n{device_address}";
       tooltip-format-enumerate-connected-battery = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-      on-click = "uwsm app -- blueman-manager";
+      on-click = "swaymsg exec blueman-manager";
     };
 
     pulseaudio = {
-      format = "{volume}% ";
-      format-muted = "";
-
-      on-click = "uwsm app -- pavucontrol";
+      format = "vol:{volume}";
+      format-muted = "muted";
+      on-click = "swaymsg exec pavucontrol";
     };
 
     network = {
-      format-wifi = "";
+      format-wifi = "wifi: {essid}";
       format-ethernet = "eth";
       format-disconnected = "";
       tooltip-format-disconnected = "Error";
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
       tooltip-format-ethernet = "{ifname}";
-      on-click = "uwsm app -- kitty nmtui";
+      on-click = "swaymsg exec 'kitty nmtui'";
+    };
+
+    "systemd-failed-units" = {
+      "hide-on-ok" = true;
+      "format" = "err:{nr_failed}";
+      "system" = true;
+      "user" = true;
     };
 
     "hyprland/workspaces" = {
       format = "{icon}";
       all-outputs = false;
-      format-icons = {
-        urgent = "";
-        active = "";
-        default = "";
-        empty = "";
-      };
       persistent-workspaces = {
         "DP-6" = [1 2 3 4];
         "DP-5" = [5 6 7 8];
@@ -116,15 +113,8 @@
     };
 
     "sway/workspaces" = {
-      format = "{icon}";
+      format = "{value}";
       all-outputs = false;
-      format-icons = {
-        "1" = "";
-        urgent = "";
-        active = "";
-        default = "";
-        empty = "";
-      };
       persistent-workspaces = {
         "1" = ["DP-6"];
         "2" = ["DP-6"];

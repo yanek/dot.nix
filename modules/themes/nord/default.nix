@@ -4,6 +4,8 @@
     ./overrides.nix
   ];
 
+  home.file.".config/waybar/scheme.css".source = ./scheme.css;
+
   stylix = {
     enable = true;
     base16Scheme = ./scheme.yaml;
