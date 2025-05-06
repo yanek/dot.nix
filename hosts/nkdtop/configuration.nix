@@ -18,6 +18,7 @@
     ../../modules/system/gaming.nix
     ../../modules/system/nas-client.nix
     ../../modules/system/wayland.nix
+    ../../modules/system/greetd.nix
     # ../../modules/system/sddm.nix
   ];
 

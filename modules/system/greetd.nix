@@ -5,15 +5,12 @@
 }: {
   services.greetd = {
     enable = true;
-    settings = {
+    settings = rec {
       initial_session = {
-        command = "uwsm start hyprland.desktop";
+        command = "${pkgs.sway}/bin/sway --unsupported-gpu";
         user = "${userSettings.username}";
       };
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome' --asterisks --remember --remember-user-session --time --cmd uwsm start hyprland.desktop";
-        user = "greeter";
-      };
+      default_session = initial_session;
     };
   };
 }
