@@ -72,6 +72,7 @@
     pavucontrol
     nemo
     gnome-calculator
+    sway-contrib.grimshot
     gcr # Provides org.gnome.keyring.SystemPrompter
   ];
 }

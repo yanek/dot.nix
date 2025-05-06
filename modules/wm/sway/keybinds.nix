@@ -73,9 +73,8 @@ in {
       "${mod}+7" = "workspace number 7";
       "${mod}+8" = "workspace number 8";
 
-      # "Print" = "exec maim --format=png --select | ${imgToClipboard}";
-      # "${mod}+Print" = "exec maim --format=png --window $(xdotool getactivewindow) | ${imgToClipboard}";
-      # "Shift+Print" = "exec maim --format=png | ${imgToClipboard}";
+      "Print" = "exec grimshot copy anything";
+      "Shift+Print" = "exec grimshot copy output";
 
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+e" = "exec nagbar -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'";
