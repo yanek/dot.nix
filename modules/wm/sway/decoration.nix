@@ -9,10 +9,10 @@
   '';
 
   wayland.windowManager.sway.config = {
-    gaps.inner = lib.mkDefault 16;
-    window.border = 1;
+    gaps.inner = lib.mkDefault 8;
+    window.border = 2;
     window.titlebar = false;
-    floating.border = 1;
+    floating.border = 2;
     floating.titlebar = false;
   };
 }
