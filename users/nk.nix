@@ -7,6 +7,7 @@ in {
     ../modules/wm/sway
     ../modules/wm/sway/output.nix
 
+    ../modules/programs/nh.nix
     ../modules/programs/ags
     ../modules/programs/git/git.nix
     ../modules/programs/obsidian.nix
