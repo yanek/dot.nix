@@ -6,8 +6,6 @@
     shadows_on_csd enable
     shadow_blur_radius 20
     shadow_color #0000007F
-
-    corner_radius 6
   '';
 
   wayland.windowManager.sway.config = {
