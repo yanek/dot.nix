@@ -45,8 +45,10 @@
   # Notification service
   services.mako = {
     enable = true;
-    borderRadius = 3;
-    defaultTimeout = 8000;
+    settings = {
+      borderRadius = 3;
+      defaultTimeout = 8000;
+    };
   };
 
   # Idle management (auto-lock, monitor off, etc)
