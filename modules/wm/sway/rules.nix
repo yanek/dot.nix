@@ -1,5 +1,7 @@
 {...}: {
   wayland.windowManager.sway.config = {
+    workspaceAutoBackAndForth = true;
+
     # Assign windows to workspaces
     assigns = {
       "2" = [{class = "^steam$";}];
