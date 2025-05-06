@@ -37,9 +37,6 @@
   # Image viewer
   programs.swayimg.enable = true;
 
-  # Sound visualizer -- TODO move to startup script
-  programs.cava.enable = true;
-
   home.packages = with pkgs; [
     rofi-wayland
     pavucontrol
