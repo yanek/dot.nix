@@ -11,6 +11,7 @@
   # };
 
   security.polkit.enable = true;
+
   security.pam.loginLimits = [
     {
       domain = "@users";
@@ -19,6 +20,8 @@
       value = 1;
     }
   ];
+
+  security.pam.services.swaylock = {};
 
   environment.systemPackages = with pkgs; [
     wl-clipboard

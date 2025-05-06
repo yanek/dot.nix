@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  userSettings,
   ...
 }: {
   # Dmenu
@@ -27,6 +28,20 @@
     };
   };
 
+  # Lockscreen
+  programs.swaylock = let
+    wallpaper = "${userSettings.dirs.theme}/wallpaper.png";
+  in {
+    enable = true;
+    settings = {
+      image = wallpaper;
+      indicator-idle-visible = true;
+    };
+  };
+
+  # Image viewer
+  programs.swayimg.enable = true;
+
   # Notification service
   services.mako = {
     enable = true;
@@ -34,8 +49,21 @@
     defaultTimeout = 8000;
   };
 
-  # Image viewer
-  programs.swayimg.enable = true;
+  # Idle management (auto-lock, monitor off, etc)
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 900;
+        command = "swaylock";
+      }
+      {
+        timeout = 1200;
+        command = "swaymsg output * dpms off";
+        resumeCommand = "swaymsg output * dpms on";
+      }
+    ];
+  };
 
   home.packages = with pkgs; [
     rofi-wayland
