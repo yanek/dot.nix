@@ -17,6 +17,7 @@ in {
       "${mod}+Return" = "exec ${term}";
       "${mod}+q" = "kill";
       "${mod}+d" = "exec ${menu}";
+      "${mod}+Escape" = "exec swaylock";
       "${mod}+F1" = "exec gnome-calculator";
 
       "${mod}+${left}" = "focus left";

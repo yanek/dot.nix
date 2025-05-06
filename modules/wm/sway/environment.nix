@@ -69,6 +69,7 @@
     rofi-wayland
     pavucontrol
     nemo
+    gnome-calculator
     gcr # Provides org.gnome.keyring.SystemPrompter
   ];
 }

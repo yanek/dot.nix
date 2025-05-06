@@ -16,6 +16,10 @@
       }
       {
         command = "floating enable";
+        criteria.app_id = "org.gnome.Calculator";
+      }
+      {
+        command = "floating enable";
         criteria.window_role = "pop-up";
       }
     ];
