@@ -8,6 +8,7 @@ in {
     ../modules/wm/sway
     ../modules/wm/sway/output.nix
 
+    ../modules/programs/neovim
     ../modules/programs/nh.nix
     ../modules/programs/ags
     ../modules/programs/git/git.nix

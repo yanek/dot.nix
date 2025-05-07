@@ -12,6 +12,9 @@
     betterfox.url = "github:heitoraugustoln/betterfox-nix";
     betterfox.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
+
     ags.url = "github:aylur/ags";
     ags.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -98,6 +101,7 @@
         modules = [
           ./users/nk.nix
           inputs.stylix.homeManagerModules.stylix
+          inputs.nvf.homeManagerModules.default
         ];
       };
 
@@ -112,6 +116,7 @@
         modules = [
           ./users/nk.nkltop.nix
           inputs.stylix.homeManagerModules.stylix
+          inputs.nvf.homeManagerModules.default
         ];
       };
     };
