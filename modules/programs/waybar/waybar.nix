@@ -72,13 +72,13 @@
       tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
       tooltip-format-enumerate-connected = "{device_alias}\n{device_address}";
       tooltip-format-enumerate-connected-battery = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-      on-click = "swaymsg exec blueman-manager";
+      on-click = "blueman-manager";
     };
 
     pulseaudio = {
       format = "vol:{volume}";
       format-muted = "muted";
-      on-click = "swaymsg exec pavucontrol";
+      on-click = "pavucontrol";
     };
 
     network = {
@@ -88,7 +88,7 @@
       tooltip-format-disconnected = "Error";
       tooltip-format-wifi = "{essid} ({signalStrength}%) ";
       tooltip-format-ethernet = "{ifname}";
-      on-click = "swaymsg exec 'kitty nmtui'";
+      on-click = "kitty nmtui";
     };
 
     "systemd-failed-units" = {
