@@ -11,8 +11,8 @@
     base16Scheme = ./scheme.yaml;
 
     cursor = {
-      name = "Nordic-cursors";
-      package = pkgs.nordic;
+      name = "Hackneyed";
+      package = pkgs.hackneyed;
       size = 24;
     };
 
