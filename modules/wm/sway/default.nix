@@ -26,4 +26,12 @@
     config.bars = []; # disable swaybar
     extraOptions = ["--unsupported-gpu"];
   };
+
+  home.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    __GL_THREADED_OPTIMIZATIONS = "0";
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
 }
