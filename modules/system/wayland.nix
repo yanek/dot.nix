@@ -23,6 +23,14 @@
 
   security.pam.services.swaylock = {};
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config = {
+      common.default = ["gtk"];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     wl-clipboard
     wlprop
