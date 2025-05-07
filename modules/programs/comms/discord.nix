@@ -1,3 +1,5 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.webcord];
+{...}: {
+  programs.vesktop = {
+    enable = true;
+  };
 }

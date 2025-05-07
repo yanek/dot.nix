@@ -2,7 +2,7 @@
 pkgs.writeShellScriptBin "run-startup"
 ''
   swaymsg workspace number 5
-  swaymsg exec webcord
+  swaymsg exec vesktop
   sleep 1
   swaymsg splith
   swaymsg exec kitty '${pkgs.btop}/bin/btop'
