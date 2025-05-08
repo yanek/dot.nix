@@ -29,6 +29,7 @@
       '';
     };
 
+    targets.cava.rainbow.enable = true;
     targets."waybar".enable = false;
   };
 }

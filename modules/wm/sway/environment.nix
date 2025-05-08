@@ -30,6 +30,11 @@
     };
   };
 
+  # Audio visualizer
+  programs.cava = {
+    enable = true;
+  };
+
   # Lockscreen
   programs.swaylock = let
     wallpaper = "${userSettings.dirs.theme}/wallpaper.png";
@@ -42,7 +47,9 @@
   };
 
   # Image viewer
-  programs.swayimg.enable = true;
+  programs.swayimg = {
+    enable = true;
+  };
 
   # Notification service
   services.mako = {
