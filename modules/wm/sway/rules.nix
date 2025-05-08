@@ -22,6 +22,11 @@
         command = "floating enable";
         criteria.window_role = "pop-up";
       }
+      {
+        command = "inhibit_idle fullscreen";
+        criteria.app_id = ".";
+        criteria.class = ".";
+      }
     ];
   };
 }

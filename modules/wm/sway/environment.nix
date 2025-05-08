@@ -65,13 +65,23 @@
     enable = true;
     timeouts = [
       {
-        timeout = 900;
-        command = "swaylock";
+        timeout = 290;
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds' -t 10000";
       }
       {
-        timeout = 1200;
-        command = "swaymsg output * dpms off";
-        resumeCommand = "swaymsg output * dpms on";
+        timeout = 300;
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+      {
+        timeout = 330;
+        command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock";
       }
     ];
   };
