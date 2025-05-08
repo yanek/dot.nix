@@ -19,7 +19,6 @@
     ../../modules/system/nas-client.nix
     ../../modules/system/wayland.nix
     ../../modules/system/greetd.nix
-    # ../../modules/system/sddm.nix
   ];
 
   boot.loader.timeout = 2;
@@ -68,10 +67,6 @@
   #   enable = true;
   #   withUWSM = true;
   # };
-
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
-  '';
 
   environment.systemPackages = with pkgs; [
     vial
