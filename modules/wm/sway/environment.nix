@@ -15,16 +15,18 @@
       height = "100%";
       border-width = 0;
       outline-width = 0;
-      padding-left = "35%";
-      padding-top = "35%";
-      result-spacing = 25;
-      num-results = 5;
+      padding-left = "45%";
+      padding-top = "30%";
+      result-spacing = 5;
+      num-results = 10;
       background-color = background;
       input-background = no_background;
-      prompt-backgound = no_background;
+      prompt-background = no_background;
       default-result-background = no_background;
       selection-background = no_background;
-      font-size = lib.mkForce 24;
+      text-cursor = true;
+      fuzzy-match = true;
+      font-size = lib.mkForce 14;
     };
   };
 

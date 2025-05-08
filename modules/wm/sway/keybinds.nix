@@ -5,7 +5,7 @@
   right = "l";
   mod = "Mod4"; # Super
   term = "kitty";
-  menu = "tofi-drun --drun-launch=true";
+  menu = "tofi-drun | xargs swaymsg exec --";
 in {
   wayland.windowManager.sway.config = {
     modifier = mod;
