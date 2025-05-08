@@ -1,4 +1,8 @@
-{userSettings, ...}: {
+{
+  pkgs,
+  userSettings,
+  ...
+}: {
   programs.waybar.enable = true;
   programs.waybar.style = builtins.readFile ../../themes/${userSettings.theme}/waybar.css;
 
@@ -20,6 +24,7 @@
     ];
 
     modules-right = [
+      "custom/spotify"
       "cpu"
       "memory"
       "pulseaudio"
@@ -134,6 +139,17 @@
 
     "sway/mode" = {
       format = "{}";
+    };
+
+    "custom/spotify" = let
+      cli = "${pkgs.spotify-cli-linux}/bin/spotifycli";
+    in {
+      exec = "${cli} --status";
+      format = "{} ";
+      interval = 2;
+      on-click = "${cli} --playpause";
+      on-scroll-up = "${cli} --next";
+      on-scroll-down = "${cli} --prev";
     };
   };
 }

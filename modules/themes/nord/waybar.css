@@ -35,6 +35,7 @@ tooltip {
 #pulseaudio,
 #systemd-failed-units,
 #tray,
+#custom-spotify,
 #window {
   padding-left: 16px;
   padding-right: 16px;
@@ -50,6 +51,7 @@ tooltip {
 #network:hover,
 #pulseaudio:hover,
 #systemd-failed-units:hover,
+#custom-spotify:hover,
 #tray:hover {
   background: @base00;
 }
@@ -96,9 +98,10 @@ tooltip {
   color: @base02;
 }
 
-#window {
+#window, #custom-spotify {
   color: @base07;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 #mode {
