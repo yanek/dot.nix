@@ -28,7 +28,6 @@ tooltip {
 #bluetooth,
 #clock,
 #cpu,
-#custom-layout,
 #memory,
 #mode,
 #network,
@@ -41,11 +40,11 @@ tooltip {
   padding-right: 16px;
 }
 
+
 #battery:hover,
 #bluetooth:hover,
 #clock:hover,
 #cpu:hover,
-#custom-layout:hover,
 #memory:hover,
 #mode:hover,
 #network:hover,
@@ -54,6 +53,21 @@ tooltip {
 #custom-spotify:hover,
 #tray:hover {
   background: @base00;
+}
+
+#battery,
+#bluetooth,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#systemd-failed-units,
+#tray {
+  border-left: 1px solid @base00;
+}
+
+#clock {
+  border-right: 1px solid @base00;
 }
 
 #memory.critical,
