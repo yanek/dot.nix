@@ -1,8 +1,4 @@
-{
-  pkgs,
-  userSettings,
-  ...
-}: {
+{userSettings, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/core.nix
@@ -11,7 +7,7 @@
     ../../modules/system/nas-client.nix
     ../../modules/system/bluetooth.nix
     ../../modules/system/wayland.nix
-    ../../modules/system/xorg.nix
+    ../../modules/system/greetd.nix
   ];
 
   boot.loader.timeout = 2;
@@ -35,6 +31,7 @@
     isNormalUser = true;
     description = "${userSettings.fullname}";
     extraGroups = [
+      "video"
       "networkmanager"
       "wheel"
     ];
@@ -59,8 +56,6 @@
       STOP_CHARGE_THRESH_BAT0 = 90; # 80 and above it stops charging
     };
   };
-
-  services.udev.packages = [pkgs.via];
 
   system.stateVersion = "24.11";
 }
