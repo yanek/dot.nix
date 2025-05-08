@@ -3,7 +3,7 @@
     ../modules/user-dirs.nix
     ../modules/themes/${userSettings.theme}
 
-    ../modules/wm/sway/sway.nix
+    ../modules/wm/sway
 
     ../modules/programs/neovim
     ../modules/programs/nh.nix
