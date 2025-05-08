@@ -8,7 +8,7 @@
     ../modules/programs/neovim
     ../modules/programs/nh.nix
     ../modules/programs/ags
-    ../modules/programs/git/git.nix
+    ../modules/programs/git
     ../modules/programs/obsidian.nix
     ../modules/programs/fish.nix
     ../modules/programs/starship/starship.nix

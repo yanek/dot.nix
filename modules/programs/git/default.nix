@@ -1,9 +1,5 @@
-{ userSettings, ... }:
-
-{
-  imports = [
-    ./delta.nix
-  ];
+{userSettings, ...}: {
+  imports = [./delta.nix];
 
   programs.git = {
     enable = true;
@@ -12,6 +8,7 @@
     extraConfig = {
       core.editor = "hx";
       init.defaultBranch = "main";
+      pull.rebase = true;
       safe.directory = "*";
       url = {
         "https://github.com/".insteadOf = "gh:";
