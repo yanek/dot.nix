@@ -7,6 +7,10 @@
 in {
   wayland.windowManager.sway.config.startup = [
     {
+      command = "swaylock";
+      always = false;
+    }
+    {
       command = "systemctl --user enable --now waybar";
       always = false;
     }
