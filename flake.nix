@@ -18,7 +18,10 @@
     ags.url = "github:aylur/ags";
     ags.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -102,6 +105,7 @@
           ./users/nk.nix
           inputs.stylix.homeManagerModules.stylix
           inputs.nvf.homeManagerModules.default
+          inputs.nixcord.homeModules.nixcord
         ];
       };
 
@@ -117,6 +121,7 @@
           ./users/nk.nkltop.nix
           inputs.stylix.homeManagerModules.stylix
           inputs.nvf.homeManagerModules.default
+          inputs.nixcord.homeModules.nixcord
         ];
       };
     };

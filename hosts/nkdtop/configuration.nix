@@ -3,11 +3,6 @@
   userSettings,
   ...
 }: {
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/core.nix
@@ -25,7 +20,7 @@
   boot.loader.systemd-boot = {
     enable = true;
     # consoleMode = "max";
-    configurationLimit = 5;
+    configurationLimit = 30;
     # edk2-uefi-shell.enable = true;
     windows."11-gaming" = {
       title = "Windows 11";
