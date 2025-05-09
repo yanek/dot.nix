@@ -31,6 +31,15 @@
     };
   };
 
+  environment.sessionVariables = {
+    WLR_RENDERER = "vulkan";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    __GL_THREADED_OPTIMIZATIONS = "0";
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+  };
+
   environment.systemPackages = with pkgs; [
     wl-clipboard
     wlprop
