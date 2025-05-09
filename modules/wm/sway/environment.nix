@@ -96,7 +96,6 @@
   };
 
   home.packages = with pkgs; [
-    rofi-wayland
     pavucontrol
     nemo
     gnome-calculator
