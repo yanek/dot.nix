@@ -50,8 +50,7 @@ tooltip {
 #network:hover,
 #pulseaudio:hover,
 #systemd-failed-units:hover,
-#custom-spotify:hover,
-#tray:hover {
+#custom-spotify:hover {
   background: @base00;
 }
 
@@ -61,12 +60,11 @@ tooltip {
 #memory,
 #network,
 #pulseaudio,
-#systemd-failed-units,
-#tray {
+#systemd-failed-units {
   border-left: 1px solid @base00;
 }
 
-#clock {
+#clock, #tray {
   border-right: 1px solid @base00;
 }
 
@@ -114,8 +112,6 @@ tooltip {
 
 #window, #custom-spotify {
   color: @base07;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 #mode {

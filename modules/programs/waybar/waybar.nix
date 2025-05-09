@@ -13,6 +13,7 @@
 
     modules-left = [
       "clock"
+      "tray"
       "hyprland/window"
       "sway/window"
       "sway/mode"
@@ -115,6 +116,11 @@
     "hyprland/window" = {
       format = "{title}";
       separate-outputs = true;
+    };
+
+    "tray" = {
+      icon-size = 18;
+      spacing = 10;
     };
 
     "sway/workspaces" = {
