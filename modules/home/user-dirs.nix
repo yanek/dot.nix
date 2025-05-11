@@ -2,9 +2,7 @@
   xdg.userDirs = let
     dir = config.home.homeDirectory;
   in {
-    enable = true;
     createDirectories = true;
-
     desktop = null;
     documents = "${dir}/docs";
     download = "${dir}/downloads";

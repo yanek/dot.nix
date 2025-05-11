@@ -2,7 +2,7 @@
   # xrandrArgs = "--output DP-4 --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0";
 in {
   imports = [
-    ../modules/user-dirs.nix
+    ../modules/home
     ../modules/themes/${userSettings.theme}
 
     ../modules/wm/sway
@@ -31,10 +31,8 @@ in {
 
   home.username = "${userSettings.username}";
   home.homeDirectory = "${userSettings.dirs.home}";
+  xdg.userDirs.enable = true;
 
-  home.sessionPath = [
-    "${userSettings.dirs.home}/.local/bin"
-  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";

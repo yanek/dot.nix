@@ -1,6 +1,6 @@
 {userSettings, ...}: {
   imports = [
-    ../modules/user-dirs.nix
+    ../modules/home
     ../modules/themes/${userSettings.theme}
 
     ../modules/wm/sway
@@ -31,12 +31,7 @@
 
   home.username = "${userSettings.username}";
   home.homeDirectory = "${userSettings.dirs.home}";
-
-  home.sessionPath = [
-    "${userSettings.dirs.home}/.local/bin"
-  ];
-
-  wayland.windowManager.sway.config.gaps.inner = 8;
+  xdg.userDirs.enable = true;
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
