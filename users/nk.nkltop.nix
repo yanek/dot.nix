@@ -7,7 +7,6 @@
 
     ../modules/programs/neovim
     ../modules/programs/nh.nix
-    ../modules/programs/ags
     ../modules/programs/git
     ../modules/programs/obsidian.nix
     ../modules/programs/fish.nix
@@ -16,7 +15,6 @@
     ../modules/programs/kitty.nix
     ../modules/programs/helix/helix.nix
     ../modules/programs/firefox.nix
-    ../modules/programs/prusa-slicer.nix
     ../modules/programs/comms/discord.nix
     ../modules/programs/doc-viewer.nix
     ../modules/programs/mail.nix
