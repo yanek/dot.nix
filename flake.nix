@@ -102,7 +102,8 @@
           inherit userSettings;
         };
         modules = [
-          ./users/nk.nix
+          ./users/nk.core.nix
+          ./users/nk.dtop.nix
           inputs.stylix.homeManagerModules.stylix
           inputs.nvf.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
@@ -118,6 +119,7 @@
           inherit userSettings;
         };
         modules = [
+          ./users/nk.core.nix
           ./users/nk.nkltop.nix
           inputs.stylix.homeManagerModules.stylix
           inputs.nvf.homeManagerModules.default
