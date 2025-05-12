@@ -1,9 +1,5 @@
-{
-  pkgs,
-  userSettings,
-  ...
-}: let
-  startup-script = import ../../../packages/scripts/run-startup.nix {inherit pkgs;};
+{userSettings, ...}: let
+  # startup-script = import ../../../packages/scripts/run-startup.nix {inherit pkgs;};
 in {
   wayland.windowManager.sway.config.startup = [
     {
@@ -18,10 +14,10 @@ in {
       command = "openrgb -m static -c cd3c0a";
       always = true;
     }
-    {
-      command = "${startup-script}/bin/run-startup";
-      always = false;
-    }
+    # {
+    #   command = "${startup-script}/bin/run-startup";
+    #   always = false;
+    # }
     {
       command = ''swaymsg output "*" bg ${userSettings.dirs.theme}/wallpaper.png fill'';
       always = true;
