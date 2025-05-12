@@ -26,6 +26,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
     config = {
       common.default = ["gtk"];
     };
@@ -37,7 +38,7 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     __GL_THREADED_OPTIMIZATIONS = "0";
     NIXOS_OZONE_WL = "1";
-    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 
   environment.systemPackages = with pkgs; [
