@@ -20,7 +20,7 @@
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = false;
-    package = pkgs.sway;
+    package = pkgs.swayfx;
     xwayland = true;
     swaynag.enable = true;
     config.bars = []; # disable swaybar
