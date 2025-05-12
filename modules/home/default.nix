@@ -1,6 +1,7 @@
 {config, ...}: {
   imports = [
     ./user-dirs.nix
+    ./services
   ];
 
   home.sessionPath = [
