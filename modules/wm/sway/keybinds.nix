@@ -73,6 +73,9 @@ in {
       "${mod}+7" = "workspace number 7";
       "${mod}+8" = "workspace number 8";
 
+      "${mod}+minus" = "scratchpad show";
+      "${mod}+Shift+minus" = "move scratchpad";
+
       "Print" = "exec grimshot copy anything";
       "Shift+Print" = "exec grimshot copy output";
 
