@@ -1,27 +1,27 @@
 {userSettings, ...}: {
   imports = [
     ../modules/home
-    ../modules/themes/${userSettings.theme}
+    ../legacy/themes/${userSettings.theme}
 
-    ../modules/wm/sway
-    ../modules/wm/sway/output.nix
+    ../legacy/wm/sway
+    ../legacy/wm/sway/output.nix
 
-    ../modules/programs/neovim
-    ../modules/programs/nh.nix
-    ../modules/programs/git
-    ../modules/programs/obsidian.nix
-    ../modules/programs/fish.nix
-    ../modules/programs/starship/starship.nix
-    ../modules/programs/cli
-    ../modules/programs/kitty.nix
-    ../modules/programs/helix/helix.nix
-    ../modules/programs/firefox.nix
-    ../modules/programs/comms/discord.nix
-    ../modules/programs/doc-viewer.nix
-    ../modules/programs/mail.nix
+    ../legacy/programs/neovim
+    ../legacy/programs/nh.nix
+    ../legacy/programs/git
+    ../legacy/programs/obsidian.nix
+    ../legacy/programs/fish.nix
+    ../legacy/programs/starship/starship.nix
+    ../legacy/programs/cli
+    ../legacy/programs/kitty.nix
+    ../legacy/programs/helix/helix.nix
+    ../legacy/programs/firefox.nix
+    ../legacy/programs/comms/discord.nix
+    ../legacy/programs/doc-viewer.nix
+    ../legacy/programs/mail.nix
 
-    ../modules/programs/multimedia/spotify.nix
-    ../modules/programs/multimedia/vlc.nix
+    ../legacy/programs/multimedia/spotify.nix
+    ../legacy/programs/multimedia/vlc.nix
   ];
 
   home.username = "${userSettings.username}";

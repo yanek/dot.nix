@@ -46,7 +46,7 @@
       dirs = {
         home = "/home/${userSettings.username}";
         config = "${userSettings.dirs.home}/.nixos-config";
-        theme = "${userSettings.dirs.config}/modules/themes/${userSettings.theme}";
+        theme = "${userSettings.dirs.config}/legacy/themes/${userSettings.theme}";
       };
     };
 

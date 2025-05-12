@@ -1,13 +1,13 @@
 {userSettings, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/core.nix
-    ../../modules/system/ssh.nix
-    ../../modules/system/audio.nix
-    ../../modules/system/nas-client.nix
-    ../../modules/system/bluetooth.nix
-    ../../modules/system/wayland.nix
-    ../../modules/system/greetd.nix
+    ../../legacy/system/core.nix
+    ../../legacy/system/ssh.nix
+    ../../legacy/system/audio.nix
+    ../../legacy/system/nas-client.nix
+    ../../legacy/system/bluetooth.nix
+    ../../legacy/system/wayland.nix
+    ../../legacy/system/greetd.nix
   ];
 
   boot.loader.timeout = 2;

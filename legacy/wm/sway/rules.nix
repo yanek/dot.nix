@@ -4,9 +4,9 @@
 
     # Assign windows to workspaces
     assigns = {
-      "2" = [{class = "^steam$";}];
-      "5" = [{class = "^WebCord$";}];
-      "6" = [{class = "^Spotify$";}];
+      "2" = [{class = "steam";}];
+      "5" = [{app_id = "discord|vesktop";}];
+      "6" = [{app_id = "spotify";}];
     };
 
     # Window specific rules
