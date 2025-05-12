@@ -3,12 +3,16 @@
     enable = true;
 
     discord = {
-      openASAR.enable = false;
-      vencord.enable = false;
+      enable = false;
     };
 
     vesktop = {
       enable = true;
+    };
+
+    config = {
+      frameless = true;
+      disableMinSize = true;
     };
 
     vesktopConfig = {
