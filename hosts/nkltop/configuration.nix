@@ -1,6 +1,7 @@
 {userSettings, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos
     ../../legacy/system/core.nix
     ../../legacy/system/ssh.nix
     ../../legacy/system/audio.nix

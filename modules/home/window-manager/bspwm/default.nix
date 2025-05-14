@@ -1,0 +1,61 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.myHome.windowManager.bspwm;
+in {
+  options.myHome.windowManager.bspwm = {
+    enable = mkOption {
+      default = false;
+      type = types.bool;
+    };
+    windowGap = mkOption {
+      default = 8;
+      type = types.int;
+    };
+    monitors = mkOption {
+      default = [];
+      type = with types; listOf str;
+    };
+  };
+
+  config = mkIf cfg.enable {
+    xsession.windowManager.bspwm = {
+      enable = true;
+      package = pkgs.bspwm;
+
+      settings = {
+        border_width = 2;
+        window_gap = cfg.windowGap;
+        split_ratio = 0.52;
+        borderless_monocle = false;
+        gapless_monocle = false;
+        focus_follows_pointer = true;
+        pointer_follows_monitor = true;
+        pointer_follows_focus = false;
+        pointer_modifier = "mod4";
+        pointer_action1 = "move";
+        pointer_action2 = "resize_size";
+        pointer_action3 = "resize_corner";
+      };
+
+      monitors = {
+        DP-4 = ["1" "2" "3" "4"];
+        DP-2 = ["5" "6" "7" "8"];
+      };
+    };
+  };
+
+  imports = [
+    ./startup.nix
+    ./sxhkd.nix
+    ./rules.nix
+    ../extras/polybar.nix
+    ../extras/dunst.nix
+    ../extras/rofi.nix
+    ../extras/picom.nix
+  ];
+}

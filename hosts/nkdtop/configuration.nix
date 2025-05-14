@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos
     ../../legacy/system/core.nix
     ../../legacy/system/ssh.nix
     ../../legacy/system/nvidia.nix
@@ -12,8 +13,7 @@
     ../../legacy/system/bluetooth.nix
     ../../legacy/system/gaming.nix
     ../../legacy/system/nas-client.nix
-    ../../legacy/system/wayland.nix
-    ../../legacy/system/greetd.nix
+    ../../legacy/system/xorg.nix
   ];
 
   boot.loader.timeout = 2;
@@ -63,6 +63,10 @@
   #   enable = true;
   #   withUWSM = true;
   # };
+
+  services.xserver.displayManager.setupCommands = ''
+    ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --primary --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0
+  '';
 
   environment.systemPackages = with pkgs; [
     vial

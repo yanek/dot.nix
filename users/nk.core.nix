@@ -1,10 +1,11 @@
-{userSettings, ...}: {
+{
+  pkgs,
+  userSettings,
+  ...
+}: {
   imports = [
     ../modules/home
     ../legacy/themes/${userSettings.theme}
-
-    ../legacy/wm/sway
-    ../legacy/wm/sway/output.nix
 
     ../legacy/programs/neovim
     ../legacy/programs/nh.nix
@@ -26,7 +27,14 @@
 
   home.username = "${userSettings.username}";
   home.homeDirectory = "${userSettings.dirs.home}";
+  home.packages = with pkgs; [
+    xfce.thunar
+    pavucontrol
+    pulsemixer
+  ];
+
   xdg.userDirs.enable = true;
+  myHome.windowManager.bspwm.enable = true;
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";

@@ -21,7 +21,6 @@
     autoRepeatInterval = 30;
     dpi = 96;
     desktopManager.xterm.enable = false;
-    # displayManager.startx.enable = true;
     windowManager.bspwm.enable = true;
     displayManager.lightdm = {
       enable = true;
@@ -54,5 +53,6 @@
     xorg.xrandr
     xclip
     xdotool
+    libnotify
   ];
 }

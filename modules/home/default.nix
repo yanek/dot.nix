@@ -2,6 +2,7 @@
   imports = [
     ./user-dirs.nix
     ./services
+    ./window-manager/bspwm
   ];
 
   home.sessionPath = [

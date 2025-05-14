@@ -24,13 +24,6 @@
       package = pkgs.papirus-nord;
     };
 
-    targets.gtk = {
-      enable = true;
-      extraCss = ''
-        window.background { border-radius: 0; }
-      '';
-    };
-
     targets.cava.rainbow.enable = true;
     targets."waybar".enable = false;
   };
