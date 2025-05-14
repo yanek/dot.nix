@@ -17,5 +17,6 @@ in {
     "systemctl --user restart polybar"
     "spotify"
     "sleep 5 && vesktop"
+    "sleep 5 && openrgb -m static -c cd3c0a"
   ];
 }
