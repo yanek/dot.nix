@@ -31,10 +31,6 @@
 
   programs.chromium = {
     enable = true;
-    commandLineArgs = [
-      "--enable-features=UseOzonePlatform"
-      "--ozone-platform=x11"
-    ];
     extensions = [
       {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock origins
       {id = "nngceckbapebfimnlniiiahkandclblb";} # bitwarden

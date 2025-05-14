@@ -8,7 +8,9 @@
 
   stylix = {
     enable = true;
+    polarity = "dark";
     base16Scheme = ./scheme.yaml;
+    image = ./wallpaper.png;
 
     cursor = {
       name = "Hackneyed";

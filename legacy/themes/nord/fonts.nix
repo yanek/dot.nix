@@ -1,18 +1,23 @@
 {pkgs, ...}: {
   stylix.fonts = {
     serif = {
-      package = pkgs.ibm-plex;
-      name = "IBM Plex Serif";
+      package = pkgs.noto-fonts;
+      name = "Noto Serif";
     };
 
     sansSerif = {
-      package = pkgs.cantarell-fonts;
-      name = "Cantarell";
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+    };
+
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
     };
 
     monospace = {
-      package = pkgs.maple-mono.NF;
-      name = "Maple Mono NF";
+      package = pkgs.nerd-fonts.commit-mono;
+      name = "CommitMono Nerd Font";
     };
 
     sizes.applications = 11;
