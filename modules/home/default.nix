@@ -2,6 +2,7 @@
   imports = [
     ./user-dirs.nix
     ./services
+    ./term
     ./window-manager/bspwm
   ];
 
