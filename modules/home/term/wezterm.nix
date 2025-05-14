@@ -1,4 +1,9 @@
-{...}: {
+{pkgs, ...}: {
+  myHome.term = {
+    package = pkgs.wezterm;
+    command = "${pkgs.wezterm}/bin/wezterm";
+  };
+
   programs.wezterm = {
     enable = true;
     enableBashIntegration = true;

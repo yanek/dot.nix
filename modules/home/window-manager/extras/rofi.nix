@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    terminal = "${pkgs.kitty}/bin/kitty";
+    terminal = "${pkgs.wezterm}/bin/wezterm";
   };
 }

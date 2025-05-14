@@ -14,7 +14,6 @@
     ../legacy/programs/fish.nix
     ../legacy/programs/starship/starship.nix
     ../legacy/programs/cli
-    ../legacy/programs/kitty.nix
     ../legacy/programs/helix/helix.nix
     ../legacy/programs/firefox.nix
     ../legacy/programs/comms/discord.nix

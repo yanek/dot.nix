@@ -2,7 +2,7 @@
   services.sxhkd = {
     enable = true;
     keybindings = let
-      term = "${pkgs.kitty}/bin/kitty";
+      term = "${pkgs.wezterm}/bin/wezterm";
       menu = "${pkgs.rofi}/bin/rofi";
     in {
       "super + ctrl + shift + {r,Escape}" = "shutdown -{r,h} now";
