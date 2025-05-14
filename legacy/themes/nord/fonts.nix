@@ -16,13 +16,15 @@
     };
 
     monospace = {
-      package = pkgs.nerd-fonts.commit-mono;
-      name = "CommitMono Nerd Font";
+      package = pkgs.commit-mono;
+      name = "CommitMono";
     };
 
-    sizes.applications = 11;
-    sizes.desktop = 11;
-    sizes.popups = 11;
-    sizes.terminal = 11;
+    sizes = {
+      applications = 11;
+      desktop = 11;
+      popups = 11;
+      terminal = 11;
+    };
   };
 }
