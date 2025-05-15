@@ -23,6 +23,9 @@
       "super + n" = "bspc desktop -f next.local.!occupied";
       "super + {_,shift + }Tab" = "bspc desktop -f {next,prev}.local.occupied"; # focus next desktop in current monitor
       "alt + {_,shift + }Tab" = "bspc node -f {next,prev}.local.!hidden.window"; # focus next node in current monitor
+
+      # screenshots
+      "{_,super + }Print" = "${pkgs.maim}/bin/maim --{select,window $(${pkgs.xdotool}/bin/xdotools getactivewindow)} | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
     };
   };
 }
