@@ -16,25 +16,33 @@
     ../../legacy/system/xorg.nix
   ];
 
-  boot.loader.timeout = 2;
-  boot.loader.systemd-boot = {
-    enable = true;
-    # consoleMode = "max";
-    configurationLimit = 30;
-    # edk2-uefi-shell.enable = true;
-    windows."11-gaming" = {
-      title = "Windows 11";
-      efiDeviceHandle = "FS3";
-      sortKey = "o_windows";
+  boot = {
+    plymouth = {
+      enable = true;
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+    consoleLogLevel = 3;
+    initrd = {
+      verbose = false;
+      kernelModules = ["nvidia"];
+    };
+    kernelParams = [
+      "nvidia-drm.fbdev=1"
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 30;
+      };
     };
   };
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.kernelModules = ["nvidia"];
-  boot.kernelParams = [
-    "nvidia-drm.fbdev=1"
-  ];
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nkdtop";
   networking.networkmanager.enable = true;
