@@ -1,7 +1,5 @@
 {
   vim = {
-    useSystemClipboard = true;
-
     options = {
       # 2-space indents
       tabstop = 2;
