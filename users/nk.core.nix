@@ -28,6 +28,7 @@
   home.homeDirectory = "${userSettings.dirs.home}";
   home.packages = with pkgs; [
     xfce.thunar
+    lxappearance
     pavucontrol
     pulsemixer
   ];
