@@ -11,8 +11,8 @@
       "super + Return" = "${config.myHome.term.command}";
       "super + d" = "${pkgs.rofi}/bin/rofi -show drun";
       "super + {_,shift + }q" = "bspc node -{c,k}"; # close or (w/shift) kill
-      # "super + f" = "bspc desktop -l next"; # alternate desktop layout
-      "super + f" = "bspc node -s \~fullscreen";
+      "super + f" = "bspc desktop -l next"; # alternate desktop layout
+      # "super + f" = "bspc node -s \~fullscreen";
       "super + g" = "bspc node -s biggest.local"; # swap the biggest node
       "super + {_,shift + }{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}"; # focus node in the given direction
       "super + grave" = "bspc desktop -s next";
