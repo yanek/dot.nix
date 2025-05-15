@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{config, ...}: {
   programs.rofi = {
     enable = true;
-    terminal = "${pkgs.wezterm}/bin/wezterm";
+    terminal = config.myHome.term.command;
   };
 }

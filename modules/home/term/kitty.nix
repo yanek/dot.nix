@@ -1,4 +1,9 @@
-{...}: {
+{pkgs, ...}: {
+  myHome.term = {
+    package = pkgs.kitty;
+    command = "${pkgs.kitty}/bin/kitty";
+  };
+
   programs.kitty = {
     enable = true;
     shellIntegration = {

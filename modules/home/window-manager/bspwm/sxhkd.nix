@@ -1,14 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   services.sxhkd = {
     enable = true;
-    keybindings = let
-      term = "${pkgs.wezterm}/bin/wezterm";
-      menu = "${pkgs.rofi}/bin/rofi";
-    in {
+    keybindings = {
       "super + ctrl + shift + {r,Escape}" = "shutdown -{r,h} now";
       "super + shift + Escape" = "bspc quit";
-      "super + Return" = "${term}";
-      "super + d" = "${menu} -show drun";
+      "super + Return" = "${config.myHome.term.command}";
+      "super + d" = "${pkgs.rofi}/bin/rofi -show drun";
       "super + {_,shift + }q" = "bspc node -{c,k}"; # close or (w/shift) kill
       # "super + f" = "bspc desktop -l next"; # alternate desktop layout
       "super + f" = "bspc node -s \~fullscreen";
@@ -17,8 +18,7 @@
       "super + grave" = "bspc desktop -s next";
       "super + space" = "bspc node -t \~floating"; # floating toggle
 
-      # focus or send to the given desktop
-      "super + {_,shift + }{1-8}" = "bspc {desktop -f,node -d} '^{1-8}'";
+      "super + {_,shift + }{1-8}" = "bspc {desktop -f,node -d} '^{1-8}'"; # focus or send to the given desktop
 
       "super + n" = "bspc desktop -f next.local.!occupied";
       "super + {_,shift + }Tab" = "bspc desktop -f {next,prev}.local.occupied"; # focus next desktop in current monitor
