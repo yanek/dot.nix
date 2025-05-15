@@ -5,5 +5,5 @@
     ../modules/home
   ];
 
-  myHome.windowManager.bspwm.monitors = ["DP-4" "DP-6"];
+  myHome.windowManager.bspwm.monitors = ["DP-4" "DP-2"];
 }
