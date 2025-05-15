@@ -39,7 +39,7 @@
         modules = {
           left = "date tray window";
           center = "workspaces";
-          right = "audio-output net-wired net-wlan";
+          right = "spotify audio-output net-wired net-wlan";
         };
       };
 
@@ -94,6 +94,20 @@
         tray = {
           spacing = 5;
           size = "70%";
+        };
+      };
+
+      "module/spotify" = let
+        get_spotify_status =
+          import ../../../../packages/scripts/get_spotify_status.nix {inherit pkgs;};
+      in {
+        type = "custom/script";
+        interval = 1;
+        format = "<label>";
+        label.foreground = base07;
+        exec = "${get_spotify_status}/bin/get_spotify_status";
+        click = {
+          left = "${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
         };
       };
 
