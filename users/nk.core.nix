@@ -5,7 +5,6 @@
 }: {
   imports = [
     ../modules/home
-    ../legacy/themes/${userSettings.theme}
 
     ../legacy/programs/neovim
     ../legacy/programs/nh.nix
@@ -32,13 +31,16 @@
       pavucontrol
       gcr # Provides org.gnome.keyring.SystemPrompter
     ];
+    stateVersion = "24.11";
   };
 
-  services.gnome-keyring.enable = true;
-
   xdg.userDirs.enable = true;
-  myHome.windowManager.bspwm.enable = true;
+
+  myHome = {
+    windowManager.bspwm.enable = true;
+    theme.variant = "nord";
+  };
 
   programs.home-manager.enable = true;
-  home.stateVersion = "24.11";
+  services.gnome-keyring.enable = true;
 }

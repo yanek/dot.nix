@@ -42,11 +42,9 @@
       username = "nk";
       fullname = "Noé Ksiazek";
       email = "noe.ksiazek@pm.me";
-      theme = "nord";
       dirs = {
         home = "/home/${userSettings.username}";
         config = "${userSettings.dirs.home}/.nixos-config";
-        theme = "${userSettings.dirs.config}/legacy/themes/${userSettings.theme}";
       };
     };
 

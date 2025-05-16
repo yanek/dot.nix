@@ -4,6 +4,7 @@
     ./services
     ./term
     ./window-manager/bspwm
+    ./themes
   ];
 
   home.sessionPath = [
