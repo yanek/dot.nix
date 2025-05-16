@@ -16,6 +16,8 @@
         padding = 2;
         width = "100%";
         monitor = "\${env:MONITOR}";
+        override-redirect = false;
+        wm-restack = "bspwm";
 
         border-bottom = {
           size = 2;
