@@ -42,10 +42,23 @@ in {
         pointer_action3 = "resize_corner";
       };
 
-      monitors = {
-        DP-4 = ["1" "2" "3" "4"];
-        DP-2 = ["5" "6" "7" "8"];
-      };
+      # This bit of code generates 1 * `desktopPerMonitor` workspaces
+      # per configured monitor for this host/user.
+      monitors = let
+        desktopPerMonitor = 4;
+        monitorDesktopMap =
+          if cfg.monitors == []
+          then {}
+          else
+            listToAttrs (
+              imap1 (i: monitor: {
+                name = monitor;
+                value = genList (j: toString ((i - 1) * desktopPerMonitor + j + 1)) desktopPerMonitor;
+              })
+              cfg.monitors
+            );
+      in
+        monitorDesktopMap;
     };
   };
 
