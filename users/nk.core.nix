@@ -24,14 +24,17 @@
     ../legacy/programs/multimedia/vlc.nix
   ];
 
-  home.username = "${userSettings.username}";
-  home.homeDirectory = "${userSettings.dirs.home}";
-  home.packages = with pkgs; [
-    xfce.thunar
-    lxappearance
-    pavucontrol
-    pulsemixer
-  ];
+  home = {
+    username = "${userSettings.username}";
+    homeDirectory = "${userSettings.dirs.home}";
+    packages = with pkgs; [
+      xfce.thunar
+      pavucontrol
+      gcr # Provides org.gnome.keyring.SystemPrompter
+    ];
+  };
+
+  services.gnome-keyring.enable = true;
 
   xdg.userDirs.enable = true;
   myHome.windowManager.bspwm.enable = true;

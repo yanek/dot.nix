@@ -8,6 +8,7 @@
     keybindings = {
       "super + ctrl + shift + {r,Escape}" = "shutdown -{r,h} now";
       "super + shift + Escape" = "bspc quit";
+      "super + Escape" = "i3lock -i ${config.stylix.image} -t";
       "super + Return" = "${config.myHome.term.command}";
       "super + d" = "${pkgs.rofi}/bin/rofi -show drun";
       "super + {_,shift + }q" = "bspc node -{c,k}"; # close or (w/shift) kill

@@ -3,35 +3,42 @@
   userSettings,
   ...
 }: {
-  programs.dconf.enable = true;
-  environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
-
-  services.displayManager = {
-    defaultSession = "none+bspwm";
-    autoLogin = {
+  programs = {
+    dconf.enable = true;
+    i3lock = {
       enable = true;
-      user = userSettings.username;
+      package = pkgs.i3lock;
     };
   };
 
-  services.xserver = {
-    enable = true;
-    xkb.layout = "eu";
-    autoRepeatDelay = 400;
-    autoRepeatInterval = 30;
-    dpi = 96;
-    desktopManager.xterm.enable = false;
-    windowManager.bspwm.enable = true;
-    displayManager.lightdm = {
-      enable = true;
-      greeters.slick.enable = true;
+  services = {
+    displayManager = {
+      defaultSession = "none+bspwm";
+      autoLogin = {
+        enable = true;
+        user = userSettings.username;
+      };
     };
-  };
 
-  # Disable mouse acceleration
-  services.libinput = {
-    enable = true;
-    mouse.accelProfile = "flat";
+    xserver = {
+      enable = true;
+      xkb.layout = "eu";
+      autoRepeatDelay = 400;
+      autoRepeatInterval = 30;
+      dpi = 96;
+      desktopManager.xterm.enable = false;
+      windowManager.bspwm.enable = true;
+      displayManager.lightdm = {
+        enable = true;
+        greeters.slick.enable = true;
+      };
+    };
+
+    # Disable mouse acceleration
+    libinput = {
+      enable = true;
+      mouse.accelProfile = "flat";
+    };
   };
 
   fonts.fontconfig = {
