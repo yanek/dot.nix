@@ -12,6 +12,7 @@ with lib; let
     else "";
 in {
   xsession.windowManager.bspwm.startupPrograms = [
+    "xsetroot -cursor_name left_ptr"
     monitorOrderCommand
     "${pkgs.feh}/bin/feh --bg-fill ${config.stylix.image}"
     "systemctl --user restart polybar"
