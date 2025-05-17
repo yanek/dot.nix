@@ -15,9 +15,6 @@
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
-    ags.url = "github:aylur/ags";
-    ags.inputs.nixpkgs.follows = "nixpkgs";
-
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -102,7 +99,7 @@
         modules = [
           ./users/nk.core.nix
           ./users/nk.dtop.nix
-          inputs.stylix.homeManagerModules.stylix
+          inputs.stylix.homeModules.stylix
           inputs.nvf.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
         ];
@@ -119,7 +116,7 @@
         modules = [
           ./users/nk.core.nix
           ./users/nk.nkltop.nix
-          inputs.stylix.homeManagerModules.stylix
+          inputs.stylix.homeModules.stylix
           inputs.nvf.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
         ];
