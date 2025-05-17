@@ -7,8 +7,7 @@
     ../../legacy/system/audio.nix
     ../../legacy/system/nas-client.nix
     ../../legacy/system/bluetooth.nix
-    ../../legacy/system/wayland.nix
-    ../../legacy/system/greetd.nix
+    ../../legacy/system/xorg.nix
   ];
 
   boot.loader.timeout = 2;
