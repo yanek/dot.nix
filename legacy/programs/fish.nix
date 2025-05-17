@@ -21,19 +21,23 @@
 
     functions = {
       # cd into directory on yazi exit
-      y = ''
-        set tmp (mktemp -t "yazi-cwd.XXXXXX")
-        yazi $argv --cwd-file="$tmp"
-        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-          builtin cd -- "$cwd"
-        end
-        rm -f -- "$tmp"
-      '';
+      y =
+        # fish
+        ''
+          set tmp (mktemp -t "yazi-cwd.XXXXXX")
+          yazi $argv --cwd-file="$tmp"
+          if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+          end
+          rm -f -- "$tmp"
+        '';
       # mkdir + cd into
-      mkcd = ''
-        mkdir -pv $argv
-        cd $argv
-      '';
+      mkcd =
+        # fish
+        ''
+          mkdir -pv $argv
+          cd $argv
+        '';
     };
 
     plugins = [

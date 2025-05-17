@@ -15,7 +15,11 @@ with lib; {
     enable = true;
     targets = {
       cava.rainbow.enable = true;
-      gtk.extraCss = ''window.background { border-radius: 0; }'';
+      gtk.extraCss =
+        # css
+        ''
+          window.background { border-radius: 0; }
+        '';
     };
   };
 

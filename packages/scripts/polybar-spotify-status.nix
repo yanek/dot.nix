@@ -1,5 +1,6 @@
 {pkgs}:
 pkgs.writeShellScriptBin "polybar-spotify-status"
+# sh
 ''
   PARENT_BAR="top"
   PARENT_BAR_PID=$(${pkgs.procps}/bin/pgrep -a "polybar" | ${pkgs.gnugrep}/bin/grep "$PARENT_BAR" | ${pkgs.coreutils}/bin/cut -d" " -f1)

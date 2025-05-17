@@ -151,11 +151,13 @@
       };
     };
 
-    script = ''
-      for m in $(polybar --list-monitors | ${pkgs.coreutils}/bin/cut -d":" -f1); do
-        MONITOR=$m polybar --reload top &
-      done
-    '';
+    script =
+      # sh
+      ''
+        for m in $(polybar --list-monitors | ${pkgs.coreutils}/bin/cut -d":" -f1); do
+          MONITOR=$m polybar --reload top &
+        done
+      '';
   };
 
   home.packages = [
