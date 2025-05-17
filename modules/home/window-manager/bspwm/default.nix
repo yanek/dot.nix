@@ -20,6 +20,10 @@ in {
       default = [];
       type = with types; listOf str;
     };
+    extraStartupPrograms = mkOption {
+      default = [];
+      type = with types; listOf str;
+    };
   };
 
   config = mkIf cfg.enable {
