@@ -31,6 +31,9 @@
 
         font = [
           "${config.stylix.fonts.monospace.name}:weight=Bold:size=10;3"
+          "Font Awesome 6 Brands Regular:style=Regular;4"
+          "Font Awesome 6 Free Solid:style=Solid;4"
+          "Font Awesome 6 Free Regular:style=Regular;4"
         ];
 
         module.margin = {
@@ -58,6 +61,7 @@
         label = {
           text = "%title%";
           foreground = base07;
+          maxlen = 80;
         };
       };
 
@@ -100,14 +104,16 @@
       };
 
       "module/spotify" = let
-        get_spotify_status =
-          import ../../../../packages/scripts/get_spotify_status.nix {inherit pkgs;};
+        spotifyStatus =
+          import ../../../../packages/scripts/polybar-spotify-status.nix {inherit pkgs;};
       in {
         type = "custom/script";
         interval = 1;
-        format = "<label>";
-        label.foreground = base07;
-        exec = "${get_spotify_status}/bin/get_spotify_status";
+        format = " <label>";
+        label = {
+          foreground = base07;
+        };
+        exec = "${spotifyStatus}/bin/polybar-spotify-status";
         click = {
           left = "${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
         };
@@ -151,4 +157,8 @@
       done
     '';
   };
+
+  home.packages = [
+    pkgs.font-awesome
+  ];
 }
