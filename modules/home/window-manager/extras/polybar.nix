@@ -146,7 +146,7 @@
         type = "internal/network";
         interface-type = "wireless";
         label = {
-          connected = "%local_ip% @ %essid";
+          connected = "%local_ip% @ %essid%";
         };
       };
     };
