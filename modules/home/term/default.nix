@@ -3,16 +3,20 @@
   pkgs,
   ...
 }:
-with lib; let
-in {
+with lib; {
   options.myHome.term = {
-    package = mkPackageOption pkgs "package" {
-      default = pkgs.wezterm;
+    name = mkOption {
+      default = "wezterm";
+      type = types.str;
     };
+    package = mkPackageOption pkgs "package" {};
     command = mkOption {
       type = types.str;
     };
   };
 
-  imports = [./wezterm.nix];
+  imports = [
+    ./wezterm.nix
+    ./kitty.nix
+  ];
 }

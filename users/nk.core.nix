@@ -39,6 +39,7 @@
   myHome = {
     windowManager.bspwm.enable = true;
     theme.variant = "nord";
+    term.name = "wezterm";
   };
 
   programs.home-manager.enable = true;
