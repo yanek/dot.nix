@@ -17,4 +17,12 @@
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
   ];
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+    };
+  };
 }

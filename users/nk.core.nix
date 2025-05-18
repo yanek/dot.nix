@@ -6,7 +6,6 @@
   imports = [
     ../modules/home
 
-    ../legacy/programs/nh.nix
     ../legacy/programs/obsidian.nix
     ../legacy/programs/cli
     ../legacy/programs/doc-viewer.nix
