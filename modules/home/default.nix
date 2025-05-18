@@ -9,6 +9,7 @@
     ./window-manager/bspwm
 
     ./comms.nix
+    ./git.nix
     ./user-dirs.nix
     ./web-browser.nix
   ];

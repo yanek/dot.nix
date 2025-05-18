@@ -7,7 +7,6 @@
     ../modules/home
 
     ../legacy/programs/nh.nix
-    ../legacy/programs/git
     ../legacy/programs/obsidian.nix
     ../legacy/programs/cli
     ../legacy/programs/doc-viewer.nix
@@ -34,6 +33,7 @@
     windowManager.bspwm.enable = true;
     theme.variant = "rose-pine";
     term.name = "wezterm";
+    git.enable = true;
     comms.discord.enable = true;
     helix = {
       enable = true;
