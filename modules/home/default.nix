@@ -1,6 +1,8 @@
 {config, ...}: {
   imports = [
-    ./services
+    ./helix
+    ./neovim
+    ./services # TODO: rename and split
     ./shell
     ./term
     ./themes

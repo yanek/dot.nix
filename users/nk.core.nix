@@ -6,12 +6,10 @@
   imports = [
     ../modules/home
 
-    ../legacy/programs/neovim
     ../legacy/programs/nh.nix
     ../legacy/programs/git
     ../legacy/programs/obsidian.nix
     ../legacy/programs/cli
-    ../legacy/programs/helix/helix.nix
     ../legacy/programs/doc-viewer.nix
     ../legacy/programs/mail.nix
 
@@ -37,6 +35,10 @@
     theme.variant = "rose-pine";
     term.name = "wezterm";
     comms.discord.enable = true;
+    helix = {
+      enable = true;
+      isDefaultEditor = true;
+    };
     web-browser = {
       firefox.enable = true;
       chromium.enable = true;
