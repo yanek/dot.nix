@@ -21,7 +21,7 @@ in {
       iconTheme = {
         enable = true;
         dark = "Papirus";
-        package = pkgs.papirus;
+        package = pkgs.papirus-icon-theme;
       };
     };
 
