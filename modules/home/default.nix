@@ -1,9 +1,10 @@
 {config, ...}: {
   imports = [
     ./services
+    ./shell
     ./term
-    ./window-manager/bspwm
     ./themes
+    ./window-manager/bspwm
 
     ./comms.nix
     ./user-dirs.nix

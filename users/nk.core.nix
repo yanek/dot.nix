@@ -10,8 +10,6 @@
     ../legacy/programs/nh.nix
     ../legacy/programs/git
     ../legacy/programs/obsidian.nix
-    ../legacy/programs/fish.nix
-    ../legacy/programs/starship/starship.nix
     ../legacy/programs/cli
     ../legacy/programs/helix/helix.nix
     ../legacy/programs/doc-viewer.nix
