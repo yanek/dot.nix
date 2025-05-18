@@ -26,5 +26,7 @@ with lib; {
   imports = [
     ./font.nix
     ./nord
+    ./rose-pine
+    ./gruvbox
   ];
 }
