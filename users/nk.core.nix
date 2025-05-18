@@ -14,8 +14,6 @@
     ../legacy/programs/starship/starship.nix
     ../legacy/programs/cli
     ../legacy/programs/helix/helix.nix
-    ../legacy/programs/firefox.nix
-    ../legacy/programs/comms/discord.nix
     ../legacy/programs/doc-viewer.nix
     ../legacy/programs/mail.nix
 
@@ -40,6 +38,11 @@
     windowManager.bspwm.enable = true;
     theme.variant = "rose-pine";
     term.name = "wezterm";
+    comms.discord.enable = true;
+    web-browser = {
+      firefox.enable = true;
+      chromium.enable = true;
+    };
   };
 
   programs.home-manager.enable = true;
