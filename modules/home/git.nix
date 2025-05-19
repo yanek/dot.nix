@@ -20,7 +20,7 @@ with lib; {
         pull.rebase = true;
         safe.directory = "*";
         url = {
-          "https://github.com/".insteadOf = "gh:";
+          "git@github.com".insteadOf = "gh:";
           "https://gist.github.com/".insteadOf = "gist:";
           "https://bitbucket.org/".insteadOf = "bb:";
         };
