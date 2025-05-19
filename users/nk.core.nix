@@ -6,9 +6,7 @@
   imports = [
     ../modules/home
 
-    ../legacy/programs/obsidian.nix
     ../legacy/programs/doc-viewer.nix
-    ../legacy/programs/mail.nix
   ];
 
   home = {
