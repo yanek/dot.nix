@@ -1,11 +1,11 @@
 {...}: {
   imports = [
-    ../legacy/programs/prusa-slicer.nix
     ../modules/home
   ];
 
   myHome = {
     gimp.enable = true;
+    print-3d.enable = true;
     windowManager.bspwm = {
       monitors = ["DP-4" "DP-2"];
       extraStartupPrograms = [

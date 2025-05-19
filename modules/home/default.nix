@@ -11,6 +11,7 @@
     ./comms.nix
     ./gimp.nix
     ./git.nix
+    ./print-3d.nix
     ./spotify.nix
     ./user-dirs.nix
     ./vlc.nix
