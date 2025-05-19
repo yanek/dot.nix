@@ -20,17 +20,6 @@
     };
 
     functions = {
-      # cd into directory on yazi exit
-      y =
-        # fish
-        ''
-          set tmp (mktemp -t "yazi-cwd.XXXXXX")
-          ${pkgs.yazi}/bin/yazi $argv --cwd-file="$tmp"
-          if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-            builtin cd -- "$cwd"
-          end
-          rm -f -- "$tmp"
-        '';
       # mkdir + cd into
       mkcd =
         # fish

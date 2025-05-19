@@ -7,7 +7,6 @@
     ../modules/home
 
     ../legacy/programs/obsidian.nix
-    ../legacy/programs/cli
     ../legacy/programs/doc-viewer.nix
     ../legacy/programs/mail.nix
   ];
@@ -33,6 +32,7 @@
     comms.discord.enable = true;
     vlc.enable = true;
     spotify.enable = true;
+    yazi.enable = true;
     helix = {
       enable = true;
       isDefaultEditor = true;

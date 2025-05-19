@@ -15,6 +15,7 @@
     ./user-dirs.nix
     ./vlc.nix
     ./web-browser.nix
+    ./yazi.nix
   ];
 
   home.sessionPath = [
