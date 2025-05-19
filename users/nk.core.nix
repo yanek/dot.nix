@@ -10,9 +10,6 @@
     ../legacy/programs/cli
     ../legacy/programs/doc-viewer.nix
     ../legacy/programs/mail.nix
-
-    ../legacy/programs/multimedia/spotify.nix
-    ../legacy/programs/multimedia/vlc.nix
   ];
 
   home = {
