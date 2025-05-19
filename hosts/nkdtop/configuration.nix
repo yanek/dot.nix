@@ -73,7 +73,7 @@
     gaming.enable = true;
     nvidia = {
       enable = true;
-      useBeta = true;
+      useBeta = false;
     };
     nas = {
       enable = true;
