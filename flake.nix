@@ -6,7 +6,7 @@
     hm.url = "github:nix-community/home-manager/master";
     hm.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
     betterfox.url = "github:heitoraugustoln/betterfox-nix";
