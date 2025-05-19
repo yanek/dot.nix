@@ -9,6 +9,7 @@
     ./window-manager/bspwm
 
     ./comms.nix
+    ./documents.nix
     ./gimp.nix
     ./git.nix
     ./print-3d.nix

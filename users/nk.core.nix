@@ -5,8 +5,6 @@
 }: {
   imports = [
     ../modules/home
-
-    ../legacy/programs/doc-viewer.nix
   ];
 
   home = {
@@ -27,6 +25,7 @@
     theme.variant = "rose-pine";
     term.name = "wezterm";
     git.enable = true;
+    documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
     spotify.enable = true;
