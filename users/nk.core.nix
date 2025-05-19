@@ -34,6 +34,8 @@
     term.name = "wezterm";
     git.enable = true;
     comms.discord.enable = true;
+    vlc.enable = true;
+    spotify.enable = true;
     helix = {
       enable = true;
       isDefaultEditor = true;

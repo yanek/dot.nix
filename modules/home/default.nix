@@ -9,8 +9,11 @@
     ./window-manager/bspwm
 
     ./comms.nix
+    ./gimp.nix
     ./git.nix
+    ./spotify.nix
     ./user-dirs.nix
+    ./vlc.nix
     ./web-browser.nix
   ];
 
