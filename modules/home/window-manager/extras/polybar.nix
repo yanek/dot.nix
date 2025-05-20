@@ -43,7 +43,17 @@
 
         modules = {
           left = "date tray window";
-          center = "workspaces";
+          center =
+            (
+              if config.myHome.windowManager.bspwm.enable
+              then "workspaces-bspwm "
+              else ""
+            )
+            + (
+              if config.myHome.windowManager.i3.enable
+              then "workspaces-i3 "
+              else ""
+            );
           right = "spotify audio-output net-wired net-wlan";
         };
       };
@@ -65,8 +75,38 @@
         };
       };
 
-      "module/workspaces" = {
+      "module/workspaces-bspwm" = {
         type = "internal/bspwm";
+        pin-workspaces = true;
+        group-by-monitor = true;
+        label = {
+          separator = "";
+          active = {
+            text = "%name%";
+            foreground = base01;
+            background = base04;
+            padding = 1;
+          };
+          occupied = {
+            text = "%name%";
+            padding = 1;
+          };
+          urgent = {
+            text = "%name%";
+            foreground = base01;
+            background = base09;
+            padding = 1;
+          };
+          empty = {
+            text = "%name%";
+            foreground = base02;
+            padding = 1;
+          };
+        };
+      };
+
+      "module/workspaces-i3" = {
+        type = "internal/i3";
         pin-workspaces = true;
         group-by-monitor = true;
         label = {

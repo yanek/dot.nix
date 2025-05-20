@@ -7,6 +7,7 @@
     ./term
     ./themes
     ./window-manager/bspwm
+    ./window-manager/i3
 
     ./comms.nix
     ./documents.nix
