@@ -5,6 +5,9 @@
 }: {
   services.polybar = {
     enable = true;
+    package = pkgs.polybar.override {
+      i3Support = config.myHome.windowManager.i3.enable;
+    };
 
     settings = with config.lib.stylix.colors.withHashtag; {
       "bar/top" = {
@@ -17,7 +20,12 @@
         width = "100%";
         monitor = "\${env:MONITOR}";
         override-redirect = false;
-        wm-restack = "bspwm";
+        wm-restack =
+          if config.myHome.windowManager.bspwm.enable
+          then "bspwm"
+          else if config.myHome.windowManager.i3.enable
+          then "i3"
+          else "";
 
         border-bottom = {
           size = 2;
@@ -43,17 +51,13 @@
 
         modules = {
           left = "date tray window";
-          center =
-            (
-              if config.myHome.windowManager.bspwm.enable
-              then "workspaces-bspwm "
-              else ""
-            )
-            + (
-              if config.myHome.windowManager.i3.enable
-              then "workspaces-i3 "
-              else ""
-            );
+          center = (
+            if config.myHome.windowManager.bspwm.enable
+            then "workspaces-bspwm"
+            else if config.myHome.windowManager.i3.enable
+            then "workspaces-i3"
+            else ""
+          );
           right = "spotify audio-output net-wired net-wlan";
         };
       };
@@ -153,9 +157,9 @@
         label = {
           foreground = base07;
         };
-        exec = "${spotifyStatus}/bin/polybar-spotify-status";
+        exec = "exec ${spotifyStatus}/bin/polybar-spotify-status";
         click = {
-          left = "${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
+          left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
         };
       };
 
@@ -168,10 +172,10 @@
         exec = "${pc} --color-muted ${colors.base0A} --format '\${VOL_LEVEL}% vol' listen";
         click = {
           left = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
-          middle = "${pc} togmute";
+          middle = "exec ${pc} togmute";
         };
-        scroll-up = "${pc} up";
-        scroll-down = "${pc} down";
+        scroll-up = "exec ${pc} up";
+        scroll-down = "exec ${pc} down";
       };
 
       "module/net-wired" = {
