@@ -62,6 +62,7 @@
   imports = [
     ./ssh.nix
     ./audio.nix
+    ./ollama.nix
     ./xorg.nix
     ./nvidia.nix
     ./nas-client.nix
