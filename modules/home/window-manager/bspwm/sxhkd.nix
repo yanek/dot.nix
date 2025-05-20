@@ -20,6 +20,10 @@
 
       "super + {_,shift + }{1-8}" = "bspc {desktop -f,node -d} '^{1-8}'"; # focus or send to the given desktop
 
+      "super + minus" = "bspc node -z left 50 0; bspc node -z right -50 0";
+      "super + equal" = "bspc node -z left -50 0; bspc node -z right 50 0";
+      "super + BackSpace" = "bspc node @/ --balance";
+
       "super + n" = "bspc desktop -f next.local.!occupied"; # focus next free desktop in current monitor
       "super + {_,shift + }Tab" = "bspc desktop -f {next,prev}.local.occupied"; # focus next occupied desktop in current monitor
       "alt + {_,shift + }Tab" = "bspc node -f {next,prev}.local.!hidden.window"; # focus next node in current monitor
