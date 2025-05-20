@@ -21,7 +21,7 @@
   xdg.userDirs.enable = true;
 
   myHome = {
-    windowManager.bspwm.enable = true;
+    windowManager.i3.enable = true;
     theme.variant = "rose-pine";
     term.name = "wezterm";
     git.enable = true;
