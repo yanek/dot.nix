@@ -67,7 +67,10 @@
   hardware.keyboard.qmk.enable = true;
 
   mySystem = {
-    xorg.enable = true;
+    xorg = {
+      enable = true;
+      windowManager = "i3";
+    };
     audio.enable = true;
     bluetooth.enable = true;
     gaming.enable = true;

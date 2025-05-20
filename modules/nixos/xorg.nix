@@ -8,6 +8,9 @@
 with lib; {
   options.mySystem.xorg = {
     enable = mkEnableOption "xorg";
+    windowManager = mkOption {
+      type = with types; uniq str;
+    };
   };
 
   config = mkIf config.mySystem.xorg.enable {
@@ -21,7 +24,7 @@ with lib; {
 
     services = {
       displayManager = {
-        defaultSession = "none+bspwm";
+        defaultSession = "none+${config.mySystem.xorg.windowManager}";
         autoLogin = {
           enable = true;
           user = userSettings.username;
@@ -35,7 +38,8 @@ with lib; {
         autoRepeatInterval = 30;
         dpi = 96;
         desktopManager.xterm.enable = false;
-        windowManager.bspwm.enable = true;
+        windowManager.bspwm.enable = config.mySystem.xorg.windowManager == "bspwm";
+        windowManager.i3.enable = config.mySystem.xorg.windowManager == "i3";
         displayManager.lightdm = {
           enable = true;
           greeters.slick.enable = true;
