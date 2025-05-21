@@ -20,7 +20,8 @@
     };
     windowManager.i3 = {
       extraStartupPrograms = [
-        {command = "sleep 3 && exec vesktop";}
+        {command = "(sleep 3 && vesktop)";}
+        {command = "steam";}
         {command = "openrgb -m static -c cd3c0a";}
       ];
     };
