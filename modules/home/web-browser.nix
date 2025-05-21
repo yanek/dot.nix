@@ -1,20 +1,23 @@
 {
   config,
   lib,
+  pkgs,
   inputs,
-  userSettings,
   ...
 }:
-with lib; {
+with lib; let
+  cfg = config.myHome.web-browser;
+in {
   options.myHome.web-browser = {
     firefox.enable = mkEnableOption "firefox";
     chromium.enable = mkEnableOption "chromium";
+    brave.enable = mkEnableOption "brave";
   };
 
   config = {
     stylix.targets."firefox".profileNames = [config.home.username];
     programs = {
-      firefox = mkIf config.myHome.web-browser.firefox.enable {
+      firefox = mkIf cfg.firefox.enable {
         enable = true;
         betterfox = {
           enable = true;
@@ -35,7 +38,7 @@ with lib; {
           };
         };
       };
-      chromium = mkIf config.myHome.web-browser.chromium.enable {
+      chromium = mkIf cfg.chromium.enable {
         enable = true;
         extensions = [
           {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock origins
@@ -43,6 +46,9 @@ with lib; {
         ];
       };
     };
+    home.packages = mkIf cfg.brave.enable [
+      pkgs.brave
+    ];
   };
 
   imports = [inputs.betterfox.homeManagerModules.betterfox];
