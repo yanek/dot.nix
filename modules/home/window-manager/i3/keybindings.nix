@@ -56,7 +56,7 @@
     "Mod4+6" = "workspace number 6";
     "Mod4+7" = "workspace number 7";
     "Mod4+8" = "workspace number 8";
-    "Mod4+Tab" = "workspace next";
+    "Mod4+Tab" = "workspace next_on_output";
 
     "Mod4+grave" = "scratchpad show";
     "Mod4+Shift+grave" = "scratchpad move";

@@ -45,30 +45,21 @@ in {
         };
         window = {
           titlebar = false;
-          border = 2;
+          border = 0;
         };
         floating = {
           titlebar = false;
-          border = 2;
+          border = 0;
           modifier = mod;
         };
-        # This bit of code generates 1 * `desktopPerMonitor` workspaces
-        # per configured monitor for this host/user.
-        # workspaceOutputAssign = let
-        #   desktopPerMonitor = 4;
-        #   monitorDesktopMap =
-        #     if cfg.monitors == []
-        #     then {}
-        #     else
-        #       listToAttrs (
-        #         imap1 (i: monitor: {
-        #           name = monitor;
-        #           workspace = genList (j: toString ((i - 1) * desktopPerMonitor + j + 1)) desktopPerMonitor;
-        #         })
-        #         cfg.monitors
-        #       );
-        # in
-        #   monitorDesktopMap;
+        # colors = let
+        #   transp = "#00000000";
+        # in {
+        #   urgent.childBorder = mkForce transp;
+        #   focusedInactive.childBorder = mkForce transp;
+        #   unfocused.childBorder = mkForce transp;
+        #   placeholder.childBorder = mkForce transp;
+        # };
         keybindings = keybinds-submodule.keybindings;
         modes = keybinds-submodule.modes;
         startup = import ./startup.nix {inherit config pkgs;};
