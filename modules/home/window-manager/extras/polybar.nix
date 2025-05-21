@@ -115,13 +115,18 @@
         group-by-monitor = true;
         label = {
           separator = "";
-          active = {
+          focused = {
             text = "%name%";
             foreground = base01;
             background = base04;
             padding = 1;
           };
-          occupied = {
+          unfocused = {
+            text = "%name%";
+            foreground = base02;
+            padding = 1;
+          };
+          visible = {
             text = "%name%";
             padding = 1;
           };
@@ -129,11 +134,6 @@
             text = "%name%";
             foreground = base01;
             background = base09;
-            padding = 1;
-          };
-          empty = {
-            text = "%name%";
-            foreground = base02;
             padding = 1;
           };
         };
