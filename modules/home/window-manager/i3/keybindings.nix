@@ -7,7 +7,6 @@
     "Mod4+Return" = "exec ${config.myHome.term.command}";
     "Mod4+q" = "kill";
     "Mod4+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
-    "Mod4+Escape" = "exec i3lock";
 
     "Mod4+h" = "focus left";
     "Mod4+j" = "focus down";
@@ -62,18 +61,21 @@
     "Mod4+Shift+grave" = "scratchpad move";
 
     "Mod4+z" = "move workspace to output up";
+    "Mod4+equal" = "resize grow width 200px";
+    "Mod4+minus" = "resize shrink width 200px";
 
     "Print" = "exec ${pkgs.maim}/bin/maim --window $(${pkgs.xdotool}/bin/xdotool getactivewindow) | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
     "Shift+Print" = "exec ${pkgs.maim}/bin/maim --select | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
-
-    "Mod4+equal" = "resize grow width 50px";
-    "Mod4+minus" = "resize shrink width 50px";
+    "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+    "XF86AudioLowerVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-";
+    "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+    "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
 
     "Mod4+Shift+c" = "reload";
     "Mod4+Shift+r" = "restart";
-    "Mod4+Shift+e" = "exec i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'";
 
     "Mod4+r" = "mode resize";
+    "Mod4+Escape" = "mode system";
   };
 
   modes = {
@@ -87,6 +89,20 @@
       "Down" = "resize grow height 10 px or 10 ppt";
       "Up" = "resize shrink height 10 px or 10 ppt";
       "Right" = "resize grow width 10 px or 10 ppt";
+
+      "Space" = "mode default";
+      "Escape" = "mode default";
+      "Return" = "mode default";
+    };
+    system = let
+      kill = "exec i3-msg [class=\".*\"] kill && sleep 1";
+    in {
+      "l" = "exec i3lock";
+      "e" = "exit";
+      "s" = "exec systemctl suspend";
+      "h" = "exec systemctl hibernate";
+      "r" = "${kill}; exec systemctl reboot";
+      "x" = "${kill}; exec systemctl poweroff";
 
       "Space" = "mode default";
       "Escape" = "mode default";
