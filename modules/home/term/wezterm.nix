@@ -19,6 +19,7 @@
           local wezterm = require 'wezterm'
           local config = wezterm.config_builder()
 
+          config.font = wezterm.font('${config.stylix.fonts.monospace.name}', { weight = 'DemiBold' })
           config.freetype_load_target = "Light"
           config.freetype_render_target = "HorizontalLcd"
           config.window_decorations = "RESIZE"
