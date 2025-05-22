@@ -15,5 +15,8 @@
     command = "systemctl --user restart polybar";
     always = true;
   }
+  {
+    command = "${pkgs.flashfocus}/bin/flashfocus --simple --time 100";
+  }
 ]
 ++ config.myHome.windowManager.i3.extraStartupPrograms
