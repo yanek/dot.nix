@@ -13,18 +13,6 @@ in {
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
       image = ./wallpaper.png;
-
-      cursor = {
-        name = "Hackneyed";
-        package = pkgs.hackneyed;
-        size = 24;
-      };
-
-      iconTheme = {
-        enable = true;
-        dark = "Papirus";
-        package = pkgs.papirus-icon-theme;
-      };
     };
 
     # xsession.windowManager.bspwm.settings = with config.lib.stylix.colors.withHashtag; let

@@ -1,26 +1,31 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}:
+with lib; {
   stylix.fonts = {
-    serif = {
+    serif = mkDefault {
       package = pkgs.noto-fonts;
       name = "Noto Serif";
     };
 
-    sansSerif = {
+    sansSerif = mkDefault {
       package = pkgs.noto-fonts;
       name = "Noto Sans";
     };
 
-    emoji = {
+    emoji = mkDefault {
       package = pkgs.noto-fonts-emoji;
       name = "Noto Color Emoji";
     };
 
-    monospace = {
+    monospace = mkDefault {
       package = pkgs.commit-mono;
       name = "CommitMono";
     };
 
-    sizes = {
+    sizes = mkDefault {
       applications = 11;
       desktop = 11;
       popups = 11;

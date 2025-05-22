@@ -15,12 +15,6 @@ in {
       # base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
       image = ./wallpaper.png;
 
-      cursor = {
-        name = "Hackneyed";
-        package = pkgs.hackneyed;
-        size = 24;
-      };
-
       iconTheme = {
         enable = true;
         dark = "Papirus";
@@ -36,5 +30,7 @@ in {
       presel_feedback_color = mkForce base02;
       focused_border_color = mkForce base06;
     };
+
+    programs.helix.settings.theme = lib.mkForce "nord_night";
   };
 }

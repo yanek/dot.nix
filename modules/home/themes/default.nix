@@ -1,18 +1,29 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib; {
   options.myHome.theme = {
-    variant = lib.mkOption {
+    variant = mkOption {
       default = "nord";
       type = types.str;
     };
   };
 
-  config.stylix = lib.mkIf (config.myHome.theme.variant != "") {
+  config.stylix = mkIf (config.myHome.theme.variant != "") {
     enable = true;
+    cursor = mkDefault {
+      name = "Hackneyed";
+      package = pkgs.hackneyed;
+      size = 24;
+    };
+    iconTheme = mkDefault {
+      enable = true;
+      dark = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
     targets = {
       cava.rainbow.enable = true;
       gtk.extraCss =
@@ -25,8 +36,10 @@ with lib; {
 
   imports = [
     ./font.nix
+    ./ayu-dark
     ./nord
     ./rose-pine
+    ./rose-pine-dawn
     ./gruvbox
   ];
 }
