@@ -10,6 +10,7 @@ with lib; {
       global = {
         origin = "top-center";
         offset = "(0,34)";
+        width = 640;
         progress_bar = true;
         frame_width = 1;
         gap_size = 8;
