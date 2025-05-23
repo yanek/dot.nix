@@ -11,6 +11,10 @@
         command = "floating enable";
         criteria.class = "easyeffects";
       }
+      {
+        command = "floating enable";
+        criteria.title = "^Cameractrls$";
+      }
     ];
 
     assigns = {
