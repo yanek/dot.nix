@@ -10,7 +10,7 @@ in {
     stylix = {
       polarity = "light";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
-      image = ./wallpaper.png;
+      image = ./wallpaper.jpg;
     };
 
     programs.helix.settings.theme = lib.mkForce "rose_pine_dawn";

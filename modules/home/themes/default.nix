@@ -36,10 +36,13 @@ with lib; {
 
   imports = [
     ./font.nix
+
     ./ayu-dark
+    ./grayscale
+    ./gruvbox
     ./nord
     ./rose-pine
     ./rose-pine-dawn
-    ./gruvbox
+    ./solarized-light
   ];
 }
