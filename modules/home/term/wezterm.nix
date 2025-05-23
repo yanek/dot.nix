@@ -26,10 +26,10 @@
           config.hide_tab_bar_if_only_one_tab = true
 
           config.window_padding = {
-            left = 10,
-            right = 10,
-            top = 10,
-            bottom = 10,
+            left = 24,
+            right = 24,
+            top = 24,
+            bottom = 24,
           }
 
           return config
