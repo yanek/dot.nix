@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "polybar-spotify-status"
 ''
   PARENT_BAR="top"
   PARENT_BAR_PID=$(${pkgs.procps}/bin/pgrep -a "polybar" | ${pkgs.gnugrep}/bin/grep "$PARENT_BAR" | ${pkgs.coreutils}/bin/cut -d" " -f1)
-  PLAYER="spotify"
+  PLAYER="spotify_player"
   FORMAT="{{ title }} - {{ artist }}"
 
   # Sends $2 as message to all polybar PIDs that are part of $1
