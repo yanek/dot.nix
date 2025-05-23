@@ -45,21 +45,13 @@ in {
         };
         window = {
           titlebar = false;
-          border = 0;
+          border = 1;
         };
         floating = {
           titlebar = false;
-          border = 0;
+          border = 1;
           modifier = mod;
         };
-        # colors = let
-        #   transp = "#00000000";
-        # in {
-        #   urgent.childBorder = mkForce transp;
-        #   focusedInactive.childBorder = mkForce transp;
-        #   unfocused.childBorder = mkForce transp;
-        #   placeholder.childBorder = mkForce transp;
-        # };
         keybindings = keybinds-submodule.keybindings;
         modes = keybinds-submodule.modes;
         startup = import ./startup.nix {inherit config pkgs;};
