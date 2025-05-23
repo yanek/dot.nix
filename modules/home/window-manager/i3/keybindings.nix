@@ -69,7 +69,7 @@
     "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
     "XF86AudioLowerVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-";
     "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-    "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
+    "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify_player";
 
     "Mod4+Shift+c" = "reload";
     "Mod4+Shift+r" = "restart";
@@ -95,14 +95,14 @@
       "Return" = "mode default";
     };
     system = let
-      kill = "exec i3-msg [class=\".*\"] kill && sleep 1";
+      kill = "exec i3-msg [class=\".*\"] kill && sleep 3";
     in {
       "l" = "exec i3lock";
       "e" = "exit";
       "s" = "exec systemctl suspend";
       "h" = "exec systemctl hibernate";
-      "r" = "${kill}; exec systemctl reboot";
-      "x" = "${kill}; exec systemctl poweroff";
+      "r" = "${kill} && exec systemctl reboot";
+      "x" = "${kill} && exec systemctl poweroff";
 
       "Space" = "mode default";
       "Escape" = "mode default";
