@@ -8,7 +8,7 @@
     command = "xsetroot -cursor_name left_ptr";
   }
   {
-    command = "${pkgs.feh}/bin/feh --bg-fill ${config.stylix.image}";
+    command = "xsetroot -solid \"${config.lib.stylix.colors.withHashtag.base02}\"";
     always = true;
   }
   {
