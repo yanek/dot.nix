@@ -1,15 +1,31 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
   ...
 }:
-with lib; {
+with lib; let
+  cfg = config.myHome.spotify;
+in {
   options.myHome.spotify = {
-    enable = mkEnableOption "spotify";
+    gui.enable = mkEnableOption "gui";
+    cli.enable = mkEnableOption "cli";
   };
 
-  config.home.packages = mkIf config.myHome.spotify.enable [
-    pkgs.spotify
-  ];
+  config = {
+    programs.spicetify = let
+      spicepkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.system};
+    in
+      mkIf cfg.gui.enable {
+        enable = true;
+        enabledExtensions = with spicepkgs.extensions; [
+          fullAppDisplay
+          shuffle
+        ];
+      };
+    programs.spotify-player = mkIf cfg.cli.enable {
+      enable = true;
+    };
+  };
 }

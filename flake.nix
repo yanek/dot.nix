@@ -15,6 +15,11 @@
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
+    spicetify = {
+      url = "github:gerg-l/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -99,6 +104,7 @@
           ./users/nk.core.nix
           ./users/nk.dtop.nix
           inputs.stylix.homeModules.stylix
+          inputs.spicetify.homeManagerModules.spicetify
           inputs.nvf.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
         ];
@@ -116,6 +122,7 @@
           ./users/nk.core.nix
           ./users/nk.nkltop.nix
           inputs.stylix.homeModules.stylix
+          inputs.spicetify.homeManagerModules.spicetify
           inputs.nvf.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
         ];

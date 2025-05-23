@@ -28,7 +28,7 @@
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
-    spotify.enable = true;
+    spotify.cli.enable = true;
     yazi.enable = true;
     helix = {
       enable = true;
