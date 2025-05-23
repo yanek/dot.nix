@@ -27,6 +27,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    xsession.enable = true;
     xsession.windowManager.i3 = let
       mod = "Mod4";
       keybinds-submodule =
@@ -65,5 +66,6 @@ in {
     ../extras/dunst.nix
     ../extras/rofi.nix
     ../extras/picom.nix
+    ../extras/flashfocus.nix
   ];
 }
