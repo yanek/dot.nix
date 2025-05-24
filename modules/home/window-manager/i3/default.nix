@@ -27,35 +27,37 @@ in {
   };
 
   config = mkIf cfg.enable {
-    xsession.enable = true;
-    xsession.windowManager.i3 = let
-      mod = "Mod4";
-      keybinds-submodule =
-        import ./keybindings.nix {inherit config pkgs;};
-    in {
+    xsession = {
       enable = true;
-      package = pkgs.i3;
-      config = {
-        modifier = mod;
-        terminal = config.myHome.term.command;
-        menu = "${pkgs.rofi}/bin/rofi -show drun";
-        bars = [];
-        gaps = {
-          inner = cfg.windowGap;
-          outer = 0;
-        };
-        window = {
-          titlebar = false;
-          border = 1;
-        };
-        floating = {
-          titlebar = false;
-          border = 1;
+      windowManager.i3 = let
+        mod = "Mod4";
+        keybinds-submodule =
+          import ./keybindings.nix {inherit config pkgs;};
+      in {
+        enable = true;
+        package = pkgs.i3;
+        config = {
           modifier = mod;
+          terminal = config.myHome.term.command;
+          menu = "${pkgs.rofi}/bin/rofi -show drun";
+          bars = [];
+          gaps = {
+            inner = cfg.windowGap;
+            outer = 0;
+          };
+          window = {
+            titlebar = false;
+            border = 1;
+          };
+          floating = {
+            titlebar = false;
+            border = 1;
+            modifier = mod;
+          };
+          keybindings = keybinds-submodule.keybindings;
+          modes = keybinds-submodule.modes;
+          startup = import ./startup.nix {inherit config pkgs;};
         };
-        keybindings = keybinds-submodule.keybindings;
-        modes = keybinds-submodule.modes;
-        startup = import ./startup.nix {inherit config pkgs;};
       };
     };
   };
