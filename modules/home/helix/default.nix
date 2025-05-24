@@ -16,6 +16,7 @@ with lib; {
   config = mkIf config.myHome.helix.enable {
     programs.helix = {
       enable = true;
+      package = pkgs.evil-helix;
       settings = pkgs.lib.importTOML ./config.toml;
       languages = import ./languages.nix {inherit pkgs;};
     };
