@@ -6,8 +6,7 @@
     ./shell
     ./term
     ./themes
-    ./window-manager/bspwm
-    ./window-manager/i3
+    ./window-manager
 
     ./comms.nix
     ./documents.nix

@@ -33,6 +33,7 @@ in {
         mod = "Mod4";
         keybinds-submodule =
           import ./keybindings.nix {inherit config pkgs;};
+        rules-submodule = import ./rules.nix;
       in {
         enable = true;
         package = pkgs.i3;
@@ -41,6 +42,7 @@ in {
           terminal = config.myHome.term.command;
           menu = "${pkgs.rofi}/bin/rofi -show drun";
           bars = [];
+          workspaceAutoBackAndForth = true;
           gaps = {
             inner = cfg.windowGap;
             outer = 0;
@@ -57,17 +59,15 @@ in {
           keybindings = keybinds-submodule.keybindings;
           modes = keybinds-submodule.modes;
           startup = import ./startup.nix {inherit config pkgs;};
+          window.commands = rules-submodule.window;
+          assigns = rules-submodule.assigns;
         };
       };
     };
-  };
 
-  imports = [
-    ./rules.nix
-    ../extras/polybar.nix
-    ../extras/dunst.nix
-    ../extras/rofi.nix
-    ../extras/picom.nix
-    ../extras/flashfocus.nix
-  ];
+    myHome.windowManager.extras = {
+      picom.enable = true;
+      polybar.enable = true;
+    };
+  };
 }

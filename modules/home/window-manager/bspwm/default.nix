@@ -75,12 +75,10 @@ in {
       enable = true;
       keybindings = import ./sxhkd.nix {inherit pkgs config;};
     };
-  };
 
-  imports = [
-    ../extras/polybar.nix
-    ../extras/dunst.nix
-    ../extras/rofi.nix
-    ../extras/picom.nix
-  ];
+    myHome.windowManager.extras = {
+      picom.enable = true;
+      polybar.enable = true;
+    };
+  };
 }
