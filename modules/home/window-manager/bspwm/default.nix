@@ -48,6 +48,9 @@ in {
           pointer_action3 = "resize_corner";
         };
 
+        startupPrograms = (import ./startup.nix {inherit config pkgs lib;}).programs;
+        rules = import ./rules.nix;
+
         # This bit of code generates 1 * `desktopPerMonitor` workspaces
         # per configured monitor for this host/user.
         monitors = let
@@ -67,12 +70,14 @@ in {
           monitorDesktopMap;
       };
     };
+
+    services.sxhkd = {
+      enable = true;
+      keybindings = import ./sxhkd.nix {inherit pkgs config;};
+    };
   };
 
   imports = [
-    ./startup.nix
-    ./sxhkd.nix
-    ./rules.nix
     ../extras/polybar.nix
     ../extras/dunst.nix
     ../extras/rofi.nix

@@ -11,7 +11,7 @@ with lib; let
     then "bspc wm --reorder-monitors ${monitorOrder}"
     else "";
 in {
-  xsession.windowManager.bspwm.startupPrograms =
+  programs =
     [
       "xsetroot -cursor_name left_ptr"
       monitorOrderCommand
