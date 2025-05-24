@@ -207,7 +207,7 @@ in {
       script =
         # sh
         ''
-          for m in $(polybar --list-monitors | ${pkgs.coreutils}/bin/cut -d":" -f1); do
+          for m in $(polybar --list-monitors | ${pkgs.uutils-coreutils-noprefix}/bin/cut -d":" -f1); do
             MONITOR=$m polybar --reload top &
           done
         '';
