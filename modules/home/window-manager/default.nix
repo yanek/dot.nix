@@ -3,9 +3,9 @@
     ./i3
     ./bspwm
     ./extras/polybar.nix
-    ./extras/flashfocus.nix # TODO modularize
-    ./extras/dunst.nix # TODO modularize
+    ./extras/flashfocus.nix
+    ./extras/dunst.nix
     ./extras/picom.nix
-    ./extras/rofi.nix # TODO modularize
+    ./extras/rofi.nix
   ];
 }
