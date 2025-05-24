@@ -19,6 +19,7 @@
       ];
     };
     windowManager.i3 = {
+      windowGap = 16;
       extraStartupPrograms = [
         {command = "(sleep 3 && vesktop)";}
         {command = "steam";}
