@@ -5,9 +5,19 @@
   ...
 }:
 with lib;
+let
+  cfg = config.myHome.git;
+in
 {
   options.myHome.git = {
     enable = mkEnableOption "git";
+    gui = mkOption {
+      default = "lazygit";
+      type = types.enum [
+        "lazygit"
+        "gitui"
+      ];
+    };
   };
 
   config.programs = mkIf config.myHome.git.enable {
@@ -38,7 +48,10 @@ with lib;
         };
       };
     };
-    lazygit = {
+    lazygit = mkIf (cfg.gui == "lazygit") {
+      enable = true;
+    };
+    gitui = mkIf (cfg.gui == "gitui") {
       enable = true;
     };
   };

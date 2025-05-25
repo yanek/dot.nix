@@ -2,7 +2,8 @@
   pkgs,
   userSettings,
   ...
-}: {
+}:
+{
   imports = [
     ../modules/home
   ];
@@ -24,7 +25,10 @@
     windowManager.i3.enable = true;
     theme.variant = "rose-pine";
     term.name = "wezterm";
-    git.enable = true;
+    git = {
+      enable = true;
+      gui = "gitui";
+    };
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
