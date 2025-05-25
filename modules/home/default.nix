@@ -12,6 +12,7 @@
     ./documents.nix
     ./gimp.nix
     ./git.nix
+    ./jellytui.nix
     ./print-3d.nix
     ./spotify.nix
     ./user-dirs.nix
