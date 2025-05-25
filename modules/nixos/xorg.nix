@@ -34,8 +34,8 @@ with lib; {
       xserver = {
         enable = true;
         xkb.layout = "eu";
-        autoRepeatDelay = 400;
-        autoRepeatInterval = 30;
+        autoRepeatDelay = 200;
+        autoRepeatInterval = 20;
         dpi = 96;
         desktopManager.xterm.enable = false;
         windowManager.bspwm.enable = config.mySystem.xorg.windowManager == "bspwm";
