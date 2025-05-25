@@ -3,14 +3,15 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   isTheme = config.myHome.theme.variant == "ayu-dark";
-in {
+in
+{
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
-      image = ./wallpaper.svg;
     };
 
     programs.helix.settings.theme = lib.mkForce "ayu_dark";

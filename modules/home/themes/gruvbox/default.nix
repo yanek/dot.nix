@@ -3,16 +3,17 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   isTheme = config.myHome.theme.variant == "gruvbox";
-in {
+in
+{
   config = lib.mkIf isTheme {
     # home.file.".config/waybar/scheme.css".source = ./scheme.css;
 
     stylix = {
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
-      image = ./wallpaper.png;
     };
 
     # xsession.windowManager.bspwm.settings = with config.lib.stylix.colors.withHashtag; let

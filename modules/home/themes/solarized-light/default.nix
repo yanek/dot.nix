@@ -3,14 +3,15 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   isTheme = config.myHome.theme.variant == "solarized-light";
-in {
+in
+{
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "light";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
-      image = ./wallpaper.png;
     };
 
     programs.helix.settings.theme = lib.mkForce "solarized_light";

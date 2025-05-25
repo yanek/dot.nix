@@ -3,35 +3,39 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   isTheme = config.myHome.theme.variant == "rose-pine";
-in {
+in
+{
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-      image = ./wallpaper.png;
     };
 
-    xsession.windowManager.i3.config.colors = with config.lib.stylix.colors.withHashtag; let
-      inherit (lib) mkForce;
-    in {
-      focused = {
-        indicator = mkForce base06;
-        border = mkForce base05;
-        childBorder = mkForce base05;
+    xsession.windowManager.i3.config.colors =
+      with config.lib.stylix.colors.withHashtag;
+      let
+        inherit (lib) mkForce;
+      in
+      {
+        focused = {
+          indicator = mkForce base06;
+          border = mkForce base05;
+          childBorder = mkForce base05;
+        };
+        focusedInactive = {
+          indicator = mkForce base00;
+          border = mkForce base00;
+          childBorder = mkForce base00;
+        };
+        unfocused = {
+          indicator = mkForce base00;
+          border = mkForce base00;
+          childBorder = mkForce base00;
+        };
       };
-      focusedInactive = {
-        indicator = mkForce base00;
-        border = mkForce base00;
-        childBorder = mkForce base00;
-      };
-      unfocused = {
-        indicator = mkForce base00;
-        border = mkForce base00;
-        childBorder = mkForce base00;
-      };
-    };
 
     programs.helix.settings.theme = lib.mkForce "rose_pine";
   };
