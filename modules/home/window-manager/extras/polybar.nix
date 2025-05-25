@@ -4,9 +4,11 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.myHome.windowManager.extras.polybar;
-in {
+in
+{
   options.myHome.windowManager.extras.polybar = {
     enable = mkEnableOption "polybar";
   };
@@ -30,11 +32,12 @@ in {
           monitor = "\${env:MONITOR}";
           override-redirect = false;
           wm-restack =
-            if config.myHome.windowManager.bspwm.enable
-            then "bspwm"
-            else if config.myHome.windowManager.i3.enable
-            then "i3"
-            else "";
+            if config.myHome.windowManager.bspwm.enable then
+              "bspwm"
+            else if config.myHome.windowManager.i3.enable then
+              "i3"
+            else
+              "";
 
           border-bottom = {
             size = 2;
@@ -61,11 +64,12 @@ in {
           modules = {
             left = "date tray window";
             center = (
-              if config.myHome.windowManager.bspwm.enable
-              then "workspaces-bspwm"
-              else if config.myHome.windowManager.i3.enable
-              then "workspaces-i3"
-              else ""
+              if config.myHome.windowManager.bspwm.enable then
+                "workspaces-bspwm"
+              else if config.myHome.windowManager.i3.enable then
+                "workspaces-i3"
+              else
+                ""
             );
             right = "spotify audio-output net-wired net-wlan";
           };
@@ -156,36 +160,39 @@ in {
           };
         };
 
-        "module/spotify" = let
-          spotifyStatus =
-            import ../../../../packages/scripts/polybar-spotify-status.nix {inherit pkgs;};
-        in {
-          type = "custom/script";
-          interval = 1;
-          format = " <label>";
-          label = {
-            foreground = base07;
+        "module/spotify" =
+          let
+            spotifyStatus = import ../../../../pkgs/scripts/polybar-spotify-status.nix { inherit pkgs; };
+          in
+          {
+            type = "custom/script";
+            interval = 1;
+            format = " <label>";
+            label = {
+              foreground = base07;
+            };
+            exec = "exec ${spotifyStatus}/bin/polybar-spotify-status";
+            click = {
+              left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
+            };
           };
-          exec = "exec ${spotifyStatus}/bin/polybar-spotify-status";
-          click = {
-            left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
-          };
-        };
 
-        "module/audio-output" = let
-          pc = "${pkgs.polybar-pulseaudio-control}/bin/pulseaudio-control";
-          colors = config.lib.stylix.colors;
-        in {
-          type = "custom/script";
-          tail = true;
-          exec = "${pc} --color-muted ${colors.base0A} --format '\${VOL_LEVEL}% vol' listen";
-          click = {
-            left = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
-            middle = "exec ${pc} togmute";
+        "module/audio-output" =
+          let
+            pc = "${pkgs.polybar-pulseaudio-control}/bin/pulseaudio-control";
+            colors = config.lib.stylix.colors;
+          in
+          {
+            type = "custom/script";
+            tail = true;
+            exec = "${pc} --color-muted ${colors.base0A} --format '\${VOL_LEVEL}% vol' listen";
+            click = {
+              left = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
+              middle = "exec ${pc} togmute";
+            };
+            scroll-up = "exec ${pc} up";
+            scroll-down = "exec ${pc} down";
           };
-          scroll-up = "exec ${pc} up";
-          scroll-down = "exec ${pc} down";
-        };
 
         "module/net-wired" = {
           type = "internal/network";

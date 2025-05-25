@@ -26,119 +26,122 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nixpkgs-stable,
-    hm,
-    ...
-  } @ inputs: let
-    systemSettings = {
-      system = "x86_64-linux";
-      locale = "en_US.UTF-8";
-      bootMode = "uefi";
-      bootMountPath = "/boot";
-    };
-
-    userSettings = {
-      username = "nk";
-      fullname = "Noé Ksiazek";
-      email = "noe.ksiazek@pm.me";
-      dirs = {
-        home = "/home/${userSettings.username}";
-        config = "${userSettings.dirs.home}/.nixos-config";
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-stable,
+      hm,
+      ...
+    }@inputs:
+    let
+      systemSettings = {
+        system = "x86_64-linux";
+        locale = "en_US.UTF-8";
+        bootMode = "uefi";
+        bootMountPath = "/boot";
       };
-    };
 
-    myOverlay = final: prev: {
-      jellytui = prev.callPackage ./packages/jellytui/package.nix {};
-    };
-
-    pkgs-stable = import nixpkgs-stable {
-      system = systemSettings.system;
-      config = {
-        allowUnfree = true;
+      userSettings = {
+        username = "nk";
+        fullname = "Noé Ksiazek";
+        email = "noe.ksiazek@pm.me";
+        dirs = {
+          home = "/home/${userSettings.username}";
+          config = "${userSettings.dirs.home}/.nixos-config";
+        };
       };
-    };
 
-    pkgs = import nixpkgs {
-      system = systemSettings.system;
-      config = {
-        allowUnfree = true;
+      myOverlay = final: prev: {
+        jellytui = prev.callPackage ./pkgs/jellytui/package.nix { };
       };
-      overlays = [myOverlay];
-    };
-  in {
-    nixosConfigurations = {
-      nkdtop = nixpkgs.lib.nixosSystem {
-        inherit pkgs;
+
+      pkgs-stable = import nixpkgs-stable {
         system = systemSettings.system;
-        specialArgs = {
-          inherit inputs;
-          inherit pkgs-stable;
-          inherit systemSettings;
-          inherit userSettings;
+        config = {
+          allowUnfree = true;
         };
-        modules = [
-          ./hosts/nkdtop/configuration.nix
-        ];
       };
-      nkltop = nixpkgs.lib.nixosSystem {
+
+      pkgs = import nixpkgs {
         system = systemSettings.system;
-        specialArgs = {
-          inherit inputs;
-          inherit pkgs-stable;
-          inherit systemSettings;
-          inherit userSettings;
+        config = {
+          allowUnfree = true;
         };
-        modules = [
-          ./hosts/nkltop/configuration.nix
-        ];
+        overlays = [ myOverlay ];
       };
-    };
-
-    homeConfigurations = {
-      "nk@nkdtop" = hm.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit inputs;
+    in
+    {
+      nixosConfigurations = {
+        nkdtop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          inherit systemSettings;
-          inherit userSettings;
+          system = systemSettings.system;
+          specialArgs = {
+            inherit inputs;
+            inherit pkgs-stable;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./hosts/nkdtop/configuration.nix
+          ];
         };
-        modules = [
-          ./users/nk.core.nix
-          ./users/nk.dtop.nix
-          inputs.stylix.homeModules.stylix
-          inputs.spicetify.homeManagerModules.spicetify
-          inputs.nvf.homeManagerModules.default
-          inputs.nixcord.homeModules.nixcord
-        ];
+        nkltop = nixpkgs.lib.nixosSystem {
+          system = systemSettings.system;
+          specialArgs = {
+            inherit inputs;
+            inherit pkgs-stable;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./hosts/nkltop/configuration.nix
+          ];
+        };
       };
 
-      "nk@nkltop" = hm.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit inputs;
+      homeConfigurations = {
+        "nk@nkdtop" = hm.lib.homeManagerConfiguration {
           inherit pkgs;
-          inherit systemSettings;
-          inherit userSettings;
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit pkgs;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./users/nk.core.nix
+            ./users/nk.dtop.nix
+            inputs.stylix.homeModules.stylix
+            inputs.spicetify.homeManagerModules.spicetify
+            inputs.nvf.homeManagerModules.default
+            inputs.nixcord.homeModules.nixcord
+          ];
         };
-        modules = [
-          ./users/nk.core.nix
-          ./users/nk.nkltop.nix
-          inputs.stylix.homeModules.stylix
-          inputs.spicetify.homeManagerModules.spicetify
-          inputs.nvf.homeManagerModules.default
-          inputs.nixcord.homeModules.nixcord
+
+        "nk@nkltop" = hm.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit pkgs;
+            inherit systemSettings;
+            inherit userSettings;
+          };
+          modules = [
+            ./users/nk.core.nix
+            ./users/nk.nkltop.nix
+            inputs.stylix.homeModules.stylix
+            inputs.spicetify.homeManagerModules.spicetify
+            inputs.nvf.homeManagerModules.default
+            inputs.nixcord.homeModules.nixcord
+          ];
+        };
+      };
+
+      devShells.${systemSettings.system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          go-task
+          vscode-langservers-extracted
         ];
       };
     };
-
-    devShells.${systemSettings.system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        go-task
-        vscode-langservers-extracted
-      ];
-    };
-  };
 }
