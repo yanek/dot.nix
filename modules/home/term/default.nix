@@ -3,13 +3,17 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+{
   options.myHome.term = {
     name = mkOption {
       default = "wezterm";
-      type = types.str;
+      type = types.enum [
+        "wezterm"
+        "kitty"
+      ];
     };
-    package = mkPackageOption pkgs "package" {};
+    package = mkPackageOption pkgs "package" { };
     command = mkOption {
       type = types.str;
     };

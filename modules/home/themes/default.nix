@@ -4,11 +4,21 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+{
   options.myHome.theme = {
     variant = mkOption {
       default = "nord";
-      type = types.str;
+      type = types.enum [
+        "ayu-dark"
+        "nord"
+        "grayscale"
+        "gruvbox"
+        "nord"
+        "rose-pine"
+        "rose-pine-dawn"
+        "solarized-light"
+      ];
     };
   };
 
