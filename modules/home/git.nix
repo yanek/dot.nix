@@ -4,7 +4,8 @@
   userSettings,
   ...
 }:
-with lib; {
+with lib;
+{
   options.myHome.git = {
     enable = mkEnableOption "git";
   };
@@ -20,7 +21,7 @@ with lib; {
         pull.rebase = true;
         safe.directory = "*";
         url = {
-          "git@github.com".insteadOf = "gh:";
+          "git@github.com:".insteadOf = "gh:";
           "https://gist.github.com/".insteadOf = "gist:";
           "https://bitbucket.org/".insteadOf = "bb:";
         };
