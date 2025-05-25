@@ -49,6 +49,10 @@
       };
     };
 
+    myOverlay = final: prev: {
+      jellytui = prev.callPackage ./packages/jellytui/package.nix {};
+    };
+
     pkgs-stable = import nixpkgs-stable {
       system = systemSettings.system;
       config = {
@@ -61,6 +65,7 @@
       config = {
         allowUnfree = true;
       };
+      overlays = [myOverlay];
     };
   in {
     nixosConfigurations = {
