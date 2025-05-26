@@ -3,9 +3,11 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.myHome.windowManager.extras.dunst;
-in {
+in
+{
   options.myHome.windowManager.extras.dunst = {
     enable = mkEnableOption "dunst";
   };
@@ -15,13 +17,13 @@ in {
       enable = true;
       settings = {
         global = {
-          origin = "top-center";
-          offset = "(0,34)";
-          width = 640;
+          origin = "top-right";
+          offset = "(8,34)";
+          width = "(320,960)";
           progress_bar = true;
           frame_width = 1;
           gap_size = 8;
-          corner_radius = 8;
+          corner_radius = 0;
           format = "<b>%s</b>\n%b";
           alignment = "left";
         };
