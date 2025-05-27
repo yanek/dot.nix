@@ -1,0 +1,5 @@
+{
+  conform-nvim = {
+    enable = true;
+  };
+}

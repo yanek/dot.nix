@@ -1,12 +1,10 @@
 {
-  vim.treesitter = {
     enable = true;
     addDefaultGrammars = true;
     autotagHtml = true;
     fold = false;
 
-    context.enable = true;
+    context.enable = false;
     highlight.enable = true;
     indent.enable = true;
-  };
 }

@@ -1,6 +1,4 @@
 {
-  vim = {
-    options = {
       # 2-space indents
       tabstop = 2;
       softtabstop = 2;
@@ -38,10 +36,5 @@
       cursorline = true;
       encoding = "utf-8";
       fileencoding = "utf-8";
-    };
 
-    globals = {
-      tex_flavor = "latex";
-    };
-  };
 }
