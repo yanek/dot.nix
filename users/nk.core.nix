@@ -29,13 +29,16 @@
       enable = true;
       gui = "lazygit";
     };
-    neovim.enable = true;
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
     spotify.cli.enable = true;
     yazi.enable = true;
     helix = {
+      enable = true;
+      isDefaultEditor = false;
+    };
+    neovim = {
       enable = true;
       isDefaultEditor = true;
     };
