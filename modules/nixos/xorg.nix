@@ -5,7 +5,8 @@
   userSettings,
   ...
 }:
-with lib; {
+with lib;
+{
   options.mySystem.xorg = {
     enable = mkEnableOption "xorg";
     windowManager = mkOption {
@@ -34,7 +35,7 @@ with lib; {
       xserver = {
         enable = true;
         xkb.layout = "eu";
-        autoRepeatDelay = 200;
+        autoRepeatDelay = 300;
         autoRepeatInterval = 20;
         dpi = 96;
         desktopManager.xterm.enable = false;
