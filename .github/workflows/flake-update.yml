@@ -1,0 +1,28 @@
+name: bump flake.lock
+
+on:
+  schedule:
+    - cron: "0 2 */2 * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v31
+
+      - run: nix flake update
+
+      - uses: stefanzweifel/git-auto-commit-action@v5.2.0
+        with:
+          commit_message: 'flake: update'
+          branch: main
+          commit_options: '--no-verify'
+          file_pattern: flake.lock
+          commit_user_name: Flake Bot
+          commit_author: Flake Bot <actions@github.com>
+          skip_dirty_check: false
+          skip_fetch: true
