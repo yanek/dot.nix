@@ -27,8 +27,9 @@
     term.name = "wezterm";
     git = {
       enable = true;
-      gui = "gitui";
+      gui = "lazygit";
     };
+    neovim.enable = true;
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
