@@ -23,7 +23,7 @@
 
   myHome = {
     windowManager.i3.enable = true;
-    theme.variant = "ayu-dark";
+    theme.variant = "rose-pine";
     term.name = "kitty";
     git = {
       enable = true;
@@ -34,15 +34,12 @@
     vlc.enable = true;
     spotify.cli.enable = true;
     yazi.enable = true;
-    helix = {
-      enable = true;
-      isDefaultEditor = false;
-    };
     neovim = {
       enable = true;
       isDefaultEditor = true;
     };
     web-browser = {
+      qutebrowser.enable = true;
       firefox.enable = true;
       brave.enable = true;
     };
