@@ -1,23 +1,4 @@
 {
-  clue = {
-    enable = true;
-    setupOpts = {
-      triggers = [
-        {
-          mode = "n";
-          keys = "<leader>";
-        }
-        {
-          mode = "n";
-          keys = "g";
-        }
-        {
-          mode = "n";
-          keys = "z";
-        }
-      ];
-    };
-  };
   comment = {
     enable = true;
     setupOpts = {
@@ -33,14 +14,6 @@
   };
   icons = {
     enable = true;
-  };
-  jump2d = {
-    enable = true;
-    setupOpts = {
-      mappings = {
-        start_jumping = "s";
-      };
-    };
   };
   notify = {
     enable = true;

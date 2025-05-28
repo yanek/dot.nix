@@ -11,6 +11,11 @@
     action = ":Neotree<CR>";
   }
   {
+    key = "<leader>qq";
+    mode = "n";
+    action = ":qa<CR>";
+  }
+  {
     key = "<Tab>";
     mode = "n";
     action = ":bnext<CR>";

@@ -23,7 +23,7 @@
 
   myHome = {
     windowManager.i3.enable = true;
-    theme.variant = "rose-pine";
+    theme.variant = "ayu-dark";
     term.name = "wezterm";
     git = {
       enable = true;
