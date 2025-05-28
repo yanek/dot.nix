@@ -1,5 +1,5 @@
 {
-  enable = false;
+  enable = true;
   config = {
     signs = {
       text = {
@@ -11,5 +11,6 @@
     update_in_insert = false;
     underline = true;
     virtual_lines = true;
+    virtual_text = false;
   };
 }

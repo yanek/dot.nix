@@ -28,7 +28,7 @@ with lib;
         binds = {
           whichKey.enable = true;
           cheatsheet.enable = true;
-          hardtime-nvim.enable = true;
+          hardtime-nvim.enable = false;
         };
 
         clipboard = {
