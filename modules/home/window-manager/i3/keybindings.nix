@@ -9,6 +9,7 @@
     "Mod4+Return" = "exec ${config.myHome.term.command}";
     "Mod4+q" = "kill";
     "Mod4+d" = "exec ${lib.getExe pkgs.rofi} -show drun";
+    "Mod4+p" = "exec ${lib.getExe pkgs.rofi-rbw}";
 
     "Mod4+h" = "focus left";
     "Mod4+j" = "focus down";
