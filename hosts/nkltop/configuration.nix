@@ -1,4 +1,5 @@
-{userSettings, ...}: {
+{ userSettings, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos
@@ -7,7 +8,7 @@
   boot = {
     loader = {
       timeout = 0;
-      loader.systemd-boot = {
+      systemd-boot = {
         enable = true;
         configurationLimit = 5;
       };
