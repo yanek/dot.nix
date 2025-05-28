@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = lib.mkIf (config.myHome.term.name == "kitty") {
     myHome.term = {
       package = pkgs.kitty;

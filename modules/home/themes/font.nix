@@ -3,7 +3,8 @@
   lib,
   ...
 }:
-with lib; {
+with lib;
+{
   stylix.fonts = {
     serif = mkDefault {
       package = pkgs.noto-fonts;
@@ -21,8 +22,8 @@ with lib; {
     };
 
     monospace = mkDefault {
-      package = pkgs.commit-mono;
-      name = "CommitMono";
+      package = pkgs.nerd-fonts.commit-mono;
+      name = "CommitMono Nerd Font";
     };
 
     sizes = mkDefault {
