@@ -60,8 +60,8 @@ with lib;
       antialias = true;
       hinting = {
         enable = true;
-        autohint = true;
-        style = "slight";
+        autohint = false;
+        style = "full";
       };
       subpixel = {
         lcdfilter = "default";
