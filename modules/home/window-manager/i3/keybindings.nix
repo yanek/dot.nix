@@ -71,10 +71,17 @@
       "exec ${lib.getExe pkgs.maim} --window $(${lib.getExe pkgs.xdotool} getactivewindow) | ${lib.getExe pkgs.xclip} -selection clipboard -t image/png";
     "Shift+Print" =
       "exec ${lib.getExe pkgs.maim} --select | ${lib.getExe pkgs.xclip} -selection clipboard -t image/png";
+
     "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
     "XF86AudioLowerVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-";
     "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
     "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause -p spotify_player";
+
+    # Brightness settings.
+    # Maybe this could be restricted to hosts with monitor brightness support,
+    # but it doesn't really matter.
+    "XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} set +10%";
+    "XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} set 10%-";
 
     "Mod4+Shift+c" = "reload";
     "Mod4+Shift+r" = "restart";
