@@ -39,7 +39,6 @@
       isDefaultEditor = true;
     };
     web-browser = {
-      qutebrowser.enable = true;
       firefox.enable = true;
       brave.enable = true;
     };
