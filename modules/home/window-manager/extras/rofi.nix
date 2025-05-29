@@ -26,16 +26,16 @@ in
             location = mkLiteral "center";
             anchor = mkLiteral "center";
             fullscreen = false;
-            width = mkLiteral "1000px";
+            width = mkLiteral "400px";
             x-offset = mkLiteral "0px";
             y-offset = mkLiteral "0px";
           };
           mainbox = {
             enabled = true;
-            spacing = mkLiteral "10px";
+            spacing = mkLiteral "0px";
             margin = mkLiteral "0px";
-            padding = mkLiteral "40px";
-            border = mkLiteral "0px solid";
+            padding = mkLiteral "8px";
+            border = mkLiteral "1px solid";
             border-radius = mkLiteral "0px 0px 0px 0px";
             children = [
               "inputbar"
@@ -45,9 +45,8 @@ in
           };
           inputbar = {
             enabled = true;
-            spacing = mkLiteral "10px";
-            margin = mkLiteral "0px";
-            padding = mkLiteral "0px 5px";
+            margin = mkLiteral "0px 0px 8px 0px";
+            padding = mkLiteral "0px";
             border = mkLiteral "0px";
             border-radius = mkLiteral "0px";
             children = [
@@ -71,14 +70,14 @@ in
           };
           listview = {
             enabled = true;
-            columns = 3;
+            columns = 1;
             lines = 10;
             cycle = true;
             dynamic = true;
             scrollbar = false;
             layout = mkLiteral "vertical";
             reverse = false;
-            fixed-height = true;
+            fixed-height = false;
             fixed-columns = true;
             spacing = mkLiteral "0px";
             margin = mkLiteral "0px";
@@ -89,9 +88,9 @@ in
           };
           element = {
             enabled = true;
-            spacing = mkLiteral "10px";
+            spacing = mkLiteral "0px";
             margin = mkLiteral "0px";
-            padding = mkLiteral "5px";
+            padding = mkLiteral "0px";
             cursor = mkLiteral "pointer";
           };
         };
