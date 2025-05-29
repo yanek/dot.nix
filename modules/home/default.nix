@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   imports = [
     ./helix
     ./neovim
@@ -14,6 +15,7 @@
     ./git.nix
     ./jellytui.nix
     ./print-3d.nix
+    ./redshift.nix
     ./spotify.nix
     ./user-dirs.nix
     ./vlc.nix
@@ -21,15 +23,22 @@
     ./yazi.nix
   ];
 
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.local/bin"
-  ];
+  home = {
+    sessionPath = [
+      "${config.home.homeDirectory}/.local/bin"
+    ];
+  };
 
-  programs.nh = {
-    enable = true;
-    clean = {
+  programs = {
+    nh = {
       enable = true;
-      dates = "weekly";
+      clean = {
+        enable = true;
+        dates = "weekly";
+      };
+    };
+    tealdeer = {
+      enable = true;
     };
   };
 }
