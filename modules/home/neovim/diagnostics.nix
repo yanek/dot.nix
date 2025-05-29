@@ -10,7 +10,7 @@
 
     update_in_insert = false;
     underline = true;
-    virtual_lines = true;
+    virtual_lines = false;
     virtual_text = false;
   };
 }

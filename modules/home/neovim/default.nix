@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -40,9 +41,18 @@ with lib;
         lsp = {
           enable = true;
           formatOnSave = true;
-          lspconfig.enable = true;
           nvim-docs-view.enable = true;
           trouble.enable = false;
+          lspconfig = {
+            enable = true;
+            sources.fish-lsp = ''
+              lspconfig.fish_lsp.setup {
+                capabilities = capabilities;
+                on_attach = default_on_attach;
+                cmd = {"${getExe pkgs.fish-lsp}", "start"};
+              }
+            '';
+          };
         };
 
         visuals = {
@@ -56,7 +66,6 @@ with lib;
         ui = {
           borders.enable = true;
           colorizer.enable = true;
-          illuminate.enable = true;
           smartcolumn = {
             enable = true;
             setupOpts = {
