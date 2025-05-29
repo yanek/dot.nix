@@ -39,6 +39,7 @@
     enable = true;
     lsp.enable = true;
     treesitter.enable = true;
+    extensions.markview-nvim.enable = true;
   };
 
   nix = {
