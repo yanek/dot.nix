@@ -64,5 +64,10 @@ in
           )
         '';
     };
+    fish.shellAbbrs = {
+      "gs" = "git status";
+      "gl" = "git lg";
+      "lg" = "lazygit";
+    };
   };
 }

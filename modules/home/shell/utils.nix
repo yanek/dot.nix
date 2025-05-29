@@ -1,10 +1,17 @@
+{ pkgs, ... }:
 {
   programs = {
     bat = {
       enable = true;
       config = {
-        map-syntax = [".*ignore:Git Ignore"];
+        map-syntax = [ ".*ignore:Git Ignore" ];
       };
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batwatch
+        prettybat
+      ];
     };
     eza = {
       enable = true;
@@ -30,6 +37,12 @@
       enable = true;
       enableFishIntegration = true;
       enableBashIntegration = true;
+    };
+    fish.shellAbbrs = {
+      "cd" = "z";
+      "cat" = "bat";
+      "man" = "batman";
+      "l" = "eza";
     };
   };
 }
