@@ -2,7 +2,8 @@
   pkgs,
   userSettings,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos
@@ -12,7 +13,7 @@
     plymouth = {
       enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     consoleLogLevel = 3;
     initrd = {
       verbose = false;
@@ -52,7 +53,7 @@
 
   services = {
     printing.enable = true;
-    udev.packages = [pkgs.via];
+    udev.packages = [ pkgs.via ];
     hardware.openrgb = {
       enable = true;
       motherboard = "amd";
