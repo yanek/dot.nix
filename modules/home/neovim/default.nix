@@ -60,7 +60,7 @@ with lib;
           smartcolumn = {
             enable = true;
             setupOpts = {
-              colorcolumn = "100";
+              colorcolumn = "80";
             };
           };
         };
