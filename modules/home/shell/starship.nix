@@ -22,7 +22,7 @@ with lib;
         "[ ](bg:${base01})"
         "$git_branch"
         "[ ](bg:${base01})"
-        "[](fg:${base01})"
+        "[ ](fg:${base01})"
       ];
       right_format = concatStrings [
         "$nix_shell"
