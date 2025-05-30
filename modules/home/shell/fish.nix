@@ -17,6 +17,11 @@
           mkdir -pv $argv
           cd $argv
         '';
+      fman =
+        # fish
+        ''
+          complete -C | cut -d \t -f 1 | fzf | xarg batman 
+        '';
     };
 
     plugins = with pkgs.fishPlugins; [
