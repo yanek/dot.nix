@@ -95,6 +95,7 @@ in
           };
         };
     };
+
     programs.rbw = {
       enable = true;
       settings = {
@@ -102,8 +103,21 @@ in
         email = "ksianoe@gmail.com";
       };
     };
-    home.packages = with pkgs; [
-      rofi-rbw
-    ];
+
+    home = {
+      packages = with pkgs; [
+        rofi-rbw
+      ];
+      file = {
+        ".local/share/rofi/rofi_power.mjs" = {
+          source = ./rofi_power.mjs;
+          executable = true;
+        };
+        ".local/share/rofi/rofi_sinks.mjs" = {
+          source = ./rofi_sinks.mjs;
+          executable = true;
+        };
+      };
+    };
   };
 }

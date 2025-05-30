@@ -77,6 +77,8 @@
     "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
     "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause -p spotify_player";
 
+    "Mod4+XF86AudioPlay" = "exec rofi -show sink -modes sink:\"~/.local/share/rofi/rofi_sinks.mjs\"";
+
     # Brightness settings.
     # Maybe this could be restricted to hosts with monitor brightness support,
     # but it doesn't really matter.
@@ -87,7 +89,7 @@
     "Mod4+Shift+r" = "restart";
 
     "Mod4+r" = "mode resize";
-    "Mod4+Escape" = "mode system";
+    "Mod4+Escape" = "exec rofi -show power -modes power:\"~/.local/share/rofi/rofi_power.mjs\"";
   };
 
   modes = {
@@ -106,21 +108,5 @@
       "Escape" = "mode default";
       "Return" = "mode default";
     };
-    system =
-      let
-        kill = "exec i3-msg [class=\".*\"] kill && sleep 3";
-      in
-      {
-        "l" = "exec i3lock";
-        "e" = "exit";
-        "s" = "exec systemctl suspend";
-        "h" = "exec systemctl hibernate";
-        "r" = "${kill} && exec systemctl reboot";
-        "x" = "${kill} && exec systemctl poweroff";
-
-        "Space" = "mode default";
-        "Escape" = "mode default";
-        "Return" = "mode default";
-      };
   };
 }
