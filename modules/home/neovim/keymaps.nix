@@ -1,19 +1,14 @@
 [
   {
-    key = "<leader>e";
-    mode = "n";
-    action = ":Neotree toggle<CR>";
-    desc = "Toggle Neotree";
-  }
-  {
-    key = "<C-e>";
-    mode = "n";
-    action = ":Neotree<CR>";
-  }
-  {
-    key = "<leader>qq";
+    key = "<leader>Q";
     mode = "n";
     action = ":qa<CR>";
+    desc = "Quit";
+  }
+  {
+    key = "<C-s>";
+    mode = "n";
+    action = ":w<CR>";
   }
   {
     key = "<Tab>";

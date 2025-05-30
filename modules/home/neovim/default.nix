@@ -27,9 +27,15 @@ with lib;
         languages = import ./languages.nix;
 
         binds = {
-          whichKey.enable = true;
+          whichKey = import ./which-key.nix;
           cheatsheet.enable = true;
-          hardtime-nvim.enable = false;
+          hardtime-nvim = {
+            enable = true;
+            setupOpts = {
+              restriction_mode = "hint";
+              disabled_keys = { };
+            };
+          };
         };
 
         clipboard = {
@@ -78,6 +84,7 @@ with lib;
           surround.enable = true;
           multicursors.enable = true;
           motion.flash-nvim.enable = true;
+          yazi-nvim = import ./yazi-nvim.nix;
         };
 
         telescope = {
@@ -94,7 +101,6 @@ with lib;
         };
 
         treesitter = import ./treesitter.nix;
-        filetree = import ./filetree.nix;
         diagnostics = import ./diagnostics.nix;
         keymaps = import ./keymaps.nix;
         mini = import ./mini.nix;
