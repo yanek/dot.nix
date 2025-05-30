@@ -24,11 +24,11 @@ in
         {
           window = {
             location = mkLiteral "center";
-            anchor = mkLiteral "center";
+            anchor = mkLiteral "north";
             fullscreen = false;
             width = mkLiteral "400px";
             x-offset = mkLiteral "0px";
-            y-offset = mkLiteral "0px";
+            y-offset = mkLiteral "-255px";
           };
           mainbox = {
             enabled = true;
