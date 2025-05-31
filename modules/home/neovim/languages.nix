@@ -100,7 +100,10 @@
     enable = true;
     extensions.ts-error-translator.enable = true;
     extraDiagnostics.enable = false; # refers to vim/nvim-lint/linters
-    format.enable = false;
+    format = {
+      enable = true;
+      type = "prettierd";
+    };
     lsp.enable = true;
     treesitter.enable = true;
   };

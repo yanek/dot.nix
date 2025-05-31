@@ -30,7 +30,7 @@ with lib;
           whichKey = import ./which-key.nix;
           cheatsheet.enable = true;
           hardtime-nvim = {
-            enable = true;
+            enable = false;
             setupOpts = {
               restriction_mode = "hint";
               disabled_keys = { };
@@ -97,7 +97,12 @@ with lib;
         };
 
         formatter = {
-          conform-nvim.enable = true;
+          conform-nvim = {
+            enable = true;
+            setupOpts = {
+              formatters_by_ft.javascript = [ "prettierd" ];
+            };
+          };
         };
 
         treesitter = import ./treesitter.nix;
