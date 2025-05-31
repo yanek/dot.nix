@@ -104,20 +104,8 @@ in
       };
     };
 
-    home = {
-      packages = with pkgs; [
-        rofi-rbw
-      ];
-      file = {
-        ".local/share/rofi/rofi_power.mjs" = {
-          source = ./rofi_power.mjs;
-          executable = true;
-        };
-        ".local/share/rofi/rofi_sinks.mjs" = {
-          source = ./rofi_sinks.mjs;
-          executable = true;
-        };
-      };
-    };
+    home.packages = with pkgs; [
+      rofi-rbw
+    ];
   };
 }

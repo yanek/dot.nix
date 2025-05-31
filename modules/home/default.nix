@@ -21,6 +21,8 @@
     ./vlc.nix
     ./web-browser.nix
     ./yazi.nix
+
+    ../../pkgs/scripts
   ];
 
   home = {

@@ -160,22 +160,18 @@ in
           };
         };
 
-        "module/spotify" =
-          let
-            spotifyStatus = import ../../../../pkgs/scripts/polybar-spotify-status.nix { inherit pkgs; };
-          in
-          {
-            type = "custom/script";
-            interval = 1;
-            format = " <label>";
-            label = {
-              foreground = base07;
-            };
-            exec = "exec ${spotifyStatus}/bin/polybar-spotify-status";
-            click = {
-              left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
-            };
+        "module/spotify" = {
+          type = "custom/script";
+          interval = 1;
+          format = " <label>";
+          label = {
+            foreground = base07;
           };
+          exec = "exec ~/.nix-profile/bin/polybar_spotify";
+          click = {
+            left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
+          };
+        };
 
         "module/audio-output" =
           let
