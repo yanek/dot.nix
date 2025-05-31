@@ -59,11 +59,10 @@ in
               border = 1;
               modifier = mod;
             };
-            keybindings = keybinds-submodule.keybindings;
-            modes = keybinds-submodule.modes;
             startup = import ./startup.nix { inherit config pkgs; };
             window.commands = rules-submodule.window;
-            assigns = rules-submodule.assigns;
+            inherit (keybinds-submodule) keybindings modes;
+            inherit (rules-submodule) assigns;
           };
         };
     };
@@ -71,7 +70,7 @@ in
     myHome.windowManager.extras = {
       picom.enable = true;
       polybar.enable = true;
-      flashfocus.enable = true;
+      flashfocus.enable = false;
       dunst.enable = true;
       rofi.enable = true;
     };
