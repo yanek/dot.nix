@@ -64,13 +64,6 @@
         jellytui = prev.callPackage ./pkgs/jellytui/package.nix { };
       };
 
-      pkgs-stable = import nixpkgs-stable {
-        inherit (systemSettings) system;
-        config = {
-          allowUnfree = true;
-        };
-      };
-
       pkgs = import nixpkgs {
         inherit (systemSettings) system;
         config = {
@@ -89,7 +82,6 @@
           inherit (systemSettings) system;
           specialArgs = {
             inherit inputs;
-            inherit pkgs-stable;
             inherit systemSettings;
             inherit userSettings;
           };
@@ -102,7 +94,6 @@
           inherit (systemSettings) system;
           specialArgs = {
             inherit inputs;
-            inherit pkgs-stable;
             inherit systemSettings;
             inherit userSettings;
           };
@@ -112,43 +103,32 @@
         };
       };
 
-      homeConfigurations = {
-        "nk@nkdtop" = hm.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit pkgs;
-            inherit systemSettings;
-            inherit userSettings;
-          };
-          modules = [
-            ./users/nk.core.nix
-            ./users/nk.dtop.nix
-            inputs.stylix.homeModules.stylix
-            inputs.spicetify.homeManagerModules.spicetify
-            inputs.nvf.homeManagerModules.default
-            inputs.nixcord.homeModules.nixcord
-          ];
-        };
+      homeConfigurations =
+        let
+          mkCommonConfiguration =
+            hostname:
+            hm.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit hostname;
+                inherit systemSettings;
+                inherit userSettings;
+              };
+              modules = [
+                ./users/nk.nix
+                inputs.stylix.homeModules.stylix
+                inputs.spicetify.homeManagerModules.spicetify
+                inputs.nvf.homeManagerModules.default
+                inputs.nixcord.homeModules.nixcord
+              ];
+            };
 
-        "nk@nkltop" = hm.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit pkgs;
-            inherit systemSettings;
-            inherit userSettings;
-          };
-          modules = [
-            ./users/nk.core.nix
-            ./users/nk.nkltop.nix
-            inputs.stylix.homeModules.stylix
-            inputs.spicetify.homeManagerModules.spicetify
-            inputs.nvf.homeManagerModules.default
-            inputs.nixcord.homeModules.nixcord
-          ];
+        in
+        {
+          "nk@nkdtop" = mkCommonConfiguration "nkdtop";
+          "nk@nkltop" = mkCommonConfiguration "nkltop";
         };
-      };
 
       devShells.${systemSettings.system}.default = pkgs.mkShell {
         packages = with pkgs; [
