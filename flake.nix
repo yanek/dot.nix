@@ -60,19 +60,19 @@
         };
       };
 
-      myOverlay = final: prev: {
+      myOverlay = _final: prev: {
         jellytui = prev.callPackage ./pkgs/jellytui/package.nix { };
       };
 
       pkgs-stable = import nixpkgs-stable {
-        system = systemSettings.system;
+        inherit (systemSettings) system;
         config = {
           allowUnfree = true;
         };
       };
 
       pkgs = import nixpkgs {
-        system = systemSettings.system;
+        inherit (systemSettings) system;
         config = {
           allowUnfree = true;
         };
@@ -86,7 +86,7 @@
       nixosConfigurations = {
         nkdtop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          system = systemSettings.system;
+          inherit (systemSettings) system;
           specialArgs = {
             inherit inputs;
             inherit pkgs-stable;
@@ -98,7 +98,8 @@
           ];
         };
         nkltop = nixpkgs.lib.nixosSystem {
-          system = systemSettings.system;
+          inherit pkgs;
+          inherit (systemSettings) system;
           specialArgs = {
             inherit inputs;
             inherit pkgs-stable;
