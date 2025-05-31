@@ -27,4 +27,9 @@
     action = "function() require('conform').format() end";
     desc = "Format buffer";
   }
+  {
+    key = "q";
+    mode = "n";
+    action = "";
+  }
 ]
