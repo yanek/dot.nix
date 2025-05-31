@@ -11,6 +11,7 @@ with lib;
       type = types.enum [
         "wezterm"
         "kitty"
+        "ghostty"
       ];
     };
     package = mkPackageOption pkgs "package" { };
@@ -22,5 +23,6 @@ with lib;
   imports = [
     ./wezterm.nix
     ./kitty.nix
+    ./ghostty.nix
   ];
 }

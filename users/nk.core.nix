@@ -24,7 +24,7 @@
   myHome = {
     windowManager.i3.enable = true;
     theme.variant = "rose-pine";
-    term.name = "kitty";
+    term.name = "wezterm";
     git = {
       enable = true;
       gui = "lazygit";
