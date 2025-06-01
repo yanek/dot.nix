@@ -37,7 +37,7 @@ const prune = async (args) => {
   const removables = all.filter((file) => file.age > args.since);
 
   if (!args.dry) {
-    removables.forEach(async (file) => await echo`rm -rvf ${file.path}`);
+    removables.forEach(async (file) => echo(await $`rm -rvf ${file.path}`));
   }
 
   notify(args.notify, args.target, removables.length);
