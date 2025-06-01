@@ -41,7 +41,6 @@ in
           { command = "openrgb -m static -c cd3c0a"; }
           { command = "nvidia-settings --load-config-only"; }
         ];
-
       })
     ];
     theme.variant = "rose-pine";
@@ -65,6 +64,14 @@ in
     };
     gimp.enable = isDesktop;
     print-3d.enable = isDesktop;
+    pruneDir = {
+      enable = true;
+      dirs = {
+        downloads = {
+          path = "${config.home.homeDirectory}/downloads";
+        };
+      };
+    };
   };
 
   programs.home-manager.enable = true;

@@ -15,14 +15,13 @@
     ./git.nix
     ./jellytui.nix
     ./print-3d.nix
+    ./prune-dir.nix
     ./redshift.nix
     ./spotify.nix
     ./user-dirs.nix
     ./vlc.nix
     ./web-browser.nix
     ./yazi.nix
-
-    ../../pkgs/scripts
   ];
 
   home = {
