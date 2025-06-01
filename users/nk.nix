@@ -58,7 +58,7 @@ in
       enable = true;
       isDefaultEditor = true;
     };
-    web-browser = {
+    webBrowser = {
       firefox.enable = true;
       brave.enable = isDesktop;
     };
