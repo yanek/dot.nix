@@ -167,9 +167,9 @@ in
           label = {
             foreground = base07;
           };
-          exec = "exec ~/.nix-profile/bin/polybar_spotify";
+          exec = "exec ${lib.getExe pkgs.myScripts.polybar_spotify}";
           click = {
-            left = "exec ${pkgs.playerctl}/bin/playerctl play-pause -p spotify";
+            left = "exec ${lib.getExe pkgs.playerctl} play-pause -p spotify";
           };
         };
 

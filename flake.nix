@@ -72,6 +72,7 @@
         overlays = [
           myOverlay
           inputs.neovim-overlay.overlays.default
+          (import ./pkgs/scripts/overlay.nix)
         ];
       };
     in

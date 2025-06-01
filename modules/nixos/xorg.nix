@@ -64,8 +64,8 @@ with lib;
         style = "full";
       };
       subpixel = {
-        lcdfilter = "default";
-        rgba = "rgb";
+        lcdfilter = "none";
+        rgba = "none";
       };
     };
 
@@ -73,11 +73,16 @@ with lib;
       graphics.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      xorg.xrandr
-      xclip
-      xdotool
-      libnotify
-    ];
+    environment = {
+      variables = {
+        FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
+      };
+      systemPackages = with pkgs; [
+        xorg.xrandr
+        xclip
+        xdotool
+        libnotify
+      ];
+    };
   };
 }

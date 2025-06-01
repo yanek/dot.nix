@@ -77,7 +77,8 @@
     "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
     "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause -p spotify_player";
 
-    "Mod4+XF86AudioPlay" = "exec rofi -show sink -modes sink:rofi_sinks";
+    "Mod4+XF86AudioPlay" =
+      "exec ${lib.getExe pkgs.rofi} -show sink -modes sink:${lib.getExe pkgs.myScripts.rofi_sinks}";
 
     # Brightness settings.
     # Maybe this could be restricted to hosts with monitor brightness support,
@@ -89,7 +90,8 @@
     "Mod4+Shift+r" = "restart";
 
     "Mod4+r" = "mode resize";
-    "Mod4+Escape" = "exec rofi -show power -modes power:rofi_power";
+    "Mod4+Escape" =
+      "exec ${lib.getExe pkgs.rofi} -show power -modes power:${lib.getExe pkgs.myScripts.rofi_power}";
   };
 
   modes = {
