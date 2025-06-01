@@ -44,7 +44,7 @@ in
       after = [ "ssh-agent.service" ];
       serviceConfig = {
         Type = "oneshot";
-        ExecStartPre = "${pkgs.uutils-coreutils-noprefix}/bin/sleep 1";
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 1";
         ExecStart = [
           "${pkgs.openssh}/bin/ssh-add ${config.users.users.${user}.home}/.ssh/id_ed25519"
         ];

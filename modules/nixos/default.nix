@@ -25,7 +25,7 @@
     ];
 
     systemPackages = with pkgs; [
-      uutils-coreutils-noprefix
+      coreutils
       rsync
       unzip
       bc
