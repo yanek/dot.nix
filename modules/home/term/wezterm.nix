@@ -21,9 +21,14 @@
           local wezterm = require 'wezterm'
           local config = wezterm.config_builder()
 
-          config.font = wezterm.font('${config.stylix.fonts.monospace.name}', { weight = 'DemiBold' })
-          config.freetype_load_target = "Normal"
-          config.window_decorations = "RESIZE"
+          config.font = wezterm.font('${config.stylix.fonts.monospace.name}', { weight = 'Medium' })
+          config.front_end = 'OpenGL'
+          config.freetype_load_target = 'HorizontalLcd'
+          config.freetype_render_target = 'HorizontalLcd'
+          config.freetype_load_flags = 'NO_HINTING'
+          config.window_decorations = 'RESIZE'
+          -- config.cell_width = 0.9
+          config.line_height = 1.0
           config.hide_tab_bar_if_only_one_tab = true 
           config.default_cursor_style = 'BlinkingBar'
 
