@@ -72,32 +72,28 @@
       };
     in
     {
-      nixosConfigurations = {
-        nkdtop = nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-          inherit (systemSettings) system;
-          specialArgs = {
-            inherit inputs;
-            inherit systemSettings;
-            inherit userSettings;
-          };
-          modules = [
-            ./hosts/nkdtop/configuration.nix
-          ];
+      nixosConfigurations =
+        let
+          mkCommonConfiguration =
+            hostname:
+            nixpkgs.lib.nixosSystem {
+              inherit pkgs;
+              inherit (systemSettings) system;
+              specialArgs = {
+                inherit inputs;
+                inherit systemSettings;
+                inherit userSettings;
+              };
+              modules = [
+                ./hosts/${hostname}/configuration.nix
+                inputs.stylix.nixosModules.stylix
+              ];
+            };
+        in
+        {
+          nkdtop = mkCommonConfiguration "nkdtop";
+          nkltop = mkCommonConfiguration "nkltop";
         };
-        nkltop = nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-          inherit (systemSettings) system;
-          specialArgs = {
-            inherit inputs;
-            inherit systemSettings;
-            inherit userSettings;
-          };
-          modules = [
-            ./hosts/nkltop/configuration.nix
-          ];
-        };
-      };
 
       homeConfigurations =
         let
