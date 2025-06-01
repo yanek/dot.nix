@@ -78,39 +78,15 @@ in
   services.gnome-keyring.enable = true;
 
   xsession.windowManager.i3.config.workspaceOutputAssign =
-    lib.mkIf (isDesktop && config.myHome.windowManager.i3.enable)
-      [
-        {
-          output = "DP-4";
-          workspace = "1";
-        }
-        {
-          output = "DP-4";
-          workspace = "2";
-        }
-        {
-          output = "DP-4";
-          workspace = "3";
-        }
-        {
-          output = "DP-4";
-          workspace = "4";
-        }
-        {
-          output = "DP-2";
-          workspace = "5";
-        }
-        {
-          output = "DP-2";
-          workspace = "6";
-        }
-        {
-          output = "DP-2";
-          workspace = "7";
-        }
-        {
-          output = "DP-2";
-          workspace = "8";
-        }
-      ];
+    let
+      mkWorkspaceAssignments =
+        output: workspaces:
+        map (ws: {
+          inherit output;
+          workspace = toString ws;
+        }) workspaces;
+    in
+    lib.mkIf (isDesktop && config.myHome.windowManager.i3.enable) (
+      (mkWorkspaceAssignments "DP-4" (lib.range 1 4)) ++ (mkWorkspaceAssignments "DP-5" (lib.range 5 8))
+    );
 }
