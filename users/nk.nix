@@ -87,6 +87,6 @@ in
         }) workspaces;
     in
     lib.mkIf (isDesktop && config.myHome.windowManager.i3.enable) (
-      (mkWorkspaceAssignments "DP-4" (lib.range 1 4)) ++ (mkWorkspaceAssignments "DP-5" (lib.range 5 8))
+      (mkWorkspaceAssignments "DP-4" (lib.range 1 4)) ++ (mkWorkspaceAssignments "DP-2" (lib.range 5 8))
     );
 }
