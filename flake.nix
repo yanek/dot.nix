@@ -38,7 +38,6 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-stable,
       hm,
       ...
     }@inputs:
@@ -60,19 +59,15 @@
         };
       };
 
-      myOverlay = _final: prev: {
-        jellytui = prev.callPackage ./pkgs/jellytui/package.nix { };
-      };
-
       pkgs = import nixpkgs {
         inherit (systemSettings) system;
         config = {
           allowUnfree = true;
         };
         overlays = [
-          myOverlay
           inputs.neovim-overlay.overlays.default
           (import ./pkgs/scripts/overlay.nix)
+          (import ./pkgs/by-name/overlay.nix)
         ];
       };
     in
