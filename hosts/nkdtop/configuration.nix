@@ -10,9 +10,6 @@
   ];
 
   boot = {
-    plymouth = {
-      enable = true;
-    };
     kernelPackages = pkgs.linuxPackages;
     consoleLogLevel = 3;
     initrd = {
