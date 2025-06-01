@@ -16,7 +16,7 @@ let
       };
       Service = {
         Type = "oneshot";
-        ExecStart = "${getExe pkgs.myScripts.prune_dir} --target=\"${config.path}\" --since=1 --notify";
+        ExecStart = "${getExe pkgs.myScripts.prune_dir} --target=\"${config.path}\" --since=48 --notify";
       };
     };
   };
