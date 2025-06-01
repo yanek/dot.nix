@@ -10,7 +10,7 @@
   wrap = false;
 
   # Searching
-  hlsearch = true;
+  hlsearch = false;
   incsearch = true;
   ignorecase = true;
   smartcase = true;
