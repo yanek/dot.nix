@@ -2,7 +2,8 @@
   pkgs,
   systemSettings,
   ...
-}: {
+}:
+{
   nix.settings = {
     warn-dirty = false;
     experimental-features = [
@@ -68,6 +69,7 @@
     ./nvidia.nix
     ./nas-client.nix
     ./bluetooth.nix
+    ./stylix.nix
     ./gaming.nix
   ];
 }
