@@ -37,6 +37,7 @@ in
         windowGap = 16;
         extraStartupPrograms = [
           { command = "(sleep 3 && vesktop)"; }
+          { command = "spotify"; }
           { command = "steam"; }
           { command = "openrgb -m static -c cd3c0a"; }
           { command = "nvidia-settings --load-config-only"; }
@@ -52,7 +53,10 @@ in
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
-    spotify.cli.enable = true;
+    spotify = {
+      cli.enable = true;
+      gui.enable = true;
+    };
     yazi.enable = true;
     neovim = {
       enable = true;
