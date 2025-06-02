@@ -55,11 +55,14 @@
       enable = true;
       motherboard = "amd";
     };
-    xserver.displayManager.setupCommands =
-      # sh
-      ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --primary --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0
-      '';
+    xserver = {
+      dpi = 110;
+      displayManager.setupCommands =
+        # sh
+        ''
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --primary --mode 3440x1440 --rate 144.00 --pos 0x1440 --output DP-2 --mode 2560x1440 --rate 143.97 --pos 440x0
+        '';
+    };
   };
 
   hardware.keyboard.qmk.enable = true;
