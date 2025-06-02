@@ -18,6 +18,7 @@
     ./prune-dir.nix
     ./redshift.nix
     ./spotify.nix
+    ./torrent-catcher.nix
     ./user-dirs.nix
     ./vlc.nix
     ./web-browser.nix

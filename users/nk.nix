@@ -68,6 +68,7 @@ in
     };
     gimp.enable = isDesktop;
     print-3d.enable = isDesktop;
+    torrentCatcher.enable = isDesktop;
     pruneDir = {
       enable = true;
       dirs = {
