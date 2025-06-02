@@ -17,6 +17,7 @@ in
     programs.rofi = {
       enable = true;
       terminal = config.myHome.term.command;
+      font = with config.stylix.fonts; mkForce "${monospace.name} ${toString sizes.terminal}";
       theme =
         let
           inherit (config.lib.formats.rasi) mkLiteral;
