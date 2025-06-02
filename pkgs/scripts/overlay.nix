@@ -48,6 +48,16 @@ in
       text = readFile ./prune_dir.mjs;
     };
 
+    file_catcher = writeZxApplication {
+      name = "file_catcher";
+      runtimeInputs = [
+        prev.libnotify
+        prev.rsync
+        prev.inotify-tools
+      ];
+      text = readFile ./file_catcher.mjs;
+    };
+
     polybar_spotify = writeShellApplication {
       name = "polybar_spotify";
       runtimeInputs = with prev; [
