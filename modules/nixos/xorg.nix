@@ -39,8 +39,7 @@ with lib;
         autoRepeatInterval = 20;
         dpi = mkDefault 96;
         desktopManager.xterm.enable = false;
-        windowManager.bspwm.enable = config.mySystem.xorg.windowManager == "bspwm";
-        windowManager.i3.enable = config.mySystem.xorg.windowManager == "i3";
+        windowManager.${config.mySystem.xorg.windowManager}.enable = true;
         displayManager.lightdm = {
           enable = true;
           greeters.slick.enable = true;
