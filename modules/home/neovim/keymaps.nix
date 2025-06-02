@@ -28,6 +28,12 @@
     desc = "Format buffer";
   }
   {
+    key = "-";
+    mode = "n";
+    action = ":Oil<CR>";
+    desc = "Open oil file explorer";
+  }
+  {
     key = "q";
     mode = "n";
     action = "";
