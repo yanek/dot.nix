@@ -12,6 +12,8 @@ switch (action) {
   case "shutdown":
     await $`systemctl poweroff`;
     break;
+  case "restart X11 server":
+    await $`sudo systemctl restart display-manager`;
   default:
-    console.log("lock\nreboot\nshutdown");
+    console.log("lock\nreboot\nshutdown\nrestart X11 server");
 }
