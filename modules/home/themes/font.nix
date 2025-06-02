@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
@@ -7,27 +8,13 @@ with lib;
 {
   stylix.fonts = {
     serif = mkDefault {
-      package = pkgs.iosevka.override {
-        set = "Etoile";
-        privateBuildPlan = {
-          family = "Iosevka Etoile";
-          spacing = "quasi-proportional";
-          serifs = "slab";
-        };
-      };
-      name = "Iosevka Etoile";
+      package = inputs.apple-fonts.packages.${pkgs.system}.ny;
+      name = "New York";
     };
 
     sansSerif = mkDefault {
-      package = pkgs.iosevka.override {
-        set = "Aile";
-        privateBuildPlan = {
-          family = "Iosevka Aile";
-          spacing = "quasi-proportional";
-          serifs = "sans";
-        };
-      };
-      name = "Iosevka Aile";
+      package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
+      name = "SF Pro Display";
     };
 
     emoji = mkDefault {
@@ -41,10 +28,29 @@ with lib;
     };
 
     sizes = mkDefault {
-      applications = 11;
-      desktop = 11;
-      popups = 11;
-      terminal = 12;
+      applications = 10;
+      desktop = 10;
+      popups = 10;
+      terminal = 13;
     };
   };
+
+  home.packages = [
+    (pkgs.iosevka.override {
+      set = "Etoile";
+      privateBuildPlan = {
+        family = "Iosevka Etoile";
+        spacing = "quasi-proportional";
+        serifs = "slab";
+      };
+    })
+    (pkgs.iosevka.override {
+      set = "Aile";
+      privateBuildPlan = {
+        family = "Iosevka Aile";
+        spacing = "quasi-proportional";
+        serifs = "sans";
+      };
+    })
+  ];
 }
