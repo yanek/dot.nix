@@ -37,7 +37,7 @@ with lib;
         xkb.layout = "eu";
         autoRepeatDelay = 300;
         autoRepeatInterval = 20;
-        dpi = 96;
+        dpi = mkDefault 96;
         desktopManager.xterm.enable = false;
         windowManager.bspwm.enable = config.mySystem.xorg.windowManager == "bspwm";
         windowManager.i3.enable = config.mySystem.xorg.windowManager == "i3";
@@ -61,11 +61,11 @@ with lib;
       hinting = {
         enable = true;
         autohint = false;
-        style = "full";
+        style = "slight";
       };
       subpixel = {
-        lcdfilter = "none";
-        rgba = "none";
+        lcdfilter = "default";
+        rgba = "rgb";
       };
     };
 
