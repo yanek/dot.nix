@@ -9,7 +9,7 @@
     duskTime = "18:00-20:00";
     temperature = {
       day = 6500;
-      night = 4500;
+      night = 3400;
     };
   };
 }
