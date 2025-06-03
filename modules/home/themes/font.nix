@@ -36,21 +36,11 @@ with lib;
   };
 
   home.packages = [
-    (pkgs.iosevka.override {
-      set = "Etoile";
-      privateBuildPlan = {
-        family = "Iosevka Etoile";
-        spacing = "quasi-proportional";
-        serifs = "slab";
-      };
+    (pkgs.iosevka-bin.override {
+      variant = "Etoile";
     })
-    (pkgs.iosevka.override {
-      set = "Aile";
-      privateBuildPlan = {
-        family = "Iosevka Aile";
-        spacing = "quasi-proportional";
-        serifs = "sans";
-      };
+    (pkgs.iosevka-bin.override {
+      variant = "Aile";
     })
   ];
 }
