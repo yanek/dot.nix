@@ -8,7 +8,7 @@
   config = lib.mkIf (config.myHome.term.name == "kitty") {
     myHome.term = {
       package = pkgs.kitty;
-      command = "${pkgs.kitty}/bin/kitty";
+      command = "${lib.getExe pkgs.kitty}";
     };
 
     programs.kitty = {

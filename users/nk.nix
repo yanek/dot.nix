@@ -45,7 +45,7 @@ in
       })
     ];
     theme.variant = "rose-pine";
-    term.name = "wezterm";
+    term.name = "kitty";
     git = {
       enable = true;
       gui = "lazygit";

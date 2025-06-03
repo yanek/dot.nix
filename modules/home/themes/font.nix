@@ -4,7 +4,9 @@
   lib,
   ...
 }:
-with lib;
+let
+  inherit (lib) mkDefault;
+in
 {
   stylix.fonts = {
     serif = mkDefault {
@@ -23,24 +25,33 @@ with lib;
     };
 
     monospace = mkDefault {
-      package = pkgs.nerd-fonts.iosevka;
-      name = "Iosevka Nerd Font";
+      package = pkgs.commit-mono;
+      name = "Commit Mono";
     };
 
     sizes = mkDefault {
       applications = 10;
       desktop = 10;
       popups = 10;
-      terminal = 13;
+      terminal = 12;
     };
   };
 
-  home.packages = [
-    (pkgs.iosevka-bin.override {
-      variant = "Etoile";
-    })
-    (pkgs.iosevka-bin.override {
-      variant = "Aile";
-    })
-  ];
+  home.packages =
+    [
+      pkgs.noto-fonts
+      pkgs.iosevka-bin
+    ]
+    ++ lib.map
+      (
+        variant:
+        pkgs.iosevka-bin.override {
+          inherit variant;
+        }
+      )
+      [
+        ""
+        "Etoile"
+        "Aile"
+      ];
 }
