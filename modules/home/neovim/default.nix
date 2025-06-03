@@ -101,8 +101,8 @@ in
           };
 
           autocomplete = {
-            nvim-cmp.enable = false;
-            blink-cmp.enable = true;
+            nvim-cmp.enable = true;
+            blink-cmp.enable = false;
           };
 
           formatter = {
