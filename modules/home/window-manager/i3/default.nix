@@ -59,7 +59,7 @@ in
               border = 1;
               modifier = mod;
             };
-            startup = import ./startup.nix { inherit config pkgs; };
+            startup = import ./startup.nix { inherit config pkgs lib; };
             window.commands = rules-submodule.window;
             inherit (keybinds-submodule) keybindings modes;
             inherit (rules-submodule) assigns;

@@ -34,6 +34,7 @@ in
   myScripts = {
     rofi_power = writeZxApplication {
       name = "rofi_power";
+      runtimeInputs = [ prev.betterlockscreen ];
       text = readFile ./rofi_power.mjs;
     };
 
