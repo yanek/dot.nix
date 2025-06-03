@@ -13,11 +13,8 @@ with lib;
         "ayu-dark"
         "nord"
         "grayscale"
-        "gruvbox"
         "nord"
         "rose-pine"
-        "rose-pine-dawn"
-        "solarized-light"
       ];
     };
   };
@@ -49,10 +46,7 @@ with lib;
 
     ./ayu-dark
     ./grayscale
-    ./gruvbox
     ./nord
     ./rose-pine
-    ./rose-pine-dawn
-    ./solarized-light
   ];
 }
