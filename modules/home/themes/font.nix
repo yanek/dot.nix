@@ -23,8 +23,8 @@ with lib;
     };
 
     monospace = mkDefault {
-      package = pkgs.iosevka;
-      name = "Iosevka";
+      package = pkgs.nerd-fonts.iosevka;
+      name = "Iosevka Nerd Font";
     };
 
     sizes = mkDefault {
