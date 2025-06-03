@@ -55,7 +55,7 @@ with lib;
 
     fonts.fontconfig = {
       enable = true;
-      allowBitmaps = false;
+      allowBitmaps = true; # Some emoji fonts seem to be considered bitmap
       antialias = true;
       hinting = {
         enable = true;
