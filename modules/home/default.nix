@@ -39,8 +39,14 @@
         dates = "weekly";
       };
     };
+
     tealdeer = {
       enable = true;
+    };
+
+    fish.shellAbbrs = {
+      "nhh" = "nh home switch ${config.home.homeDirectory}/.nixos-config";
+      "nho" = "nh os switch ${config.home.homeDirectory}/.nixos-config";
     };
   };
 }
