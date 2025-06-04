@@ -19,8 +19,9 @@ in
     username = "${userSettings.username}";
     homeDirectory = "${userSettings.dirs.home}";
     packages = with pkgs; [
-      xfce.thunar
       pavucontrol
+      nautilus
+      file-roller
       aseprite
       gcr # Provides org.gnome.keyring.SystemPrompter
     ];
