@@ -21,6 +21,7 @@ in
     packages = with pkgs; [
       xfce.thunar
       pavucontrol
+      aseprite
       gcr # Provides org.gnome.keyring.SystemPrompter
     ];
     stateVersion = "24.11";
