@@ -25,7 +25,7 @@ in
           locale = "fr_FR.UTF-8";
           background = base00;
           foreground = base06;
-          height = 20;
+          height = 22;
           fixed-center = true;
           padding = 2;
           width = "100%";
