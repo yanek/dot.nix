@@ -26,8 +26,8 @@ in
       {
         focused = {
           indicator = mkForce base06;
-          border = mkForce base05;
-          childBorder = mkForce base05;
+          border = mkForce base03;
+          childBorder = mkForce base03;
         };
         focusedInactive = {
           indicator = mkForce base00;

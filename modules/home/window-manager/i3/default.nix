@@ -52,11 +52,11 @@ in
             };
             window = {
               titlebar = false;
-              border = 1;
+              border = 2;
             };
             floating = {
               titlebar = false;
-              border = 1;
+              border = 2;
               modifier = mod;
             };
             startup = import ./startup.nix { inherit config pkgs lib; };
