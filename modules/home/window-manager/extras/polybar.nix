@@ -23,38 +23,36 @@ in
       settings = with config.lib.stylix.colors.withHashtag; {
         "bar/top" = {
           locale = "fr_FR.UTF-8";
-          background = base01;
-          foreground = base04;
-          height = 24;
+          background = base00;
+          foreground = base06;
+          height = 20;
           fixed-center = true;
           padding = 2;
           width = "100%";
           monitor = "\${env:MONITOR}";
           override-redirect = false;
-          wm-restack =
-            if config.myHome.windowManager.bspwm.enable then
-              "bspwm"
-            else if config.myHome.windowManager.i3.enable then
-              "i3"
-            else
-              "";
+          wm-restack = "i3";
 
           border-bottom = {
-            size = 2;
-            color = base00;
+            size = 0;
           };
 
           separator = {
             text = "|";
-            foreground = base00;
+            foreground = base03;
           };
 
-          font = [
-            "${config.stylix.fonts.monospace.name}:weight=Bold:size=10;3"
-            "Font Awesome 6 Brands Regular:style=Regular;4"
-            "Font Awesome 6 Free Solid:style=Solid;4"
-            "Font Awesome 6 Free Regular:style=Regular;4"
-          ];
+          font =
+            let
+              inherit (config.stylix.fonts.monospace) name;
+              size = builtins.toString config.stylix.fonts.sizes.desktop;
+            in
+            [
+              "${name}:weight=Bold:size=${size};2"
+              "Font Awesome 6 Brands Regular:style=Regular:size=${size};3"
+              "Font Awesome 6 Free Solid:style=Solid:size=${size};3"
+              "Font Awesome 6 Free Regular:style=Regular:size=${size};3"
+            ];
 
           module.margin = {
             left = 1;
@@ -62,24 +60,23 @@ in
           };
 
           modules = {
-            left = "date tray window";
-            center = (
-              if config.myHome.windowManager.bspwm.enable then
-                "workspaces-bspwm"
-              else if config.myHome.windowManager.i3.enable then
-                "workspaces-i3"
-              else
-                ""
-            );
-            right = "spotify audio-output net-wired net-wlan";
+            left = "date time tray window";
+            center = "workspaces";
+            right = "audio-output fsroot fshelix net-wired net-wlan";
           };
         };
 
         "module/date" = {
           type = "internal/date";
           date = "%Y-%m-%d";
+          label = "%date%";
+          format = "<label>";
+        };
+
+        "module/time" = {
+          type = "internal/date";
           time = "%H:%M:%S";
-          label = "%date% %time%";
+          label = "%time%";
           format = "<label>";
         };
 
@@ -92,37 +89,7 @@ in
           };
         };
 
-        "module/workspaces-bspwm" = {
-          type = "internal/bspwm";
-          pin-workspaces = true;
-          group-by-monitor = true;
-          label = {
-            separator = "";
-            active = {
-              text = "%name%";
-              foreground = base01;
-              background = base04;
-              padding = 1;
-            };
-            occupied = {
-              text = "%name%";
-              padding = 1;
-            };
-            urgent = {
-              text = "%name%";
-              foreground = base01;
-              background = base09;
-              padding = 1;
-            };
-            empty = {
-              text = "%name%";
-              foreground = base02;
-              padding = 1;
-            };
-          };
-        };
-
-        "module/workspaces-i3" = {
+        "module/workspaces" = {
           type = "internal/i3";
           pin-workspaces = true;
           group-by-monitor = true;
@@ -175,13 +142,13 @@ in
 
         "module/audio-output" =
           let
+            inherit (config.lib.stylix) colors;
             pc = "${pkgs.polybar-pulseaudio-control}/bin/pulseaudio-control";
-            colors = config.lib.stylix.colors;
           in
           {
             type = "custom/script";
             tail = true;
-            exec = "${pc} --color-muted ${colors.base0A} --format '\${VOL_LEVEL}% vol' listen";
+            exec = "${pc} --color-muted ${colors.base0A} --format 'VOL:\${VOL_LEVEL}%' listen";
             click = {
               left = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
               middle = "exec ${pc} togmute";
@@ -190,11 +157,27 @@ in
             scroll-down = "exec ${pc} down";
           };
 
+        "module/fsroot" = {
+          type = "internal/fs";
+          mount = [ "/" ];
+          label.mounted = "ROOTFS:%percentage_free%%";
+          interval = 60;
+          fixed-values = true;
+          warn-percentage = 70;
+          spacing = 1;
+        };
+
+        "module/fshelix" = {
+          "inherit" = "module/fsroot";
+          mount = [ "/mnt/helix" ];
+          label.mounted = "HELIX:%percentage_free%%";
+        };
+
         "module/net-wired" = {
           type = "internal/network";
           interface-type = "wired";
           label = {
-            connected = "%local_ip%";
+            connected = "L:%local_ip%";
           };
         };
 
@@ -202,18 +185,16 @@ in
           type = "internal/network";
           interface-type = "wireless";
           label = {
-            connected = "%local_ip% @ %essid%";
+            connected = "W:%local_ip%@%essid%";
           };
         };
       };
 
-      script =
-        # sh
-        ''
-          for m in $(polybar --list-monitors | ${pkgs.coreutils}/bin/cut -d":" -f1); do
-            MONITOR=$m polybar --reload top &
-          done
-        '';
+      script = ''
+        for m in $(polybar --list-monitors | ${pkgs.coreutils}/bin/cut -d":" -f1); do
+          MONITOR=$m polybar --reload top &
+        done
+      '';
     };
 
     home.packages = [
