@@ -5,6 +5,8 @@
     preferAbbrs = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      set pure_enable_single_line_prompt true
+      set pure_enable_nixdevshell true
     '';
 
     shellAbbrs = {
@@ -28,8 +30,8 @@
         inherit (fzf-fish) src;
       }
       {
-        name = "hydro";
-        inherit (hydro) src;
+        name = "pure";
+        inherit (pure) src;
       }
     ];
   };
