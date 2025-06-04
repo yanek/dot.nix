@@ -56,7 +56,7 @@ with lib;
       hinting = {
         enable = true;
         autohint = false;
-        style = "slight";
+        style = "none";
       };
       subpixel = {
         lcdfilter = "default";
