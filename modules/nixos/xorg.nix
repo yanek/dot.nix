@@ -17,6 +17,7 @@ with lib;
   config = mkIf config.mySystem.xorg.enable {
     programs = {
       dconf.enable = true;
+      i3lock.enable = true;
     };
 
     services = {
