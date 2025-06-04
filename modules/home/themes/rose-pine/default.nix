@@ -12,6 +12,10 @@ in
     stylix = {
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+      targets = {
+        helix.enable = false;
+        nvf.enable = false;
+      };
     };
 
     xsession.windowManager.i3.config.colors =
@@ -37,6 +41,13 @@ in
         };
       };
 
-    programs.helix.settings.theme = lib.mkForce "rose_pine";
+    programs = {
+      helix.settings.theme = lib.mkForce "rose_pine";
+      nvf.settings.vim.theme = {
+        enable = true;
+        name = "rose-pine";
+        style = "main";
+      };
+    };
   };
 }
