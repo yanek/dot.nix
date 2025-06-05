@@ -22,8 +22,8 @@ with lib;
   config.stylix = mkIf (config.myHome.theme.variant != "") {
     enable = true;
     cursor = mkDefault {
-      name = "Hackneyed";
-      package = pkgs.hackneyed;
+      name = "Simp1e";
+      package = pkgs.simp1e-cursors;
       size = 24;
     };
     iconTheme = mkDefault {
