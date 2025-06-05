@@ -70,7 +70,8 @@
           allowUnfree = true;
         };
         overlays = [
-          inputs.neovim-overlay.overlays.default
+          # FIXME: for now, nightly neovim is broken on this config
+          # inputs.neovim-overlay.overlays.default
           (import ./pkgs/scripts/overlay.nix)
           (import ./pkgs/by-name/overlay.nix)
         ];
