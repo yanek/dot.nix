@@ -10,8 +10,8 @@ in
 {
   stylix.fonts = {
     serif = mkDefault {
-      package = inputs.apple-fonts.packages.${pkgs.system}.ny;
-      name = "New York";
+      package = pkgs.noto-fonts; # inputs.apple-fonts.packages.${pkgs.system}.ny;
+      name = "Noto Serif";
     };
 
     sansSerif = mkDefault {
