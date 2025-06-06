@@ -17,7 +17,7 @@ with lib;
   config = mkIf config.mySystem.xorg.enable {
     programs = {
       dconf.enable = true;
-      i3lock.enable = true;
+      slock.enable = true;
     };
 
     services = {
@@ -31,6 +31,7 @@ with lib;
 
       xserver = {
         enable = true;
+        enableCtrlAltBackspace = false;
         xkb.layout = "eu";
         autoRepeatDelay = 300;
         autoRepeatInterval = 20;
@@ -41,6 +42,9 @@ with lib;
           enable = true;
           greeters.slick.enable = true;
         };
+        serverFlagsSection = ''
+          Option "DontVTSwitch" "True"
+        '';
       };
 
       # Disable mouse acceleration
@@ -57,7 +61,7 @@ with lib;
       hinting = {
         enable = true;
         autohint = false;
-        style = "none";
+        style = "slight";
       };
       subpixel = {
         lcdfilter = "default";

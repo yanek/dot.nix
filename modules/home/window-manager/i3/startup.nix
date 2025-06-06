@@ -13,7 +13,7 @@ in
     command = "xsetroot -cursor_name left_ptr";
   }
   {
-    command = "${getExe pkgs.betterlockscreen} --lock blur --display 1";
+    command = "${getExe pkgs.slock}";
   }
   {
     # Set the desktop background to a solid color, based on the applied color scheme.

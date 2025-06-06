@@ -4,7 +4,7 @@ const action = process.argv.slice(3).shift();
 
 switch (action) {
   case "lock":
-    await $`exec betterlockscreen --lock blur --display 1`;
+    await $`exec slock`;
     break;
   case "reboot":
     await $`systemctl reboot`;
