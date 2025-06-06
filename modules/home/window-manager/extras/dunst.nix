@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   lib,
   ...
@@ -30,6 +31,10 @@ in
         urgency_normal = {
           background = mkForce config.lib.stylix.colors.withHashtag.base02;
           frame_color = mkForce config.lib.stylix.colors.withHashtag.base04;
+        };
+        play_sound = {
+          summary = "*";
+          script = lib.getExe pkgs.myScripts.alert;
         };
       };
     };

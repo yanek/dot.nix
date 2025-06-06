@@ -68,5 +68,10 @@ in
       ];
       text = readFile ./polybar_spotify.sh;
     };
+
+    alert = writeShellApplication {
+      name = "alert";
+      text = readFile ./alert.sh;
+    };
   };
 }
