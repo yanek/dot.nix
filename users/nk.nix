@@ -36,7 +36,6 @@ in
         enable = true;
       }
       (mkIf isDesktop {
-        windowGap = 16;
         extraStartupPrograms = [
           { command = "(sleep 3 && vesktop)"; }
           { command = "spotify"; }
