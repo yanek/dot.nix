@@ -32,10 +32,9 @@ let
 in
 {
   myScripts = {
-    rofi_power = writeZxApplication {
+    rofi_power = writeShellApplication {
       name = "rofi_power";
-      runtimeInputs = [ prev.slock ];
-      text = readFile ./rofi_power.mjs;
+      text = readFile ./rofi_power.sh;
     };
 
     rofi_sinks = writeZxApplication {

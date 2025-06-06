@@ -4,7 +4,7 @@ const action = process.argv.slice(3).shift();
 
 switch (action) {
   case "lock":
-    await $`exec slock`;
+    await $`slock`;
     break;
   case "reboot":
     await $`systemctl reboot`;
