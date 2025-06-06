@@ -22,8 +22,7 @@
           local config = wezterm.config_builder()
 
           config.font = wezterm.font(
-            '${config.stylix.fonts.monospace.name}', 
-            { weight = 'Regular' }
+            '${config.stylix.fonts.monospace.name}'
           )
 
           config.front_end = 'OpenGL'
