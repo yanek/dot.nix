@@ -43,10 +43,9 @@ in
 
     programs = {
       helix.settings.theme = lib.mkForce "rose_pine";
-      nvf.settings.vim.theme = {
-        enable = true;
-        name = "rose-pine";
-        style = "main";
+      nvf.settings.vim = {
+        theme.enable = false;
+        luaConfigRC.rosebones = "vim.cmd('colorscheme rosebones')";
       };
     };
   };
