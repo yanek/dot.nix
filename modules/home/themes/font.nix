@@ -10,7 +10,7 @@ in
 {
   stylix.fonts = {
     serif = mkDefault {
-      package = pkgs.noto-fonts; # inputs.apple-fonts.packages.${pkgs.system}.ny;
+      package = pkgs.noto-fonts;
       name = "Noto Serif";
     };
 
@@ -25,15 +25,15 @@ in
     };
 
     monospace = mkDefault {
-      package = pkgs.commit-mono;
-      name = "Commit Mono";
+      package = pkgs.iosevka-bin;
+      name = "Iosevka";
     };
 
     sizes = mkDefault {
       applications = 10;
       desktop = 11;
-      popups = 10;
-      terminal = 12;
+      popups = 11;
+      terminal = 13;
     };
   };
 
@@ -51,6 +51,7 @@ in
       )
       [
         ""
+        "Slab"
         "Etoile"
         "Aile"
       ];
