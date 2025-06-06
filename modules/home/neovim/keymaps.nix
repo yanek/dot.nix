@@ -7,8 +7,11 @@
   }
   {
     key = "<C-s>";
-    mode = "n";
-    action = ":w<CR>";
+    mode = [
+      "n"
+      "i"
+    ];
+    action = "<Escape>:w<CR>";
   }
   {
     key = "<Tab>";
