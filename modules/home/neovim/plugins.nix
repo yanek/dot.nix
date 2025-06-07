@@ -17,10 +17,6 @@
       };
       cmd = [ "Oil" ];
     };
-    "zenbones.nvim" = {
-      package = zenbones-nvim;
-      lazy = false;
-    };
     "lush.nvim" = {
       package = lush-nvim;
       lazy = false;

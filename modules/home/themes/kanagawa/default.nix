@@ -5,15 +5,14 @@
   ...
 }:
 let
-  isTheme = config.myHome.theme.variant == "rose-pine";
+  isTheme = config.myHome.theme.variant == "kanagawa";
 in
 {
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
       targets = {
-        helix.enable = false;
         nvf.enable = false;
       };
     };
@@ -42,7 +41,6 @@ in
       };
 
     programs = {
-      helix.settings.theme = lib.mkForce "rose_pine";
       nvf.settings.vim = {
         theme.enable = false;
         lazy.plugins = with pkgs.vimPlugins; {
@@ -51,7 +49,7 @@ in
             lazy = false;
           };
         };
-        luaConfigRC.rosebones = "vim.cmd('colorscheme rosebones')";
+        luaConfigRC.kanagawa = "vim.cmd('colorscheme kanagawabones')";
       };
     };
   };

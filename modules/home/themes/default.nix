@@ -13,8 +13,8 @@ with lib;
         "ayu-dark"
         "nord"
         "grayscale"
-        "nord"
         "rose-pine"
+        "kanagawa"
       ];
     };
   };
@@ -48,5 +48,6 @@ with lib;
     ./grayscale
     ./nord
     ./rose-pine
+    ./kanagawa
   ];
 }

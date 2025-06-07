@@ -45,7 +45,7 @@ in
         ];
       })
     ];
-    theme.variant = "rose-pine";
+    theme.variant = "kanagawa";
     term.name = "wezterm";
     git = {
       enable = true;
