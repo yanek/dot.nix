@@ -28,23 +28,25 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    xsession = {
-      enable = true;
-      windowManager.i3 =
-        let
-          mod = "Mod4";
-          keybinds-submodule = import ./keybindings.nix { inherit config lib pkgs; };
-          rules-submodule = import ./rules.nix;
-        in
-        {
+  config =
+    let
+      mod = "Mod4";
+      startup = import ./startup.nix { inherit config pkgs lib; };
+      keybinds = import ./keybindings.nix { inherit config lib pkgs; };
+      rules = import ./rules.nix;
+      bars = import ./bars.nix { inherit config lib pkgs; };
+    in
+    mkIf cfg.enable {
+      xsession = {
+        enable = true;
+        windowManager.i3 = {
           enable = true;
           package = pkgs.i3;
           config = {
             modifier = mod;
             terminal = config.myHome.term.command;
             menu = "${pkgs.rofi}/bin/rofi -show drun";
-            bars = [ ];
+            bars = bars.i3bars;
             workspaceAutoBackAndForth = true;
             gaps = {
               inner = cfg.windowGap;
@@ -59,20 +61,26 @@ in
               border = 2;
               modifier = mod;
             };
-            startup = import ./startup.nix { inherit config pkgs lib; };
-            window.commands = rules-submodule.window;
-            inherit (keybinds-submodule) keybindings modes;
-            inherit (rules-submodule) assigns;
+            window.commands = rules.window;
+            inherit startup;
+            inherit (keybinds) keybindings modes;
+            inherit (rules) assigns;
           };
         };
-    };
+      };
 
-    myHome.windowManager.extras = {
-      picom.enable = true;
-      polybar.enable = true;
-      flashfocus.enable = false;
-      dunst.enable = true;
-      rofi.enable = true;
+      programs.i3blocks = {
+        enable = true;
+        bars = bars.i3blocks;
+      };
+
+      myHome.windowManager.extras = {
+        picom.enable = true;
+        flashfocus.enable = false;
+        dunst.enable = true;
+        rofi.enable = true;
+      };
+
+      home.packages = bars.extraPackages;
     };
-  };
 }
