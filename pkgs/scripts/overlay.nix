@@ -73,5 +73,10 @@ in
       name = "alert";
       text = readFile ./alert.sh;
     };
+
+    status_net = writeShellApplication {
+      name = "status_net";
+      text = readFile ./status_net.sh;
+    };
   };
 }
