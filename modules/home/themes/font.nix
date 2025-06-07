@@ -31,8 +31,8 @@ in
 
     sizes = mkDefault {
       applications = 10;
-      desktop = 11;
-      popups = 11;
+      desktop = 10;
+      popups = 10;
       terminal = 13;
     };
   };
