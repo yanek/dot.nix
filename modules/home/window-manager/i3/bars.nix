@@ -73,6 +73,11 @@ in
         command = "${getExe' pkgs.wireplumber "wpctl"} get-volume @DEFAULT_AUDIO_SINK@";
         interval = 1;
       }
+      # net interface(s) status
+      {
+        command = "${getExe pkgs.myScripts.status_net}";
+        interval = 10;
+      }
       # full date
       {
         command = "date +%F";
