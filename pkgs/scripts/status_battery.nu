@@ -2,7 +2,7 @@
 
 let out = acpi -b
 | lines
-| parse "Battery {idx}: {status}, {percent}%, {rest}"
+| parse "Battery {idx}: {status}, {percent}%{rest}"
 | update status { |row| $row.status | str trim }
 | update percent { |row| $row.percent | str trim }
 | each { |row|
