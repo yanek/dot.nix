@@ -51,7 +51,7 @@ in
         };
         luaConfigRC.kanagawa = "vim.cmd('colorscheme kanagawa-dragon')";
       };
-
+      helix.settings.theme = lib.mkForce "kanagawa-dragon";
     };
   };
 }
