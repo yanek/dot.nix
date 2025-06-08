@@ -11,7 +11,7 @@ in
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa-dragon.yaml";
+      base16Scheme = ./kanagawa-dragon.yaml;
       targets = {
         nvf.enable = false;
       };
@@ -51,6 +51,7 @@ in
         };
         luaConfigRC.kanagawa = "vim.cmd('colorscheme kanagawa-dragon')";
       };
+
     };
   };
 }

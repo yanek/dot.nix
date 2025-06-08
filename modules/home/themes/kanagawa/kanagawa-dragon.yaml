@@ -1,0 +1,49 @@
+system: "base16"
+name: "Kanagawa Dragon"
+author: "Tommaso Laurenzi (https://github.com/rebelot)"
+variant: "dark"
+palette:
+  base00: "#181616"  # dragonBlack3 (dark background)
+  base01: "#282727"  # dragonBlack4 (lighter background)
+  base02: "#393836"  # dragonBlack5 (selection bg)
+  base03: "#737c73"  # dragonAsh (comments)
+  base04: "#a6a69c"  # dragonGray (dark fg)
+  base05: "#c5c9c5"  # dragonWhite (default fg)
+  base06: "#7a8382"  # dragonGray3 (light fg)
+  base07: "#c5c9c5"  # dragonWhite (light bg)
+  base08: "#c4746e"  # dragonRed (variables/errors)
+  base09: "#b98d7b"  # dragonOrange2 (numbers/constants)
+  base0A: "#c4b28a"  # dragonYellow (classes)
+  base0B: "#87a987"  # dragonGreen (strings)
+  base0C: "#8ea4a2"  # dragonAqua (support)
+  base0D: "#8ba4b0"  # dragonBlue2 (functions)
+  base0E: "#8992a7"  # dragonViolet (keywords)
+  base0F: "#a292a3"  # dragonPink (deprecated)
+
+# Colors extracted from the official git repository:
+# https://github.com/rebelot/kanagawa.nvim/blob/master/lua/kanagawa/colors.lua
+#
+# dragonBlack0 = "#0d0c0c",
+# dragonBlack1 = "#12120f",
+# dragonBlack2 = "#1D1C19",
+# dragonBlack3 = "#181616",
+# dragonBlack4 = "#282727",
+# dragonBlack5 = "#393836",
+# dragonBlack6 = "#625e5a",
+# dragonWhite = "#c5c9c5",
+# dragonGreen = "#87a987",
+# dragonGreen2 = "#8a9a7b",
+# dragonPink = "#a292a3",
+# dragonOrange = "#b6927b",
+# dragonOrange2 = "#b98d7b",
+# dragonGray = "#a6a69c",
+# dragonGray2 = "#9e9b93",
+# dragonGray3 = "#7a8382",
+# dragonBlue = "#658594",
+# dragonBlue2 = "#8ba4b0",
+# dragonViolet= "#8992a7",
+# dragonRed = "#c4746e",
+# dragonAqua = "#8ea4a2",
+# dragonAsh = "#737c73",
+# dragonTeal = "#949fb5",
+# dragonYellow = "#c4b28a",--"#a99c8b",-- "#8a9aa3",
