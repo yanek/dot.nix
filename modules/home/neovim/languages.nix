@@ -56,6 +56,12 @@
     treesitter.enable = true;
   };
 
+  nu = {
+    enable = true;
+    lsp.enable = true;
+    treesitter.enable = true;
+  };
+
   odin = {
     enable = true;
     lsp.enable = true;
