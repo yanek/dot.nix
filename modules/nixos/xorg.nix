@@ -60,7 +60,7 @@ with lib;
       antialias = true;
       hinting = {
         enable = true;
-        autohint = false;
+        autohint = true;
         style = "slight";
       };
       subpixel = {
