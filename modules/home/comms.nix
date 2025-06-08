@@ -3,24 +3,32 @@
   lib,
   ...
 }:
-with lib; {
+let
+  inherit (lib) mkEnableOption mkIf;
+  cfg = config.myHome.comms;
+in
+{
   options.myHome.comms = {
     discord.enable = mkEnableOption "discord";
   };
 
   config = {
-    programs.nixcord = mkIf config.myHome.comms.discord.enable {
+    programs.nixcord = mkIf cfg.discord.enable {
       enable = true;
+
       discord = {
         enable = false;
       };
+
       vesktop = {
         enable = true;
       };
+
       config = {
         frameless = true;
         disableMinSize = true;
       };
+
       vesktopConfig = {
         plugins = {
           alwaysTrust = {
@@ -58,6 +66,17 @@ with lib; {
           };
         };
       };
+
+      quickCss =
+        let
+          font = config.stylix.fonts.sansSerif.name;
+        in
+        ''
+          :root {
+            --font-primary: "${font}", sans-serif !important;
+            --font-display: "${font}", sans-serif !important;
+          }
+        '';
     };
   };
 }
