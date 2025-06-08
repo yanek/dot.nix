@@ -34,6 +34,7 @@
       command = "${pkgs.ols}/bin/ols";
     };
   };
+
   language = [
     {
       name = "nix";

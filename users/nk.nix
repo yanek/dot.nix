@@ -47,10 +47,6 @@ in
     ];
     theme.variant = "kanagawa";
     term.name = "wezterm";
-    git = {
-      enable = true;
-      gui = "lazygit";
-    };
     documents.enable = true;
     comms.discord.enable = true;
     vlc.enable = true;
@@ -59,10 +55,6 @@ in
       gui.enable = true;
     };
     yazi.enable = true;
-    neovim = {
-      enable = true;
-      isDefaultEditor = true;
-    };
     webBrowser = {
       firefox.enable = true;
       brave.enable = isDesktop;
@@ -77,6 +69,18 @@ in
           path = "${config.home.homeDirectory}/downloads";
         };
       };
+    };
+  };
+
+  spec.home = {
+    editor.neovim = {
+      enable = true;
+      isDefaultEditor = true;
+    };
+
+    git = {
+      enable = true;
+      gui = "lazygit";
     };
   };
 

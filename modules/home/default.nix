@@ -1,8 +1,7 @@
 { config, ... }:
 {
   imports = [
-    ./helix
-    ./neovim
+    ./editor
     ./shell
     ./term
     ./themes
