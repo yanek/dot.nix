@@ -7,7 +7,7 @@ let out = acpi -b
 | update percent { |row| $row.percent | str trim }
 | each { |row|
     let symbol = if $row.status == "Charging" { "(+)" } else { "" }
-      $"BAT($row.idx): ($row.percent)%($symbol)"
+      $"bat($row.idx): ($row.percent)%($symbol)"
   }
 | str join " - "
 | str trim
