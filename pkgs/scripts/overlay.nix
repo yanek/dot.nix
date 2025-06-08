@@ -29,6 +29,26 @@ let
         ${getExe prev.zx} ${src}/bin/${name}.mjs "$@"
       '';
     };
+  writeNuApplication =
+    {
+      name,
+      runtimeInputs ? [ ],
+      text,
+    }:
+    let
+      src = prev.writeText "${name}.nu" text;
+    in
+    prev.stdenv.mkDerivation {
+      inherit src name;
+      # buildInputs = [ prev.nushell ];
+      unpackPhase = "true";
+      buildInputs = runtimeInputs ++ [ prev.nushell ];
+      installPhase = ''
+        mkdir -p $out/bin
+        cp $src $out/bin/$name
+        chmod +x $out/bin/$name
+      '';
+    };
 in
 {
   myScripts = {
