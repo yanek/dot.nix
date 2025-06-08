@@ -111,5 +111,11 @@ in
       runtimeInputs = [ prev.acpi ];
       text = readFile ./status_battery.nu;
     };
+
+    status_volume = writeNuApplication {
+      name = "status_volume";
+      runtimeInputs = [ prev.wireplumber ];
+      text = readFile ./status_volume.nu;
+    };
   };
 }

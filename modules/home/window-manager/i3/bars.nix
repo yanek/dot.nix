@@ -73,7 +73,7 @@ in
       }
       # volume
       {
-        command = "${getExe' pkgs.wireplumber "wpctl"} get-volume @DEFAULT_AUDIO_SINK@";
+        command = "${getExe pkgs.myScripts.status_volume}";
         interval = 1;
       }
       # net interface(s) status
