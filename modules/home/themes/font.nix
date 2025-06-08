@@ -15,8 +15,8 @@ in
     };
 
     sansSerif = mkDefault {
-      package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro;
-      name = "SF Pro Display";
+      package = pkgs.ubuntu-sans;
+      name = "Ubuntu Sans";
     };
 
     emoji = mkDefault {
