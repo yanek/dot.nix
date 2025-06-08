@@ -29,6 +29,7 @@ let
         ${getExe prev.zx} ${src}/bin/${name}.mjs "$@"
       '';
     };
+
   writeNuApplication =
     {
       name,
@@ -43,11 +44,17 @@ let
       # buildInputs = [ prev.nushell ];
       unpackPhase = "true";
       buildInputs = runtimeInputs ++ [ prev.nushell ];
+      nativeBuildInputs = [ prev.makeWrapper ];
       installPhase = ''
         mkdir -p $out/bin
         cp $src $out/bin/$name
         chmod +x $out/bin/$name
       '';
+      postFixup = ''
+        wrapProgram $out/bin/${name} \
+         --set PATH ${prev.lib.makeBinPath runtimeInputs}
+      '';
+      meta.mainProgram = name;
     };
 in
 {
@@ -97,6 +104,12 @@ in
     status_net = writeShellApplication {
       name = "status_net";
       text = readFile ./status_net.sh;
+    };
+
+    status_battery = writeNuApplication {
+      name = "status_battery";
+      runtimeInputs = [ prev.acpi ];
+      text = readFile ./status_battery.nu;
     };
   };
 }
