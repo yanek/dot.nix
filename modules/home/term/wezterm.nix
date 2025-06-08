@@ -38,10 +38,10 @@
 
           config.window_decorations = 'RESIZE'
           config.window_padding = {
-            left = 24,
-            right = 24,
-            top = 24,
-            bottom = 24,
+            left = 8,
+            right = 8,
+            top = 8,
+            bottom = 8,
           }
 
           config.colors = {
