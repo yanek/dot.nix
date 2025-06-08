@@ -2,20 +2,23 @@
   config,
   pkgs,
   lib,
+  hostname,
 }:
 let
   inherit (lib) getExe getExe';
-  inherit (lib.hm.dag) entryAfter entryBefore;
   inherit (config.stylix) fonts;
   colors = config.lib.stylix.colors.withHashtag;
   blocksConfig = config.xdg.configFile."i3blocks/main".source;
+  isLaptop = hostname == "nkltop";
+  mkLaptopSpecific = laptop: data: if (isLaptop == laptop) then data else { };
+
 in
 {
   i3bars = [
     {
       id = "main";
       position = "top";
-      statusCommand = "${getExe pkgs.i3blocks} -c ${blocksConfig}";
+      statusCommand = "2>/tmp/i3blocks.err ${getExe pkgs.i3blocks} -vvv -c ${blocksConfig} | tee /tmp/i3blocks.out";
       trayOutput = "primary";
 
       colors = {
@@ -78,6 +81,11 @@ in
         command = "${getExe pkgs.myScripts.status_net}";
         interval = 10;
       }
+      # battery
+      (mkLaptopSpecific true {
+        command = "${getExe pkgs.myScripts.status_battery}";
+        interval = 30;
+      })
       # full date
       {
         command = "date +%F";

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  hostname,
   ...
 }:
 with lib;
@@ -34,7 +35,14 @@ in
       startup = import ./startup.nix { inherit config pkgs lib; };
       keybinds = import ./keybindings.nix { inherit config lib pkgs; };
       rules = import ./rules.nix;
-      bars = import ./bars.nix { inherit config lib pkgs; };
+      bars = import ./bars.nix {
+        inherit
+          config
+          lib
+          pkgs
+          hostname
+          ;
+      };
     in
     mkIf cfg.enable {
       xsession = {
