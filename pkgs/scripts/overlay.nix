@@ -41,7 +41,6 @@ let
     in
     prev.stdenv.mkDerivation {
       inherit src name;
-      # buildInputs = [ prev.nushell ];
       unpackPhase = "true";
       buildInputs = runtimeInputs ++ [ prev.nushell ];
       nativeBuildInputs = [ prev.makeWrapper ];
@@ -101,9 +100,10 @@ in
       text = readFile ./alert.sh;
     };
 
-    status_net = writeShellApplication {
+    status_net = writeNuApplication {
       name = "status_net";
-      text = readFile ./status_net.sh;
+      runtimeInputs = [ prev.networkmanager ];
+      text = readFile ./status_net.nu;
     };
 
     status_battery = writeNuApplication {
