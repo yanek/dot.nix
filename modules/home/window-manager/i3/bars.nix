@@ -5,7 +5,7 @@
   hostname,
 }:
 let
-  inherit (lib) getExe getExe';
+  inherit (lib) getExe;
   inherit (config.stylix) fonts;
   colors = config.lib.stylix.colors.withHashtag;
   blocksConfig = config.xdg.configFile."i3blocks/main".source;
