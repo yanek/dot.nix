@@ -32,7 +32,10 @@ with lib;
       xserver = {
         enable = true;
         enableCtrlAltBackspace = false;
-        xkb.layout = "eu";
+        xkb = {
+          layout = "eu";
+          options = "caps:ctrl_modifier";
+        };
         autoRepeatDelay = 300;
         autoRepeatInterval = 20;
         dpi = mkDefault 96;
