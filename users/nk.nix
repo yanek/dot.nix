@@ -24,6 +24,7 @@ in
       file-roller
       aseprite
       gcr # Provides org.gnome.keyring.SystemPrompter
+      godot_4_4
     ];
     stateVersion = "24.11";
   };
