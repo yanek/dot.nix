@@ -4,7 +4,8 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+{
   options.mySystem.gaming = {
     enable = mkEnableOption "gaming";
   };
@@ -40,5 +41,9 @@ with lib; {
         };
       };
     };
+
+    environment.systemPackages = [
+      pkgs.steam-run
+    ];
   };
 }
