@@ -5,16 +5,21 @@ line-number = "relative"
 cursorline = true
 continue-comments = false
 color-modes = true
+true-color = true
+undercurl = true
 auto-format = true
-bufferline = "always"
+completion-timeout = 5
+completion-trigger-len = 1
+bufferline = "multiple"
 default-line-ending = "lf"
-end-of-line-diagnostics = "hint"
+clipboard-provider = "x-clip"
 
 [editor.statusline]
 left = [ "mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control" ]
 
 [editor.inline-diagnostics]
-cursor-line = "warning"
+cursor-line = "hint"
+other-lines = "error"
 
 [editor.lsp]
 display-inlay-hints = false

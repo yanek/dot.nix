@@ -23,7 +23,7 @@ in
 
   config =
     let
-      languages = import ./languages.nix { inherit pkgs; };
+      languages = import ./languages.nix { inherit pkgs lib; };
       settings = pkgs.lib.importTOML ./config.toml;
     in
     mkIf cfg.enable {
