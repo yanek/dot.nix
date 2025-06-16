@@ -1,4 +1,6 @@
 {
+  config,
+  lib,
   pkgs,
   userSettings,
   ...
@@ -30,6 +32,7 @@
         configurationLimit = 10;
       };
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   networking = {
@@ -64,6 +67,29 @@
         '';
     };
   };
+
+  fileSystems =
+    let
+      inherit (config.users.users.${userSettings.username}) uid;
+      options = [
+        "users"
+        "nofail"
+        "x-gvfs-show"
+        "rw"
+        "uid=${toString uid}"
+      ];
+      fsType = "ntfs-3g";
+    in
+    {
+      "/mnt/windows" = {
+        device = "/dev/disk/by-uuid/46FA641CFA640B0F";
+        inherit options fsType;
+      };
+      "/mnt/ceres" = {
+        device = "/dev/disk/by-uuid/EEBACF36BACEF9DB";
+        inherit options fsType;
+      };
+    };
 
   hardware.keyboard.qmk.enable = true;
 
