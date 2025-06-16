@@ -84,6 +84,10 @@ in
       enable = true;
       gui = "lazygit";
     };
+
+    gamedev = {
+      enable = true;
+    };
   };
 
   programs.home-manager.enable = true;
