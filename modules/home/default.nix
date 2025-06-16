@@ -11,7 +11,7 @@
     ./documents.nix
     ./gimp.nix
     ./git.nix
-    ./godot.nix
+    ./gamedev.nix
     ./jellytui.nix
     ./print-3d.nix
     ./prune-dir.nix
