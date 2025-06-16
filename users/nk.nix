@@ -20,11 +20,10 @@ in
     homeDirectory = "${userSettings.dirs.home}";
     packages = with pkgs; [
       pavucontrol
-      nautilus
-      file-roller
+      nemo
+      nemo-fileroller
       aseprite
       gcr # Provides org.gnome.keyring.SystemPrompter
-      godot_4_4
     ];
     stateVersion = "24.11";
   };
