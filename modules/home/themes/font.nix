@@ -15,8 +15,8 @@ in
     };
 
     sansSerif = mkDefault {
-      package = pkgs.ubuntu-sans;
-      name = "Ubuntu Sans";
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
     };
 
     emoji = mkDefault {
