@@ -37,8 +37,7 @@ in
       }
       (mkIf isDesktop {
         extraStartupPrograms = [
-          { command = "(sleep 3 && vesktop)"; }
-          { command = "spotify"; }
+          { command = "vesktop"; }
           { command = "steam"; }
           { command = "openrgb -m static -c cd3c0a"; }
           { command = "nvidia-settings --load-config-only"; }
