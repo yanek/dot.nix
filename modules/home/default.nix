@@ -20,6 +20,7 @@
     ./user-dirs.nix
     ./vlc.nix
     ./web-browser.nix
+    ./feh.nix
     ./yazi.nix
   ];
 
