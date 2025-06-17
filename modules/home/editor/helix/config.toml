@@ -15,7 +15,21 @@ default-line-ending = "lf"
 clipboard-provider = "x-clip"
 
 [editor.statusline]
-left = [ "mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control" ]
+left = [
+  "mode",
+  "spinner",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+  "version-control",
+]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "position-percentage",
+  "file-encoding",
+]
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
@@ -38,13 +52,17 @@ render = true
 
 [keys.insert]
 C-s = [":write", "normal_mode"]
+C-space = "signature_help"
 
 [keys.normal]
 ";" = "command_mode"
 C-s = ":write"
-C-w = ":buffer-close"
 tab = ":buffer-next"
 C-tab = ":buffer-previous"
+C-space = "signature_help"
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-q = ":bclose"
+a = ["append_mode", "collapse_selection"]
 
 [keys.normal.space]
 m = ":toggle-option soft-wrap.enable"
