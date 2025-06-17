@@ -72,12 +72,9 @@ in
   };
 
   spec.home = {
-    editor = {
-      neovim = {
-        enable = true;
-        isDefaultEditor = true;
-      };
-      helix.enable = true;
+    editor.helix = {
+      enable = true;
+      isDefaultEditor = true;
     };
 
     git = {
