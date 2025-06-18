@@ -11,7 +11,8 @@ in
   config = lib.mkIf isTheme {
     stylix = {
       polarity = "dark";
-      base16Scheme = ./kanagawa-dragon.yaml;
+      # base16Scheme = ./kanagawa-dragon.yaml;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
       targets = {
         nvf.enable = false;
       };
@@ -48,10 +49,14 @@ in
             package = kanagawa-nvim;
             lazy = false;
           };
+          "zenbones.nvim" = {
+            package = zenbones-nvim;
+            lazy = false;
+          };
         };
-        luaConfigRC.kanagawa = "vim.cmd('colorscheme kanagawa-dragon')";
+        luaConfigRC.kanagawa = "vim.cmd('colorscheme kanagawabones')";
       };
-      helix.settings.theme = lib.mkForce "kanagawa-dragon";
+      helix.settings.theme = lib.mkForce "kanagawa";
     };
   };
 }
