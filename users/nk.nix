@@ -44,7 +44,7 @@ in
         ];
       })
     ];
-    theme.variant = "kanagawa";
+    theme.variant = "lackluster";
     term.name = "wezterm";
     documents.enable = true;
     comms.discord.enable = true;
