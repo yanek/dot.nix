@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   ...
@@ -25,21 +24,26 @@ in
     };
 
     monospace = mkDefault {
-      package = pkgs.iosevka-bin;
-      name = "Iosevka";
+      package = pkgs.hack-font;
+      name = "Hack";
     };
 
     sizes = mkDefault {
       applications = 10;
       desktop = 10;
       popups = 10;
-      terminal = 13;
+      terminal = 12;
     };
   };
 
   home.packages =
     [
       pkgs.noto-fonts
+      pkgs.open-sans
+
+      pkgs.commit-mono
+      pkgs.jetbrains-mono
+      pkgs.fira-code
       pkgs.iosevka-bin
     ]
     ++ lib.map
