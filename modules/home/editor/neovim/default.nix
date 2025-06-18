@@ -139,6 +139,11 @@ in
                     '';
                 once = true;
               }
+              {
+                event = [ "ColorScheme" ];
+                desc = "Makes the background transparent";
+                command = "highlight Normal ctermbg=NONE guibg=NONE";
+              }
             ];
 
             globals = {
