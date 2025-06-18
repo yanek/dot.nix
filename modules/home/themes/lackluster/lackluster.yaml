@@ -1,0 +1,21 @@
+system: "base16"
+name: "Lackluster"
+author: "Noé Ksiazek"
+variant: "dark"
+palette:
+  base00: "#080808"  # gray1 
+  base01: "#191919"  # gray2
+  base02: "#2a2a2a"  # gray3
+  base03: "#444444"  # gray4
+  base04: "#7a7a7a"  # gray6 
+  base05: "#aaaaaa"  # gray7
+  base06: "#cccccc"  # gray8
+  base07: "#dddddd"  # gray9
+  base08: "#d70000"  # error
+  base09: "#ffaa88"  # warn
+  base0A: "#ffaa88"  # warn
+  base0B: "#789978"  # special
+  base0C: "#7788aa"  # hint
+  base0D: "#708090"  # lack
+  base0E: "#deeeed"  # luster
+  base0F: "#aaaaaa"  # gray7

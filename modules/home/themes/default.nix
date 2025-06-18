@@ -15,6 +15,7 @@ with lib;
         "grayscale"
         "rose-pine"
         "kanagawa"
+        "lackluster"
       ];
     };
   };
@@ -49,5 +50,6 @@ with lib;
     ./nord
     ./rose-pine
     ./kanagawa
+    ./lackluster
   ];
 }
