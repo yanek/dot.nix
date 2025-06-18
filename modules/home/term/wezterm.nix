@@ -44,6 +44,11 @@
             bottom = 8,
           }
 
+          config.window_content_alignment = {
+            horizontal = 'Center',
+            vertical = 'Center',
+          }
+
           config.colors = {
             cursor_border = '${base07}',
             cursor_fg = '${base07}',
