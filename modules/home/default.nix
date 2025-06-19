@@ -9,6 +9,7 @@
 
     ./comms.nix
     ./documents.nix
+    ./feh.nix
     ./gimp.nix
     ./git.nix
     ./gamedev.nix
@@ -21,7 +22,6 @@
     ./user-dirs.nix
     ./vlc.nix
     ./web-browser.nix
-    ./feh.nix
     ./yazi.nix
   ];
 
