@@ -6,10 +6,10 @@
     hm.url = "github:nix-community/home-manager/master";
     hm.inputs.nixpkgs.follows = "nixpkgs";
 
-    vault = {
-      url = "git+ssh://git@github.com/yanek/vault.nix.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # vault = {
+    #   url = "git+ssh://git@github.com/yanek/vault.nix.git";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
