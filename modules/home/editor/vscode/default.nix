@@ -27,6 +27,14 @@ in
         extensions = with pkgs.vscode-extensions; [
           asvetliakov.vscode-neovim
           geequlim.godot-tools
+          (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+            mktplcRef = {
+              name = "vscode-icontheme-nomo-dark";
+              publisher = "be5invis";
+              version = "1.3.6";
+              hash = "sha256-HEym2csu6PU+zKKFWBQP4DwpmD+ntYPtXOIbUv4BmtA=";
+            };
+          })
         ];
 
         userSettings = {
@@ -34,6 +42,7 @@ in
           "extensions.experimental.affinity" = {
             "asvetliakov.vscode-neovim" = 1;
           };
+          "workbench.iconTheme" = "vs-nomo-dark";
         };
 
       };

@@ -65,7 +65,7 @@ in
           })
         ];
         userSettings = {
-          "workbench.colorTheme" = lib.mkForce "Monochrome Dark";
+          "workbench.colorTheme" = lib.mkForce "Dark Modern";
         };
       };
     };
