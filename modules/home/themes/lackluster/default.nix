@@ -14,6 +14,7 @@ in
       base16Scheme = ./lackluster.yaml;
       targets = {
         nvf.enable = false;
+        # vscode.enable = false;
       };
     };
 
@@ -50,6 +51,22 @@ in
           };
         };
         luaConfigRC.rosebones = "vim.cmd('colorscheme lackluster')";
+      };
+
+      vscode.profiles.default = {
+        extensions = [
+          (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+            mktplcRef = {
+              name = "monochrome";
+              publisher = "anotherglitchinthematrix";
+              version = "2.4.3";
+              hash = "sha256-xk4YTT6a1RW/JnWl+r7O0c3ZN/lZM7uiEnCc9h7smZc=";
+            };
+          })
+        ];
+        userSettings = {
+          "workbench.colorTheme" = lib.mkForce "Monochrome Dark";
+        };
       };
     };
   };
