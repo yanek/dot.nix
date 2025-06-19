@@ -37,13 +37,24 @@ in
           })
         ];
 
-        userSettings = {
-          "editor.bracketPairColorization.enabled" = false;
-          "extensions.experimental.affinity" = {
-            "asvetliakov.vscode-neovim" = 1;
+        userSettings =
+          let
+            fontSize = 14;
+            fontFamily = config.stylix.fonts.monospace.name;
+          in
+          {
+            "editor.bracketPairColorization.enabled" = false;
+            "extensions.experimental.affinity" = {
+              "asvetliakov.vscode-neovim" = 1;
+            };
+            "workbench.iconTheme" = "vs-nomo-dark";
+            "editor.fontFamily" = fontFamily;
+            "editor.inlayHints.editor.fontFamily" = fontFamily;
+            "editor.inlineSuggest.editor.fontFamily" = fontFamily;
+
+            "editor.fontSize" = fontSize;
+            "terminal.integrated.fontSize" = fontSize;
           };
-          "workbench.iconTheme" = "vs-nomo-dark";
-        };
 
       };
     };

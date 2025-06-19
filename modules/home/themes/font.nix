@@ -24,15 +24,15 @@ in
     };
 
     monospace = mkDefault {
-      package = pkgs.hack-font;
-      name = "Hack";
+      package = pkgs.commit-mono;
+      name = "CommitMono";
     };
 
     sizes = mkDefault {
       applications = 10;
       desktop = 10;
       popups = 10;
-      terminal = 11;
+      terminal = 12;
     };
   };
 

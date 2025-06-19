@@ -14,7 +14,7 @@ in
       base16Scheme = ./lackluster.yaml;
       targets = {
         nvf.enable = false;
-        # vscode.enable = false;
+        vscode.enable = false;
       };
     };
 
@@ -65,7 +65,7 @@ in
           })
         ];
         userSettings = {
-          "workbench.colorTheme" = lib.mkForce "Dark Modern";
+          "workbench.colorTheme" = "Dark Modern";
         };
       };
     };
