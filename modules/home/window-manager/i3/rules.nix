@@ -15,8 +15,10 @@
   ];
 
   assigns = {
-    "2" = [{class = "steam";}];
-    "5" = [{class = "vesktop";}];
-    "6" = [{class = "Spotify";} {title = "^spotify_player$";}];
+    "4" = [ { class = "steam"; } ];
+    "5" = [
+      { class = "vesktop"; }
+      { class = "Spotify"; }
+    ];
   };
 }

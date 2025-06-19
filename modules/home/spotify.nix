@@ -5,9 +5,11 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.myHome.spotify;
-in {
+in
+{
   options.myHome.spotify = {
     gui.enable = mkEnableOption "gui";
     cli.enable = mkEnableOption "cli";
@@ -15,9 +17,10 @@ in {
 
   config = {
     programs = {
-      spicetify = let
-        spicepkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.system};
-      in
+      spicetify =
+        let
+          spicepkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.system};
+        in
         mkIf cfg.gui.enable {
           enable = true;
           enabledExtensions = with spicepkgs.extensions; [
@@ -26,18 +29,9 @@ in {
           ];
         };
 
-      spotify-player = mkIf cfg.cli.enable {
+      ncspot = mkIf cfg.cli.enable {
         enable = true;
       };
     };
-    # services.spotifyd = mkIf cfg.cli.enable {
-    #   enable = true;
-    #   package = pkgs.spotifyd.override {
-    #     withMpris = true;
-    #   };
-    #   settings.global = {
-    #     use_mpris = true;
-    #   };
-    # };
   };
 }
