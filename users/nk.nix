@@ -80,6 +80,9 @@ in
         enable = true;
         isDefaultEditor = true;
       };
+      vscode = {
+        enable = true;
+      };
     };
 
     git = {
