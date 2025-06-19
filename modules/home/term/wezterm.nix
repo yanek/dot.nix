@@ -27,9 +27,9 @@
 
           config.front_end = 'OpenGL'
 
-          config.freetype_load_target = 'HorizontalLcd'
+          config.freetype_load_target = 'Light'
           config.freetype_render_target = 'HorizontalLcd'
-          config.freetype_load_flags = 'NO_HINTING'
+          --config.freetype_load_flags = 'NO_HINTING'
 
           config.line_height = 1.0
           config.hide_tab_bar_if_only_one_tab = true 
