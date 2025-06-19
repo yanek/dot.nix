@@ -32,7 +32,7 @@ in
       applications = 10;
       desktop = 10;
       popups = 10;
-      terminal = 12;
+      terminal = 11;
     };
   };
 
