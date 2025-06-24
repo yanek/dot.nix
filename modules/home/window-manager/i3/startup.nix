@@ -4,7 +4,7 @@
   lib,
 }:
 let
-  inherit (lib) getExe';
+  inherit (lib) getExe getExe';
   color = config.lib.stylix.colors.withHashtag;
 in
 [
@@ -13,8 +13,11 @@ in
     command = "xsetroot -cursor_name left_ptr";
   }
   {
-    command = "slock";
+    command = "${getExe pkgs.xmousepasteblock}";
   }
+  # {
+  #   command = "slock";
+  # }
   {
     # Set the desktop background to a solid color, based on the applied color scheme.
     command = "${getExe' pkgs.hsetroot "hsetroot"} -solid \"${color.base02}\"";
