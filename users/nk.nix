@@ -24,6 +24,7 @@ in
       nemo-fileroller
       aseprite
       obs-studio
+      peazip
       gcr # Provides org.gnome.keyring.SystemPrompter
     ];
     stateVersion = "24.11";
