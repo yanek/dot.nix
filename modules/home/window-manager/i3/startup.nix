@@ -15,9 +15,9 @@ in
   {
     command = "${getExe pkgs.xmousepasteblock}";
   }
-  # {
-  #   command = "slock";
-  # }
+  {
+    command = "slock";
+  }
   {
     # Set the desktop background to a solid color, based on the applied color scheme.
     command = "${getExe' pkgs.hsetroot "hsetroot"} -solid \"${color.base02}\"";
