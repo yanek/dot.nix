@@ -20,7 +20,7 @@ case $1 in
 "shutdown")
   systemctl poweroff
   ;;
-"restart X11 server")
+"restart xorg")
   sudo systemctl restart display-manager
   ;;
 *)
