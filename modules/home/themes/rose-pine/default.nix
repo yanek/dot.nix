@@ -15,6 +15,7 @@ in
       targets = {
         helix.enable = false;
         nvf.enable = false;
+        vscode.enable = false;
       };
     };
 
@@ -46,12 +47,12 @@ in
       nvf.settings.vim = {
         theme.enable = false;
         lazy.plugins = with pkgs.vimPlugins; {
-          "zenbones.nvim" = {
-            package = zenbones-nvim;
+          "rose-pine" = {
+            package = rose-pine;
             lazy = false;
           };
         };
-        luaConfigRC.rosebones = "vim.cmd('colorscheme rosebones')";
+        luaConfigRC.rose-pine = "vim.cmd('colorscheme rose-pine')";
       };
     };
   };

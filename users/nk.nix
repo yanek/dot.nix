@@ -46,7 +46,7 @@ in
         ];
       })
     ];
-    theme.variant = "lackluster";
+    theme.variant = "rose-pine";
     term.name = "wezterm";
     documents.enable = true;
     comms.discord.enable = true;
