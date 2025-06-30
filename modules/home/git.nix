@@ -30,6 +30,7 @@ in
     mkIf cfg.enable {
       git = {
         enable = true;
+        lfs.enable = true;
         userName = userSettings.fullname;
         userEmail = userSettings.email;
         extraConfig = {
