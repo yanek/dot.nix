@@ -89,7 +89,7 @@ in
               borders.enable = true;
               colorizer.enable = true;
               smartcolumn = {
-                enable = true;
+                enable = false;
                 setupOpts = {
                   colorcolumn = "80";
                 };
