@@ -24,6 +24,7 @@ in
       {
         packages = [
           pkgs.godot_4_4
+          pkgs.famistudio
           templatesPackage
           pkgs.ldtk # Level designer toolkit
         ];
