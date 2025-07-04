@@ -114,6 +114,7 @@
     vial
     v4l-utils
     cameractrls-gtk4
+    libsForQt5.xp-pen-deco-01-v2-driver
   ];
 
   system.stateVersion = "24.11";
