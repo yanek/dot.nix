@@ -27,6 +27,8 @@ in
           pkgs.famistudio
           templatesPackage
           pkgs.ldtk # Level designer toolkit
+          pkgs.ardour
+          pkgs.audacity
         ];
 
         # Setup Godot export templates
